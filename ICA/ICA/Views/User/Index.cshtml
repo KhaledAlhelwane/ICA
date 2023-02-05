@@ -1,0 +1,72 @@
+﻿@model IEnumerable<UserViewModel>
+@*@model SusbendUserViewModel*@
+@{
+	ViewData["Title"] = "Users";
+}
+<h1>Users and Roles</h1>
+
+<a class="btn btn btn-warning m-2 align-self-center" asp-action="Creat"><i class="bi bi-person-plus-fill"></i> add new user</a>
+
+<table class="table table-white table-hover table-striped">
+	<thead>
+		<tr class="bg-primary text-white">
+			
+			<th>Name</th>
+			<th>Nickname</th>
+			<th>Email</th>
+			<th>Roles</th>
+			<th>Status</th>
+			
+
+		</tr>
+	</thead>
+	<tbody>
+		@{var counter=0;
+		}
+		@foreach (var x in Model)
+		{
+		
+				<tr>
+					
+					<td>@x.FirstName</td>
+					<td>@x.LastName</td>
+					<td>@x.Email</td>
+					<td>@string.Join(" , ",x.Roles.ToList())</td>
+				
+				<td>
+					@{
+						if (x.status)
+						{	x.status = true;
+							<a asp-controller="User" asp-action="SuspendUser" asp-route-userId="@x.id">	 <i class="bi bi-lock-fill"></i></a>
+				 
+						}
+						else
+						{
+							x.status = false;
+							<a asp-controller="User" asp-action="SuspendUser" asp-route-userId="@x.id">   <i class="bi bi-unlock-fill"></i></a>
+				 	
+
+							
+						}
+					}
+					
+					</td>
+				@{counter=counter+1;
+				}
+
+			</tr>
+		}
+	</tbody>
+
+
+</table>
+<script>
+	function toggleswitch(c) {
+		console.log(c);
+	var b=document.getElementsByClassName(c).value;
+		alert("hello"+c);
+		alert(b);
+		//$('.c').removeClass('d-none');
+		//document.getElementById("switchform").submit();
+	}
+</script>

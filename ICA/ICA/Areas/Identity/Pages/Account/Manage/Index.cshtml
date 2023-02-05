@@ -1,0 +1,60 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
+
+<form id="profile-form" method="post" class="MyContainer" enctype="multipart/form-data">
+            <div class="row">
+             <div class="col-md-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                <input asp-for="Username" class="form-control" disabled />
+                <label asp-for="Username" class="form-label"></label>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Input.FirstName" class="form-control" />
+                <label asp-for="Input.FirstName" class="form-label"></label>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div> <div class="form-floating">
+                <input asp-for="Input.SecoundName" class="form-control" />
+                <label asp-for="Input.SecoundName" class="form-label"></label>
+                <span asp-validation-for="Input.SecoundName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <label asp-for="Input.PhoneNumber" class="form-label"></label>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <br/>
+        </div>
+        <div class="col-md-4">
+            @if (Model.Input.profilePictureGet != null)
+            {
+                <img id="pp" alt="image profile" class="img-thumbnail" width="150" height="150" src="~/PorfilesPictures/@Model.Input.profilePictureGet" />
+            }
+            else
+            {
+                <img id="pp" alt="profile" src="~/PorfilesPictures/ProfilePicture.png" class="img-thumbnail" width="150" height="150" />
+            }
+            <div class="custom-file mt-2">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/*" asp-for="Input.PorfilePicture"
+                       onchange="document.getElementById('pp').src=window.URL.createObjectURL(this.files[0])" />
+
+                <span asp-validation-for="Input.PorfilePicture" class="text-danger"></span>
+            </div>
+            </div>
+            <br/>
+
+            <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+       
+    </div>
+     </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

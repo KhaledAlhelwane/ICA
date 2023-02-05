@@ -1,0 +1,111 @@
+﻿@model ICA.ViewModel.UserViewModel
+
+@{
+    ViewData["Title"] = "SuspendUser";
+}
+
+
+<div class="MyContainer">
+
+    @{
+        if (ViewBag.status == "Can't process")
+        {
+            <div class="row">          
+            <div class="alert alert-danger  d-flex justify-content-center" role="alert">
+                    <h4><i class="bi bi-bug"></i> Admin Can't suspend him self!</h4>
+                </div>
+             </div>
+
+            <div>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+
+        }
+        else{
+        if (ViewBag.status == "UnLock")
+        {
+            <h1> <i class="bi bi-lock-fill"></i> Suspend User</h1>
+        }
+        else
+        {
+            <h1><i class="bi bi-unlock-fill"></i> Activate User</h1>
+        }
+   
+   
+
+<h4>UserViewModel</h4>
+<hr /> 
+<div class="row d-flex justify-content-center">
+    <div class="col-md-4 " >
+        <form asp-action="SuspendUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+               
+                <input hidden asp-for="id" class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+                <input hidden asp-for="UserName" class="form-control" />
+          
+                @{
+                    if (ViewBag.status == "UnLock")
+                    {
+                        Model.status = true;
+                        <input hidden type="checkbox" asp-for="status"/>
+              
+        }
+                else
+                    {
+                        Model.status = false;
+                        
+               <input hidden type="checkbox" asp-for="status"/>
+                      
+        }
+                }@{
+                    if (ViewBag.status == "UnLock")
+                    {
+                        <br />
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-lock-fill"></i> Lock the User</button>
+                            
+                        </div>
+                    }
+                    else
+                    {
+                        <br />
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-unlock-fill"></i> UnLock the User</button>
+
+                           </div>
+                    }
+
+        }
+           
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+        }
+    }
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
