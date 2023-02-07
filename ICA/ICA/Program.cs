@@ -1,8 +1,12 @@
 using ICA.Data;
 using ICA.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,17 +15,39 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+//Identity Configuration
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
-    
+
+//localiztion Configuration
+builder.Services.AddLocalization(Options=>Options.ResourcesPath= "Resources");
+builder.Services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+            {
+            var supportedCultures = new[]
+            {
+                    new CultureInfo("en"),
+                    new CultureInfo("ar-SY")
+                };
+
+            options.DefaultRequestCulture = new RequestCulture(culture: "ar-SY", uiCulture: "ar-SY");
+            options.SupportedCultures = supportedCultures;
+            options.SupportedUICultures = supportedCultures;
+            });
+//var supportedCultures = new[] { "en-US", "ar-SY" };
+//var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+//    .AddSupportedCultures(supportedCultures)
+//    .AddSupportedUICultures(supportedCultures);
+
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -41,6 +67,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseRequestLocalization();
 
 app.MapControllerRoute(
     name: "default",

@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,8 +14,21 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ICA.styles.css" asp-append-version="true" />
-<link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-<link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    @{ if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+        {
+            <link rel="stylesheet" href="~/lib/bootStrap-rtl/css/bootstrap-flipped.css"/>
+            
+            <link rel="stylesheet" href="~/lib/bootStrap-rtl/css/bootstrap-rtl.css"/>
+              <link rel="stylesheet"
+                  href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+                  integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe"
+                  crossorigin="anonymous" />
+
+        }
+    }
+
 
 </head>
 <body>
@@ -33,6 +53,9 @@
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
+                     <div>
+                        <partial name="_SelectLanguagePartial" />
+                </div>
                 </div>
             </div>
         </nav>
