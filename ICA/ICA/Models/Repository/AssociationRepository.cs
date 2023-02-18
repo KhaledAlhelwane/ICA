@@ -1,31 +1,43 @@
-﻿namespace ICA.Models.Repository
+﻿using ICA.Data;
+using Microsoft.Build.FileSystem;
+
+namespace ICA.Models.Repository
 {
     public class AssociationRepository : ICRUD<Assosiation>
     {
+        private readonly ApplicationDbContext db;
 
+        public AssociationRepository(ApplicationDbContext Db)
+        {
+            db = Db;
+        }
         public void Add(Assosiation entity)
         {
-            throw new NotImplementedException();
+            db.Assosiation.Add(entity);
+            db.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = find(id);
+            db.Assosiation.Remove(entity);
+            db.SaveChanges();
         }
 
         public Assosiation find(int id)
         {
-            throw new NotImplementedException();
+            return db.Assosiation.Find(id);
         }
 
         public List<Assosiation> List()
         {
-            throw new NotImplementedException();
+            return db.Assosiation.ToList();
         }
 
         public void Update(Assosiation entity)
         {
-            throw new NotImplementedException();
+            db.Assosiation.Update(entity);
+            db.SaveChanges();
         }
     }
 }
