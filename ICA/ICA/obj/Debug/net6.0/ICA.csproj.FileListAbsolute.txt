@@ -557,3 +557,10 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.pdb
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.genruntimeconfig.cache
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ref\ICA.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\bin\Debug\net6.0\libman.json
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\bin\Debug\net6.0\ar\ICA.resources.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\bin\Debug\net6.0\en\ICA.resources.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.Resources.Views.Home.Index.ar.resources
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.Resources.Views.Home.Index.en.resources
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.csproj.GenerateResource.cache
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ar\ICA.resources.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\en\ICA.resources.dll

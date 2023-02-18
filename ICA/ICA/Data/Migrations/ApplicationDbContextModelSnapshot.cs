@@ -22,6 +22,46 @@ namespace ICA.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("ICA.Models.Album", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AlbumTitel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MainAssociationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MainInterfaceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("projectsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId")
+                        .IsUnique();
+
+                    b.HasIndex("MainAssociationId")
+                        .IsUnique();
+
+                    b.HasIndex("MainInterfaceId")
+                        .IsUnique();
+
+                    b.HasIndex("projectsId")
+                        .IsUnique();
+
+                    b.ToTable("Albums");
+                });
+
             modelBuilder.Entity("ICA.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -94,6 +134,358 @@ namespace ICA.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("ICA.Models.Article", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ApplicationUsersId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("AssosiationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ContentArabic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContentEnglish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DatePuplished")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TitleArabic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleEnglish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUsersId");
+
+                    b.HasIndex("AssosiationId");
+
+                    b.ToTable("Articles");
+                });
+
+            modelBuilder.Entity("ICA.Models.Assosiation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FaceBookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manger")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Assosiation");
+                });
+
+            modelBuilder.Entity("ICA.Models.Center", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ComplintDepId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MemberId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProjectsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("center_manger")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("contac_us")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("location_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("map")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ComplintDepId");
+
+                    b.HasIndex("MemberId")
+                        .IsUnique();
+
+                    b.HasIndex("ProjectsId");
+
+                    b.ToTable("Center");
+                });
+
+            modelBuilder.Entity("ICA.Models.ComplintDep", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("complient")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("persone_status")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("projectsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("projectsId");
+
+                    b.ToTable("ComplintDep");
+                });
+
+            modelBuilder.Entity("ICA.Models.Images", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AlbumId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlbumId");
+
+                    b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("ICA.Models.ITRequist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ApplicationUsersId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaintenanceNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("RequistStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RequistTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TechnicalNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TypeOfRequist")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUsersId");
+
+                    b.ToTable("ITRequists");
+                });
+
+            modelBuilder.Entity("ICA.Models.MainAssociation", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manger")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("MainAssociation");
+                });
+
+            modelBuilder.Entity("ICA.Models.MainInterface", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Emial_link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("facebook_link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("served_over")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MainInterface");
+                });
+
+            modelBuilder.Entity("ICA.Models.Member", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AssosiationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Postion")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PostionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("projectsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssosiationId");
+
+                    b.HasIndex("projectsId")
+                        .IsUnique();
+
+                    b.ToTable("Member");
+                });
+
+            modelBuilder.Entity("ICA.Models.projects", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AssosiationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Center")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logo_picture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("project_title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssosiationId");
+
+                    b.ToTable("projects");
+                });
+
+            modelBuilder.Entity("ICA.Models.TypeOfArticle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TitleArabic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleEnglish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId")
+                        .IsUnique();
+
+                    b.ToTable("TypeOfArticles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -229,6 +621,143 @@ namespace ICA.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ICA.Models.Album", b =>
+                {
+                    b.HasOne("ICA.Models.Article", "Article")
+                        .WithOne("Album")
+                        .HasForeignKey("ICA.Models.Album", "ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ICA.Models.MainAssociation", "MainAssociation")
+                        .WithOne("Album")
+                        .HasForeignKey("ICA.Models.Album", "MainAssociationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ICA.Models.MainInterface", "MainInterface")
+                        .WithOne("Album")
+                        .HasForeignKey("ICA.Models.Album", "MainInterfaceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ICA.Models.projects", "projects")
+                        .WithOne("Album")
+                        .HasForeignKey("ICA.Models.Album", "projectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+
+                    b.Navigation("MainAssociation");
+
+                    b.Navigation("MainInterface");
+
+                    b.Navigation("projects");
+                });
+
+            modelBuilder.Entity("ICA.Models.Article", b =>
+                {
+                    b.HasOne("ICA.Models.ApplicationUser", "ApplicationUsers")
+                        .WithMany("Articles")
+                        .HasForeignKey("ApplicationUsersId");
+
+                    b.HasOne("ICA.Models.Assosiation", "Assosiation")
+                        .WithMany("Articles")
+                        .HasForeignKey("AssosiationId");
+
+                    b.Navigation("ApplicationUsers");
+
+                    b.Navigation("Assosiation");
+                });
+
+            modelBuilder.Entity("ICA.Models.Center", b =>
+                {
+                    b.HasOne("ICA.Models.ComplintDep", "ComplintDep")
+                        .WithMany()
+                        .HasForeignKey("ComplintDepId");
+
+                    b.HasOne("ICA.Models.Member", "Member")
+                        .WithOne("center")
+                        .HasForeignKey("ICA.Models.Center", "MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ICA.Models.projects", "Projects")
+                        .WithMany("centers")
+                        .HasForeignKey("ProjectsId");
+
+                    b.Navigation("ComplintDep");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Projects");
+                });
+
+            modelBuilder.Entity("ICA.Models.ComplintDep", b =>
+                {
+                    b.HasOne("ICA.Models.projects", "projects")
+                        .WithMany("ComplintDeps")
+                        .HasForeignKey("projectsId");
+
+                    b.Navigation("projects");
+                });
+
+            modelBuilder.Entity("ICA.Models.Images", b =>
+                {
+                    b.HasOne("ICA.Models.Album", "Album")
+                        .WithMany("Images")
+                        .HasForeignKey("AlbumId");
+
+                    b.Navigation("Album");
+                });
+
+            modelBuilder.Entity("ICA.Models.ITRequist", b =>
+                {
+                    b.HasOne("ICA.Models.ApplicationUser", "ApplicationUsers")
+                        .WithMany("ITRequists")
+                        .HasForeignKey("ApplicationUsersId");
+
+                    b.Navigation("ApplicationUsers");
+                });
+
+            modelBuilder.Entity("ICA.Models.Member", b =>
+                {
+                    b.HasOne("ICA.Models.Assosiation", "Assosiation")
+                        .WithMany("Members")
+                        .HasForeignKey("AssosiationId");
+
+                    b.HasOne("ICA.Models.projects", "projects")
+                        .WithOne("Member")
+                        .HasForeignKey("ICA.Models.Member", "projectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Assosiation");
+
+                    b.Navigation("projects");
+                });
+
+            modelBuilder.Entity("ICA.Models.projects", b =>
+                {
+                    b.HasOne("ICA.Models.Assosiation", "Assosiation")
+                        .WithMany("Projects")
+                        .HasForeignKey("AssosiationId");
+
+                    b.Navigation("Assosiation");
+                });
+
+            modelBuilder.Entity("ICA.Models.TypeOfArticle", b =>
+                {
+                    b.HasOne("ICA.Models.Article", "Article")
+                        .WithOne("TypeOfArticles")
+                        .HasForeignKey("ICA.Models.TypeOfArticle", "ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -278,6 +807,60 @@ namespace ICA.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ICA.Models.Album", b =>
+                {
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("ICA.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("Articles");
+
+                    b.Navigation("ITRequists");
+                });
+
+            modelBuilder.Entity("ICA.Models.Article", b =>
+                {
+                    b.Navigation("Album");
+
+                    b.Navigation("TypeOfArticles");
+                });
+
+            modelBuilder.Entity("ICA.Models.Assosiation", b =>
+                {
+                    b.Navigation("Articles");
+
+                    b.Navigation("Members");
+
+                    b.Navigation("Projects");
+                });
+
+            modelBuilder.Entity("ICA.Models.MainAssociation", b =>
+                {
+                    b.Navigation("Album");
+                });
+
+            modelBuilder.Entity("ICA.Models.MainInterface", b =>
+                {
+                    b.Navigation("Album");
+                });
+
+            modelBuilder.Entity("ICA.Models.Member", b =>
+                {
+                    b.Navigation("center");
+                });
+
+            modelBuilder.Entity("ICA.Models.projects", b =>
+                {
+                    b.Navigation("Album");
+
+                    b.Navigation("ComplintDeps");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("centers");
                 });
 #pragma warning restore 612, 618
         }

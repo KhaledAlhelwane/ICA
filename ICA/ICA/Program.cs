@@ -1,5 +1,6 @@
 using ICA.Data;
 using ICA.Models;
+using ICA.Models.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -20,6 +21,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>options.Si
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<ICRUD<Article>, ArticleRepository>();
 
 //localiztion Configuration
 builder.Services.AddLocalization(Options=>Options.ResourcesPath= "Resources");

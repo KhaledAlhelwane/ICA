@@ -17,6 +17,14 @@
         },
         "runtime": {
           "ICA.dll": {}
+        },
+        "resources": {
+          "ar/ICA.resources.dll": {
+            "locale": "ar"
+          },
+          "en/ICA.resources.dll": {
+            "locale": "en"
+          }
         }
       },
       "Humanizer.Core/2.8.26": {

@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\ICA.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\syria.png",
+      "PackagePath": "staticwebassets\\Desighn\\syria.png"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\united-kingdom.png",
+      "PackagePath": "staticwebassets\\Desighn\\united-kingdom.png"
+    },
+    {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\PorfilesPictures\\3fc7a7ad-019f-4408-91df-8e237cfa8cb7photo_2022-10-25_21-36-18.jpg",
       "PackagePath": "staticwebassets\\PorfilesPictures\\3fc7a7ad-019f-4408-91df-8e237cfa8cb7photo_2022-10-25_21-36-18.jpg"
     },
@@ -7887,6 +7895,30 @@
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-icons\\icons\\zoom-out.svg",
       "PackagePath": "staticwebassets\\lib\\bootstrap-icons\\icons\\zoom-out.svg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-rtl\\css\\bootstrap-flipped.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-rtl\\css\\bootstrap-flipped.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-rtl\\css\\bootstrap-flipped.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-rtl\\css\\bootstrap-flipped.css.map"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-rtl\\css\\bootstrap-flipped.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-rtl\\css\\bootstrap-flipped.min.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-rtl\\css\\bootstrap-rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-rtl\\css\\bootstrap-rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-rtl\\css\\bootstrap-rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-rtl\\css\\bootstrap-rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap-rtl\\css\\bootstrap-rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-rtl\\css\\bootstrap-rtl.min.css"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\bootstrap\\LICENSE",
