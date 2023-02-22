@@ -17,7 +17,14 @@ namespace ICA.Controllers
         {
             return View();
         }
-
+        public IActionResult about()
+        {
+            return View();
+        }
+        public IActionResult contact()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
