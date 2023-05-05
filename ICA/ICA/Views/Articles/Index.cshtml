@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ICA.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>المقالات</h1>
+
+<form asp-action="index" method="post">
+<div class="input-group mb-3">
+        <button class="btn btn-outline-secondary " type="submit"  id="button-addon2">بحث</button>
+
+        <input type="text" name="search" class="form-control" placeholder="بحث بإستخدام عنوان المقال" aria-label="Recipient's username" aria-describedby="button-addon2" value="@ViewBag.searchword">
+  </div>
+</form>
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> إنشاء مقال جديد</a>
+</p>
+@if (ViewBag.faild != null)
+{
+    <div class="alert alert-warning" role="alert">
+       لا يوجد مقال بهذا العنوان 
+    </div>
+}
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                <h4>عنوان المقال</h4>
+            </th>
+            <th>
+                <h4>نوعه</h4>
+            </th>
+            <th>
+                <h4>تاريخ النشر</h4>
+            </th>
+            <th >
+                <h4 class="d-flex justify-content-center">حالة الظهور</h4>
+            </th>
+            
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleArabic)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfArticles)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePuplished)
+            </td>
+            <td >
+                    <a class="d-flex justify-content-center" asp-action="ChangeStatus" asp-route-id="@item.Id">
+                        @if (item.Status)
+                        {
+                            <h2 class="text-success"><i class="bi bi-eye"></i></h2>
+                        }
+                        else
+                        {
+                            <h2 class="text-danger"><i class="bi bi-eye-slash"></i></h2>
+
+                        }
+                    </a>
+             </td>
+            <td>
+                    <a asp-controller="Images" class="btn btn-primary" asp-action="Index" asp-route-id="@item.Album.Id"><i class="bi bi-gear"></i> إدارة الصور</a> |
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> تعديل</a> |
+                    <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id"><i class="bi bi-layout-text-sidebar-reverse"></i> مراجعة</a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><i class="bi bi-trash"></i>  حذف المقال</a>
+                 
+            </td>
+        </tr>
+}
+    </tbody>
+
+</table>
+<script>
+    function AnchorFiring() {
+        document.getElementsByClassName("fire").click();
+    }
+</script>

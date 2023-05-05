@@ -10,7 +10,7 @@
         public string ?Email { get; set; }
         public string ?PhoneNumber { get; set; }
         public string ?FacebookLink { get; set; }
-        public string Manger { get; set; }
+        public string ?Manger { get; set; }
         public Album ?Album { get; set; }
 
 

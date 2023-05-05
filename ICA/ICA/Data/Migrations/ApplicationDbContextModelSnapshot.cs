@@ -17,7 +17,7 @@ namespace ICA.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.13")
+                .HasAnnotation("ProductVersion", "6.0.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -33,31 +33,35 @@ namespace ICA.Data.Migrations
                     b.Property<string>("AlbumTitel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ArticleId")
+                    b.Property<int?>("ArticleId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MainAssociationId")
+                    b.Property<int?>("MainAssociationId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MainInterfaceId")
+                    b.Property<int?>("MainInterfaceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("projectsId")
+                    b.Property<int?>("projectsId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ArticleId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[ArticleId] IS NOT NULL");
 
                     b.HasIndex("MainAssociationId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[MainAssociationId] IS NOT NULL");
 
                     b.HasIndex("MainInterfaceId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[MainInterfaceId] IS NOT NULL");
 
                     b.HasIndex("projectsId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[projectsId] IS NOT NULL");
 
                     b.ToTable("Albums");
                 });
@@ -171,6 +175,9 @@ namespace ICA.Data.Migrations
                     b.Property<string>("TitleEnglish")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TypeOfArticles")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUsersId");
@@ -201,7 +208,6 @@ namespace ICA.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manger")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -213,6 +219,28 @@ namespace ICA.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Assosiation");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FullName = "عون"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FullName = "الميتم"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FullName = "صالة زنوبية"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FullName = "المدارس الخيريةالنموذجية"
+                        });
                 });
 
             modelBuilder.Entity("ICA.Models.Center", b =>
@@ -253,7 +281,7 @@ namespace ICA.Data.Migrations
 
                     b.HasIndex("ProjectsId");
 
-                    b.ToTable("Center");
+                    b.ToTable("Centers");
                 });
 
             modelBuilder.Entity("ICA.Models.ComplintDep", b =>
@@ -355,7 +383,6 @@ namespace ICA.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manger")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -366,7 +393,7 @@ namespace ICA.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("MainAssociation");
+                    b.ToTable("MainAssociations");
                 });
 
             modelBuilder.Entity("ICA.Models.MainInterface", b =>
@@ -430,7 +457,7 @@ namespace ICA.Data.Migrations
                     b.HasIndex("projectsId")
                         .IsUnique();
 
-                    b.ToTable("Member");
+                    b.ToTable("Members");
                 });
 
             modelBuilder.Entity("ICA.Models.projects", b =>
@@ -463,29 +490,26 @@ namespace ICA.Data.Migrations
                     b.ToTable("projects");
                 });
 
-            modelBuilder.Entity("ICA.Models.TypeOfArticle", b =>
+            modelBuilder.Entity("ICA.Models.Rating", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int>("ArticleId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TitleArabic")
+                    b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TitleEnglish")
+                    b.Property<string>("IP")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("RatingLevel")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("ArticleId")
-                        .IsUnique();
+                    b.HasKey("id");
 
-                    b.ToTable("TypeOfArticles");
+                    b.ToTable("Rating", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -625,27 +649,19 @@ namespace ICA.Data.Migrations
                 {
                     b.HasOne("ICA.Models.Article", "Article")
                         .WithOne("Album")
-                        .HasForeignKey("ICA.Models.Album", "ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ICA.Models.Album", "ArticleId");
 
                     b.HasOne("ICA.Models.MainAssociation", "MainAssociation")
                         .WithOne("Album")
-                        .HasForeignKey("ICA.Models.Album", "MainAssociationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ICA.Models.Album", "MainAssociationId");
 
                     b.HasOne("ICA.Models.MainInterface", "MainInterface")
                         .WithOne("Album")
-                        .HasForeignKey("ICA.Models.Album", "MainInterfaceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ICA.Models.Album", "MainInterfaceId");
 
                     b.HasOne("ICA.Models.projects", "projects")
                         .WithOne("Album")
-                        .HasForeignKey("ICA.Models.Album", "projectsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ICA.Models.Album", "projectsId");
 
                     b.Navigation("Article");
 
@@ -747,17 +763,6 @@ namespace ICA.Data.Migrations
                     b.Navigation("Assosiation");
                 });
 
-            modelBuilder.Entity("ICA.Models.TypeOfArticle", b =>
-                {
-                    b.HasOne("ICA.Models.Article", "Article")
-                        .WithOne("TypeOfArticles")
-                        .HasForeignKey("ICA.Models.TypeOfArticle", "ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Article");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -824,8 +829,6 @@ namespace ICA.Data.Migrations
             modelBuilder.Entity("ICA.Models.Article", b =>
                 {
                     b.Navigation("Album");
-
-                    b.Navigation("TypeOfArticles");
                 });
 
             modelBuilder.Entity("ICA.Models.Assosiation", b =>

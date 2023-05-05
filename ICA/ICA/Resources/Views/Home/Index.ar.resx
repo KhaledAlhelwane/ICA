@@ -117,7 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="A charitable association founded in 1339 AH corresponding to 1921 AD. Among its achievements were exemplary charitable schools (preparatory, primary, and secondary education), in addition to the orphanage and Zenobia Hall for conferences and celebrations, and last but not least, the Aoun Project for Relief and Development" xml:space="preserve">
+    <value>جمعية خيرية تأسست عام 1339هـ الموافق لعام 1921م وكان من منجزاتها المدارس الخيرية النموذجية (تعليم أساسي وإعدادي وثانوي) بالإضافة إلى دار الأيتام وقاعة زنوبيا للمؤتمرات والاحتفالات، وأخيراً وليس آخراً مشروع عَون للإغاثة والتنمية
+                        </value>
+  </data>
+  <data name="Become A Volunteer" xml:space="preserve">
+    <value>التطوع</value>
+  </data>
+  <data name="beneficiary satisfaction" xml:space="preserve">
+    <value>رضا المستفيدين</value>
+  </data>
+  <data name="Events will be updated soon..." xml:space="preserve">
+    <value>...الأحداث سيتم تحديثها قريباً</value>
+  </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>ممتازة</value>
+  </data>
+  <data name="Fair" xml:space="preserve">
+    <value>مقبولة</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>جيدة</value>
+  </data>
+  <data name="Make Donation" xml:space="preserve">
+    <value>المساهمة</value>
+  </data>
+  <data name="Media Center" xml:space="preserve">
+    <value>المركز الإعلامي</value>
+  </data>
+  <data name="Our achievements" xml:space="preserve">
+    <value>منجزاتنا</value>
+  </data>
+  <data name="Our Latest Events" xml:space="preserve">
+    <value>آخر الأحداث</value>
+  </data>
+  <data name="Our Partnars" xml:space="preserve">
+    <value>شركائنا</value>
+  </data>
+  <data name="Please provide your feedback" xml:space="preserve">
+    <value>يرجى تقديم ملاحظاتك</value>
+  </data>
+  <data name="Poor" xml:space="preserve">
+    <value>غير ذلك</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>إقرأ</value>
+  </data>
+  <data name="Recent from blog" xml:space="preserve">
+    <value>آخر الأخبار</value>
+  </data>
+  <data name="Sponsorship" xml:space="preserve">
+    <value>الرعاية</value>
+  </data>
+  <data name="The News will be updated soon..." xml:space="preserve">
+    <value>...ًسيتم تحديث الأخبار قريبا</value>
+  </data>
+  <data name="Vote" xml:space="preserve">
+    <value>تصويت</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>مرحبا</value>
+  </data>
+  <data name="Your opinion of the services provided by the association and its branches" xml:space="preserve">
+    <value>رأيكم في الخدمات المقدمة من الجميعة وفروعها</value>
+  </data>
+  <data name="“Always give without remembering and always receive without forgetting.” -Brian Tracy" xml:space="preserve">
+    <value>العطاء دون حب لا قيمة له</value>
+  </data>
+  <data name="“Indeed, all bounty is in the Hands of Allah—He grants it to whoever He wills. And Allah is All-Bountiful, All-Knowing.-He chooses whoever He wills to receive His mercy. And Allah is the Lord of infinite bounty.” Ali 'Imran 3:73,3:74" xml:space="preserve">
+    <value>قُلْ إِنَّ ٱلْفَضْلَ بِيَدِ ٱللَّهِ يُؤْتِيهِ مَن يَشَآءُ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌۭ - يَخْتَصُّ بِرَحْمَتِهِۦ مَن يَشَآءُ ۗ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ</value>
+  </data>
+  <data name="“The best way to find yourself is to lose yourself in the service of others.” – Gandhi" xml:space="preserve">
+    <value>وَاللهُ فِي عَوْنِ الْعَبْدِ مَا كَانَ الْعَبْدُ فِي عَوْنِ أَخِيهِ</value>
+  </data>
+  <data name="“We ourselves feel that what we are doing is just a drop in the ocean. But the ocean would be less because of that missing drop.” Mother Teresa" xml:space="preserve">
+    <value>كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ</value>
   </data>
 </root>

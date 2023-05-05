@@ -3,12 +3,29 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "bootstrap-icons@1.10.3",
-      "destination": "wwwroot/lib/bootstrap-icons/"
+      "library": "bootstrap-rtl@3.3.4",
+      "destination": "wwwroot/bootstrap-rtl/"
     },
     {
-      "library": "bootstrap-rtl@3.4.0",
-      "destination": "wwwroot/lib/bootstrap-rtl/"
+      "library": "bootstrap-v4-rtl@4.6.2-1",
+      "destination": "wwwroot/lib/bootstrap-v4-rtl/",
+      "files": [
+        "js/bootstrap.min.js",
+        "css/bootstrap-rtl.css"
+      ]
+    },
+    {
+      "library": "summernote@0.8.20",
+      "destination": "wwwroot/lib/summernote/summernote/",
+      "files": [
+        "summernote.min.js",
+        "summernote-bs5.js",
+        "summernote-bs5.css"
+      ]
+    },
+    {
+      "library": "bootstrap-icons@1.10.4",
+      "destination": "wwwroot/lib/bootstrap-icons/"
     }
   ]
 }

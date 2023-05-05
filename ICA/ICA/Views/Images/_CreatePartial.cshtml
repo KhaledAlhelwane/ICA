@@ -1,0 +1,33 @@
+﻿@model ICA.Models.Images
+
+<link href="~/desighn/uploadfilescss.css" rel="stylesheet" />
+
+<form asp-action="CreatePartial" enctype="multipart/form-data">
+    <div class="row MyContainer">
+        <h4><i class="bi bi-cloud-upload-fill"></i> تحميل الصور</h4>
+        <p class="text-danger"><small>*في حال تجاوز الصور أكثر من عشر صور, يرجى إختيار عشر صور على الأكثر عند كل تحميل</small></p>
+        <hr>
+        <div class="col-8 d-flex justify-content-center">
+    </div>
+    <input hidden name="id" value="@Model.Album.Id" />
+    <div class="upload__box">
+        <div id="thebutton" class="upload__btn-box  d-flex justify-content-center" onclick="hideme();">
+            <label class="upload__btn">
+                    <p>تحميل الصور <i class="bi bi-upload"></i></p>
+                    <input type="file" name="images" multiple="" data-max_length="20" class="upload__inputfile" accept="image/*">
+            </label>
+        </div>
+        <div class="upload__img-wrap"></div>
+    </div>
+        <button type="submit" class="btn btn-outline-primary Mybutton">حفظ</button>
+   @* <input type="submit" value="حفظ" class="btn btn-primary" />*@
+    </div>
+</form>
+
+<script>
+    function hideme() {
+        var element5 = document.getElementById("thebutton");
+        element5.classList.add("d-none");
+    }
+</script>
+<script src="~/desighn/uploadfielsjs.js"></script>

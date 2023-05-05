@@ -85,7 +85,7 @@ namespace ICA.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TitleArabic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TitleEnglish = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ArticleId = table.Column<int>(type: "int", nullable: false)
+                    ArticleId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

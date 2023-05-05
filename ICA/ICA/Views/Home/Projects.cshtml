@@ -1,0 +1,577 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization;
+
+@inject IViewLocalizer localizer
+@{
+	ViewData["Title"] = "Projects";
+	Layout = "_MainLayout";
+}
+<style>
+
+    .MyContainer {
+        position: center;
+        width: 100%;
+        height: 100%;
+        margin: 10px auto;
+        padding: 10px 20px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background: #fff;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
+    }
+</style>
+
+<link href="~/desighn/timelinecss.css" rel="stylesheet" />
+@{
+    string direction = "";
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar")) { direction = "rtl"; }
+    else { direction = "ltr"; }
+}
+
+<div class="hero-wrap" style="background-image: url(/images/bg_7.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a asp-action="index">Home</a></span> <span>About</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
+@*<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+*@
+<br>
+<section class="timeline_area section_padding_130" dir="@direction">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-lg-6">
+                <!-- Section Heading-->
+                <div class="section_heading text-center">
+                    <h6>@localizer["Our History"]</h6>
+                    <h3>@localizer["A brief timeline of our 10 years effort with our partners"] </h3>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row " data-aos="fade-up">
+            <div class="col-12">
+                <!-- Timeline Area-->
+                <div class="apland-timeline-area">
+                    <!-- Single Timeline Content-->
+                 @*   <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">Near Future</p>
+                        </div>
+                        <div class="row MyContainer" >
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer[""]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer[""]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer[""]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                    <!-- Single Timeline Content-->
+                    <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2022</p>
+                        </div>
+
+                        <div class="row MyContainer" data-aos="fade-up" >
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" data-toggle="modal" data-target="#exampleModalCenter">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/ocha-256_0.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Providing Education Services in the Northern Countryside"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" data-toggle="modal" data-target="#exampleModalCenter">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                         <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Distribution of Food Baskets"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Timeline Content-->
+           
+                    <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2021</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up" data-toggle="modal" data-target="#exampleModalCenter">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" data-toggle="modal" data-target="#exampleModalCenter">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                         <img src="~/ourpartner/ocha-256_0.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Providing Education Services in the Northern Countryside"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" data-toggle="modal" data-target="#exampleModalCenter">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Distribution of Food Baskets"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2020</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/ocha-256_0.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Providing Education Services in the Northern Countryside"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                       
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Distribution of Food Baskets"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2019</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/ocha-256_0.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Providing Education Services in the Northern Countryside"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+
+                                      <p style="font-size:100%; color: black;">@localizer["Distribution of Food Baskets"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unfpa.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Women's development"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2018</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Distribution of Food Baskets"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unfpa.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Women's development"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2017</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                       
+                                        <img src="~/ourpartner/unfpa.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Women's development"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                    <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" class="rounded-circle" />
+                                    <p style="font-size:100%; color: black;">@localizer["Food aid"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2016</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unhabitat-256.png" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Income-Generating Equipment Project"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unhabitat-256.png" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Income-Generating Equipment Project"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                      
+                                        <img src="~/ourpartner/ocha-256_0.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Food aid"]</p>
+                                    </div>
+                                </div>
+                            </div>   <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                      
+                                        <img src="~/ourpartner/WHO_logo.png" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["The medical project"]</p>
+                                    </div>
+                                </div>
+                            </div>   <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                       
+                                        <img src="~/ourpartner/unfpa.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Women's development"]</p>
+                                    </div>
+                                </div>
+                            </div>   <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                    
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Food aid"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                         <img src="~/ourpartner/WHO_logo.png" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["The medical project"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2015</p>
+                        </div>
+
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Social care"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unicef-logo.png" width="55" />
+
+                                      <p style="font-size:100%; color: black;">@localizer["The mettle for Youth Participation and Development"]</p>
+                                    </div>
+                                </div>
+                            </div> <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unicef-logo.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["The Back to Learning Campaign"]</p>
+                                    </div>
+                                </div>
+                            </div> <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unicef-logo.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["The natural breastfeeding campaign"]</p>
+                                    </div>
+                                </div>
+                            </div> <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unicef-logo.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["The medical project"]</p>
+                                    </div>
+                                </div>
+                            </div> <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unicef-logo.png" width="55" />
+                                      <p style="font-size:100%; color: black;">@localizer["Our life is hope"]</p>
+                                    </div>
+                                </div>
+                            </div> <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/unicef-logo.png" width="55"  />
+                                      <p style="font-size:100%; color: black;">@localizer["Generations of Tomorrow"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/logo-wfp (1).svg" width="50" />
+                                      <p style="font-size:100%; color: black;">@localizer["Food aid"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/biog14lx_400x400.jpg" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["Medical clinic"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2014</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                        <img src="~/ourpartner/bauh3tjy_400x400.jpg" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["cleanliness"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                      
+                                        <img src="~/ourpartner/bauh3tjy_400x400.jpg" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["The detergent factory"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                      
+                                        <img src="~/ourpartner/biog14lx_400x400.jpg" width="50" class="rounded-circle" />
+                                      <p style="font-size:100%; color: black;">@localizer["The non-food aid project"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                     <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                          <img src="~/ourpartner/unicef-logo.png" width="55"  />
+                                      <p style="font-size:100%; color: black;">@localizer["Our life is hope"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <div class="single-timeline-area">
+                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                          <p style="font-size:100%; color: black;">2013</p>
+                        </div>
+                        <div class="row MyContainer" data-aos="fade-up">
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                      <div class="timeline-text text-center">
+                                        <img src="~/desighn/logo-modified-min.png" width="55" />
+                                             <img src="~/ourpartner/logo-wfp (1).svg" width="50"  />
+                                      <p style="font-size:100%; color: black;">@localizer["Distribution of Food Baskets"]</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" >
+                                <div class="single-timeline-content  wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <div class="timeline-text text-center">
+                                        <div class="d-inline-block">
+                                            <img src="~/desighn/logo-modified-min.png" width="55" />
+                                                <img src="~/ourpartner/unchcr.png" width="50" class="rounded-circle" />
+                                          </div>
+                                     
+                                      <p style="font-size:100%; color: black;">@localizer["The educational project"]</p>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+	<script src="~/desighn/ourstoryang.js"></script>
+}

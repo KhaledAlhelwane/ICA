@@ -1,0 +1,104 @@
+﻿@model ICA.Models.Article
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center text-success">@Model.TitleArabic</h1>
+<h2><i class="bi bi-trash"></i> حذف</h2>
+<div>
+    <hr />
+    <div class="row MyContainer">
+        <div class="alert alert-danger" role="alert">
+            <h3><i class="bi bi-exclamation-octagon-fill"></i> هل أنت متأكد من حذف هذا المقال؟</h3>
+        </div>
+        <p class="text-danger"><small>يمكنك الحذف بالضغط على زر حذف في الأسفل, علما ان جميع البيانات والصور سيتم حذفها</small>!!</p>
+
+        <div class="col-md-8">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TypeOfArticles" class="control-label">نوع المقال</label>
+                <input readonly class="form-control" value="@Model.TypeOfArticles" />
+                <span asp-validation-for="TypeOfArticles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">عن</label>
+                <input readonly class="form-control" value="@Model.Assosiation.FullName" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="TitleArabic" class="control-label">العنوان</label>
+                <input readonly asp-for="TitleArabic" class="form-control" />
+                <span asp-validation-for="TitleArabic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentArabic" class="control-label">المحتوى</label>
+                <textarea id="summernote" asp-for="ContentArabic"></textarea>
+                <span asp-validation-for="ContentArabic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatePuplished" class="control-label">تاريخ النشر</label>
+                <input readonly asp-for="DatePuplished" class="form-control" />
+                <span asp-validation-for="DatePuplished" class="text-danger"></span>
+            </div>
+            @*  <div class="form-group form-check">
+            <label class="form-check-label">
+            <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
+            </label>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="TitleEnglish" class="control-label"></label>
+                <input readonly asp-for="TitleEnglish" class="form-control" />
+                <span asp-validation-for="TitleEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentEnglish" class="control-label"></label>
+                <textarea id="summernote2" asp-for="ContentEnglish"></textarea>
+                <span asp-validation-for="ContentEnglish" class="text-danger"></span>
+            </div>
+
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="ContentEnglish" class="control-label">صورة الغلاف</label>
+
+                <img id="pp" alt="image profile" class="img-thumbnail" src="~/PorfilesPictures/@Model.ProfilePicture" />
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="ContentEnglish" class="control-label">صورة الألبوم</label>
+                <div class="col">
+                    @if (Model.Album.Images.Count() == 0)
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            <p> <i class="bi bi-exclamation-triangle-fill"></i> الألبوم لا يتضمن أي صور </p>
+                        </div>
+                    }
+                    @foreach (var x in Model.Album.Images.ToList())
+                    {
+                        <img alt="image profile" style=" float: left;width:  100px;height: 100px;object-fit: cover;" src="~/PorfilesPictures/@x.ImageUrl" />
+
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" class="btn btn-secondary m-2"> <i class="bi bi-arrow-return-right"></i> العودة</a>
+|
+        <button type="submit" class="Mybutton btn btn-danger"><i class="bi bi-trash"></i> حذف</button>
+       @* <input type="submit" value="Delete" class="btn btn-danger" /> 
+      *@    </form>
+   
+</div>
+<script>
+    $('#summernote').summernote('disable');
+    $('#summernote2').summernote('disable');
+</script>

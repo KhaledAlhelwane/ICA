@@ -23,6 +23,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>options.Si
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<ICRUD<Article>, ArticleRepository>();
+builder.Services.AddScoped<ICRUD<Album>, AlbumRepository>();
+builder.Services.AddScoped<ICRUD<ITRequist>, ItRequistRepository>();
+
 
 //localiztion Configuration
 builder.Services.AddLocalization(Options=>Options.ResourcesPath= "Resources");
@@ -42,10 +45,6 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
             options.SupportedCultures = supportedCultures;
             options.SupportedUICultures = supportedCultures;
             });
-//var supportedCultures = new[] { "en-US", "ar-SY" };
-//var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
-//    .AddSupportedCultures(supportedCultures)
-//    .AddSupportedUICultures(supportedCultures);
 
 
 builder.Services.AddControllersWithViews();

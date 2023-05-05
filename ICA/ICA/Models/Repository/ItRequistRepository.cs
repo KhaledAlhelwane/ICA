@@ -1,4 +1,5 @@
 ﻿using ICA.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ICA.Models.Repository
 {
@@ -25,7 +26,8 @@ namespace ICA.Models.Repository
 
         public ITRequist find(int id)
         {
-            return db.ITRequists.Find(id);
+            return db.ITRequists.Include(a => a.ApplicationUsers).SingleOrDefault(c => c.Id == id);
+            
         }
 
         public List<ITRequist> List()

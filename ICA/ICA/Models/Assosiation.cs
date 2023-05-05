@@ -9,7 +9,7 @@
         public string  ?Email{ get; set; }
         public string  ?PhoneNumber{ get; set; }
         public string  ?FaceBookLink{ get; set; }
-        public string Manger { get; set; }
+        public string ?Manger { get; set; }
         public ICollection<projects>? Projects { get; set; }
         public ICollection<Member> ?Members{ get; set; }
         public ICollection<Article>? Articles { get; set; }

@@ -1,5 +1,6 @@
 ﻿using ICA.Models;
 using ICA.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ICA.Controllers.Admin
 {
+    
     public class UserController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -133,7 +135,12 @@ namespace ICA.Controllers.Admin
            
             return RedirectToAction(nameof(Index));
         }
+        [Authorize]
+        public IActionResult Account()
+        {
 
+            return View();
+        }
 
-	}
+    }
 }

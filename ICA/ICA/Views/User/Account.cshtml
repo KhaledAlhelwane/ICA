@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Main page";
+}
+
+<style>
+    /* Custom styles */
+    .navbar-brand {
+        color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        margin-left: 15px;
+    }
+
+        .navbar-nav .nav-link:hover {
+            color: #c2e7ff !important;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+    .text-green {
+        color: #28a745;
+    }
+
+    .text-blue {
+        color: #007bff;
+    }
+
+    .icon-green {
+        color: #28a745;
+    }
+
+    .icon-blue {
+        color: #007bff;
+    }
+</style>
+
+
+<div class="container mt-5">
+    <div class="container mt-5">
+       
+        <h1>أهلا بك  @UserManager.GetUserAsync(User).Result.FirstName في  لوحة التحكم الخاصة بك</h1>
+        <p class="lead">هنا يمكنك الوصول إلى جميع الأدوات والميزات التي تحتاجها لأداء عملك</p>
+    </div> 
+    <hr>
+    <div class="row mt-5">
+        @if (User.IsInRole("Media") || User.IsInRole("IT"))
+        {
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card col-8">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tasks fa-3x mb-3 icon-green"></i>
+                        <h3 class="card-title text-green">ادارة المقالات</h3>
+                        <p class="card-text" style="font-size:120%">عرض وإدارة المقالات وأنواعها من إضافة وحذف وتعديل بالإضافة لإدارة الصور</p>
+                        <a asp-controller="articles" asp-action="Index" class="btn btn-primary Mybutton">انتقل</a>
+                    </div>
+                </div>
+            </div>
+        }
+      @if (User.IsInRole("IT"))
+        {
+            <div class="col-md-12 d-flex justify-content-center mt-2">
+                <div class="card col-8">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3 icon-blue"></i>
+                    <h4 class="card-title text-blue ">إدارة المستخدمين</h4>
+                    <p class="card-text">يمكنك إضافة مستخدمين جدد بالأدوار المناسبة</p>
+                    <a asp-controller="User" asp-action="Index" class="btn btn-primary Mybutton">انتقل</a>
+                </div>
+            </div>
+        </div>
+}
+    </div>
+</div>

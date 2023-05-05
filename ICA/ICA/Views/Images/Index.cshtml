@@ -1,0 +1,133 @@
+﻿@model ICA.ViewModel.ImageDeleteViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    int counter = 1;
+}
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    input[type="checkbox"][id^="myCheckbox"] {
+        display: none;
+    }
+
+    label {
+        border: 1px solid #fff;
+        padding: 10px;
+        display: block;
+        position: relative;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+        label:before {
+            background-color: white;
+            color: white;
+            content: "x";
+            display: block;
+            border-radius: 50%;
+            border: 1px solid grey;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 28px;
+            transition-duration: 0.4s;
+            transform: scale(0);
+        }
+
+        label img {
+            height: 175px;
+            width: 175px;
+          object-fit: cover;
+            /*transition-duration: 0.2s;
+      transform-origin: 50% 50%;*/
+        }
+
+    :checked + label {
+        border-color: #ddd;
+    }
+
+        :checked + label:before {
+            content: "X";
+            background-color: #ed0000;
+            transform: scale(1);
+        }
+
+        :checked + label img {
+            transform: scale(0.9);
+            /* box-shadow: 0 0 5px #333; */
+            z-index: -1;
+        }
+</style>
+<h1 class="text-center display-3"><q class="text-success">@ViewBag.AlbumTitle</q> </h1>
+<h2>
+    <i class="bi bi-gear"></i> إدارة صور
+</h2>
+
+<hr>
+<div class="MyContainer">
+<div class="row ">
+
+   
+   @*  <div class="col-2">
+        <a class="btn btn-primary mb-3 Mybutton" asp-action="Create" asp-route-id="@Model.AlbumId"><i class="bi bi-file-plus"></i> إضافة صور جديدة </a>
+          </div>*@
+   
+</div>
+<div>
+     <h4><i class="bi bi-journal-album"></i> ألبوم الصور</h4>
+<hr>
+</div>
+@if (ViewBag.NotFound!=null)
+{
+<div class="alert alert-warning" role="alert">
+            <h2><i class="bi bi-exclamation-triangle-fill"></i> الألبوم لا يحتوي أي صور</h2>
+</div>
+}else{
+        <div class="col-1">
+            <button type="submit" class="btn btn-danger Mybutton" onclick="deleteImages();"><i class="bi bi-trash"></i> حذف</button>
+        </div>
+    <form asp-action="Delete" method="post"  id="Myform">
+<ul>
+   <input hidden asp-for="AlbumId" value="@Model.AlbumId"/>
+        @for(var i = 0; i < Model.Images.Count(); i++){
+      
+    <li>
+                <input hidden asp-for="@Model.Images[i].id" value="@Model.Images[i].id" />
+                <input hidden asp-for="@Model.Images[i].ImageUrl" value="@Model.Images[i].ImageUrl" />
+        <input type="checkbox" asp-for=@Model.Images[i].CheckedStatus id="myCheckbox+@counter" />
+                <label for="myCheckbox+@counter"><img src="/PorfilesPictures/@Model.Images[i].ImageUrl" /></label>
+    </li>
+    
+        counter= counter + 1;
+            
+        
+
+    }
+    
+</ul>
+
+<br>
+       
+</form>
+    
+}
+   
+</div>
+<hr/>
+<partial name="_CreatePartial" model="new  Images(){Album=Model.AlbumObject};" />
+<a asp-controller="Articles" asp-action="Index" class="btn btn-secondary Mybutton"><i class="bi bi-arrow-return-right"></i> العودة</a>
+<script>
+    function deleteImages() {
+        document.getElementById("Myform").submit();
+    }
+</script>

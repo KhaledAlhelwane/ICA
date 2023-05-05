@@ -42,9 +42,9 @@
                 <img id="pp" alt="profile" src="~/PorfilesPictures/ProfilePicture.png" class="img-thumbnail" width="150" height="150" />
             }
             <div class="custom-file mt-2">
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/*" asp-for="Input.PorfilePicture"
+               @* <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/*" asp-for="Input.PorfilePicture"
                        onchange="document.getElementById('pp').src=window.URL.createObjectURL(this.files[0])" />
-
+*@
                 <span asp-validation-for="Input.PorfilePicture" class="text-danger"></span>
             </div>
             </div>

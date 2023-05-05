@@ -1,0 +1,58 @@
+﻿@model ICA.Models.ITRequist
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ITRequist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+               
+            </div>*@
+            <div class="form-group">
+                <label asp-for="RequistTitle" class="control-label"></label>
+                <input asp-for="RequistTitle" class="form-control" />
+                <span asp-validation-for="RequistTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfRequist" class="control-label"></label>
+                <input asp-for="TypeOfRequist" class="form-control" />
+                <span asp-validation-for="TypeOfRequist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TechnicalNotes" class="control-label"></label>
+                <input asp-for="TechnicalNotes" class="form-control" />
+                <span asp-validation-for="TechnicalNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaintenanceNote" class="control-label"></label>
+                <input asp-for="MaintenanceNote" class="form-control" />
+                <span asp-validation-for="MaintenanceNote" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RequistStatus" /> @Html.DisplayNameFor(model => model.RequistStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
