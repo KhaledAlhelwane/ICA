@@ -1,6 +1,7 @@
 using ICA.Data;
 using ICA.Models;
 using ICA.Models.Repository;
+using ICA.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -26,6 +27,8 @@ builder.Services.AddScoped<ICRUD<Article>, ArticleRepository>();
 builder.Services.AddScoped<ICRUD<Album>, AlbumRepository>();
 builder.Services.AddScoped<ICRUD<ITRequist>, ItRequistRepository>();
 
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddTransient<IMailingService, MailingService>();
 
 //localiztion Configuration
 builder.Services.AddLocalization(Options=>Options.ResourcesPath= "Resources");

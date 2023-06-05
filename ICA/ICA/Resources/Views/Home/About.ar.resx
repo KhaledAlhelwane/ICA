@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About us" xml:space="preserve">
+    <value>عنا</value>
+  </data>
+  <data name="is to be a leading national institution that supports the national economy and plays a tangible and effective role in the development and advancement of society. The institution aims to achieve solidarity and cooperation among its members, while contributing to the overall growth and progress of the community." xml:space="preserve">
+    <value>إن رؤية عون للإغاثة والتنمية تتمثل في أن نكون مؤسسة وطنية رائدة تدعم الاقتصاد الوطني وذات دور ملموس وفعال في تنمية وتطوير المجتمع وتحقيق التكافل والتعاضد بين أبناءه.</value>
+  </data>
+  <data name="is to strive towards a compassionate society where individuals support each other. We are committed to delivering humanitarian aid to those in need, regardless of their political, religious, or sectarian affiliations." xml:space="preserve">
+    <value>نحو مجتمع متكافل يعضد بعضه بعضاً.
+نحن حريصون على إيصال المساعدات الإغاثية والإنسانية إلى مستحقيها دون النظر إلى الانتماء السياسي أو الديني أو الطائفي.</value>
+  </data>
+  <data name="Providing material and moral support to affected families.Developing the skills and performance of displaced individuals by providing vocational training and assisting them in finding employment opportunities.Raising awareness and providing psychological and educational support that contributes to improving the behavior of individuals in the community.Implementing projects that contribute to the development of the community, create new job opportunities, and promote its growth." xml:space="preserve">
+    <value>تقديم يد العون والمساعدة (المادية والمعنوية) للعائلات المتضررة.
+	تطوير مهارات وأداء الأفراد النازحين بتقديم التدريب المهني لهم ومساعدتهم لإيجاد فرص عمل لهم.
+	نشر الوعي وتقديم الدعم والتأهيل النفسي والتربوي بما يساهم في تقويم سلوكيات أفراد المجتمع.
+تنفيذ مشاريع تساهم في تنمية المجتمع وتطويره وتخلق فرص عمل جديدة.
+	التطوير المستمر لأداء الموظفين داخل المؤسسة واستخدام أفضل أساليب وطرق العمل.</value>
+  </data>
+  <data name="The main achievements of Islamic Charity Association was the establishment of exemplary charity schools (elementary, preparatory, and secondary education), in addition to an orphanage and the Zenobia hall for conferences and celebrations. Lastly but not least, the 'Aoun Relief and Development Project' was launched, as a result of changes that occurred in the social structure of the city of Homs. The project aims to meet the needs of displaced persons and affected families, providing them with dignified accommodation until they can safely return to their homes and neighborhoods with the permission of the Almighty." xml:space="preserve">
+    <value>وكان من منجزاتها المدارس الخيرية النموذجية (تعليم أساسي وإعدادي وثانوي) بالإضافة إلى دار الأيتام وقاعة زنوبيا للمؤتمرات والاحتفالات، وأخيراً وليس آخراً مشروع عَون للإغاثة والتنمية.
+حيث تم إطلاق عَون للإغاثة والتنمية وذلك نتيجة التغيرات التي طرأت على بنية المجتمع في مدينة حمص حيث نقوم بتلبية احتياجات النازحين والعائلات المنكوبة بما يكفل لهم إقامة كريمة إلى حين عودتهم سالمين آمنين إلى منازلهم وأحيائهم بإذنه جل جلاله.</value>
+  </data>
+  <data name="The message of Aoun Relief and Development" xml:space="preserve">
+    <value>رسالة عَـــون للإغاثة والتنمية</value>
+  </data>
+  <data name="The policy of Aoun Relief and Development includes the following" xml:space="preserve">
+    <value>سياسة عَـــون للإغاثة والتنمية</value>
+  </data>
+  <data name="The vision of Aoun Relief and Development" xml:space="preserve">
+    <value>رؤية عَـــون للإغاثة والتنمية</value>
+  </data>
+  <data name="Welcome to Islamic Charity Association Stablished Since 1921" xml:space="preserve">
+    <value>أهلا بك في  الجمعية الخيرية الإسلامية التي تأسست عام 1339هـ الموافق لعام 1921م </value>
+  </data>
+</root>

@@ -7,9 +7,14 @@
 <html >
 <head>
     <meta name="viewport" content="width=device-width" />
+     <meta name="description" content="@ViewBag.meta">
+    <meta name="keywords" content="Islamic Charity Association, Aoun Homs, Aoun Relief and Development, Charity Association, NGO, Humanitarian Organization, Relief Organization, Orphan Sponsorship, Orphanage, Zanobia Hall, Exemplary Charitable Schools, Social Care, Self-Education, Orphan Sponsorship in Syria, Relief Projects, Global Relief, Refugees, Displaced People, الجمعية الخيرية الإسلامية, أمان للرعاية الإجتماعية,عون حمص, عون للإغاثة والتنمية, جمعية خيرية, منظمة خيرية, منظمة غير حكومية, منظمة إنسانية, منظمة إغاثية, كفالة الأيتام, دار الأيتام, صالة زنوبيا, المدارس الخيرية النموذجية, الخيرية, الرعاية الاجتماعية, التعليم الذاتي, الحملات الإغاثية, المشاريع الخيرية, مشاريع الإغاثة, حملات الإغاثة, الإغاثة العالمية, إغاثة, اللاجئين, النازحين" />
+    <meta name="geo.position" content="34.744805; 36.680314">
+    <meta name="geo.placename" content="Homs, Syria">
+    <meta name="geo.region" content="SY-HO">
+    <meta name="ICBM" content="34.744805,36.680314">
+    <link rel="icon" type="image/ico" href="~/desighn/logo-modified-min.ico">
     <title>@ViewBag.Title</title>
-    <link rel="icon" type="image/png" href="~/desighn/logo-modified-min.ico">
-
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
     <link href="~/assets/css/bootstrap/bootstrap-grid.css" rel="stylesheet" />
@@ -20,15 +25,10 @@
     <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
-
     <link rel="stylesheet" href="~/assets/css/aos.css">
-
     <link rel="stylesheet" href="~/assets/css/ionicons.min.css">
-
     <link rel="stylesheet" href="~/assets/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="~/assets/css/jquery.timepicker.css">
-
-
     <link rel="stylesheet" href="~/assets/css/flaticon.css">
     <link rel="stylesheet" href="~/assets/css/icomoon.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
@@ -59,7 +59,18 @@
     @{
         var thedirection = "";
         if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-        { thedirection = "rtl"; }
+        { thedirection = "rtl";
+        <style>
+                .ftco-footer .ftco-footer-widget h2:after {
+                    position: absolute;
+                    bottom: -15px;
+                    content: '';
+                    width: 98px;
+                    height: 1px;
+                    right: 0;
+                    background: #fff;
+                }</style>
+        }
         else
         {
             thedirection = "ltr";
@@ -70,7 +81,7 @@
                 <div class="container">
                     <a class="navbar-brand" asp-controller="Home" asp-action="index">
                 <div class="logo-container">
-                    <img src="~/desighn/logo-modified-min.png" width="70" height="70" />
+                    <img src="~/desighn/logo-modified-min.png" width="70" height="70" class="rounded-circle" style="background-color: white;" />
                     <div class="text-container m-2">
                         الجمعية الخيرية الإسلامية
                         <small class="second-sentence mr-3" style="font-size:40%;font-family: 'Didot', serif;letter-spacing: 1px;">Islamic Charity Association</small>
@@ -110,37 +121,94 @@
     <footer class="ftco-footer ftco-section img">
         <div class="overlay"></div>
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+        <div class="row mb-5" dir="@thedirection">
+          <div class="col-md-4">
+                    <div class="mb-4" dir="@thedirection">
+                        <h2 class="ftco-heading-2" dir="@thedirection">  <img src="~/desighn/logo-modified-min.png" width="80" /></h2>
+                        <p >@localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."]</p>
+                        <ul class="ftco-footer-social list-unstyled  mt-5 " >
+                           @* <li class="ftco-animate"><a https:"" ><span class="icon-twitter"></span></a></li>
+                          *@  <li class="ftco-animate"><a href="https://www.facebook.com/islamicaidorgan/"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.linkedin.com/company/islamiccharityassociation/?originalSubdomain=sy" /><span class="icon-linkedin"></span></a></li>
               </ul>
             </div>
+
           </div>
           <div class="col-md-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">@localizer["main projects"] </h2>
+                        <div class="block-23 mb-3">
+                            <a href="https://www.facebook.com/islamicaidorgan/">
+                                <img src="~/ourachivments/own.png" width="40" class="rounded-circle" alt="عون" />
+                            </a>
+                            <a href="https://www.facebook.com/p/%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85-100066815956039/?paipv=0&eav=AfYUb0wtnrMopYhY3AlXXknqyYVqDr_xKet5-pnpJZIfJHwq8bHkt9sdTXXlABfQ5no&_rdr">
+                                <img src="~/ourachivments/orphans.jpg" width="40" class="rounded-circle" alt="الميتم الإسلامي" />
+                            </a>
+                            <a href="https://www.facebook.com/Aman.for.Community.Services">
+                                <img src="~/ourachivments/communityServices.png" width="40" alt="الرعاية الإجتماعية" />
+                            </a>
+                            <a>
+                                <img src="~/ourachivments/SelfLearning.png" width="40" alt="التعلم الذاتي" />
+                            </a>
+                            <a href="https://www.facebook.com/alkhariaha/">
+                                <img src="~/ourachivments/shools.png" width="40" class="rounded-circle" alt="المدارس الخيرية" />
+                            </a>
+                            <a href="https://www.facebook.com/zannobia.hall/">
+                                <img src="~/ourachivments/zanobia.png" width="40" class="rounded-circle" alt="صالة زنوبيا" />
+                            </a>
+                            <a>
+                                <img src="~/ourachivments/wfb.png" width="40" alt="WFB" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">@localizer["Site Links"]</h2>
+                        <ul class="list-unstyled" >
+                            <li dir="@thedirection"><a asp-controller="Home" asp-action="index" class="py-2 d-block">@localizer["Home"]</a></li>
+                            <li dir="@thedirection"><a asp-controller="Home" asp-action="projects" class="py-2 d-block">@localizer["Projects"]</a></li>
+                            <li><a asp-controller="Home" asp-action="Articles" class="py-2 d-block">@localizer["News"]</a></li>
+                            <li><a asp-controller="Home" asp-action="events" class="py-2 d-block">@localizer["Events"]</a></li>
+                            <li><a asp-controller="Home" asp-action="about" class="py-2 d-block">@localizer["about"]</a></li>
+                            <li><a asp-controller="Home" asp-action="contact" class="py-2 d-block">@localizer["Contact"]</a></li>
+                        </ul>
+                    </div>
+                </div>
+          <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <h2 class="ftco-heading-2">@localizer["Have a Questions?"]</h2>
                 <div class="block-23 mb-3">
                   <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">@localizer["Al-Maytam Street, Al-Waer neighborhood, Homs, Syria"]</span></li>
-                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">031 223 3173</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@icangoh.org.com</span></a></li>
                   </ul>
                 </div>
             </div>
           </div>
+
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
+                    @{
+                        if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                        {
+                            <p>
+                                <script>document.write(new Date().getFullYear());</script>
+                                جميع الحقوق محفوظة  للجمعية الخيرية الإسلامية
+ 
+                                </p>
+                        }
+                        else
+                        {
+                            <p>
+                                All rights reserved @Html.Raw("@") Islamic charity association in <script>document.write(new Date().getFullYear());</script>  
+                            </p>
+                        }
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Islamic charity association <br> <br> <sm>Devloped by </sm><br><sm> Alhousami & Alhelwani</sm>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+              }
+                    <br> <br> <sm>Devloped by </sm><br><sm> Alhousami & Alhelwani</sm>
           </div>
         </div>
       </div>
@@ -160,9 +228,9 @@
     <script src="~/assets/js/bootstrap-datepicker.js"></script>
     <script src="~/assets/js/jquery.timepicker.min.js"></script>
     <script src="~/assets/js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+   @* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="~/assets/js/google-map.js"></script>
-    <script src="~/assets/js/main.js"></script>
+ *@   <script src="~/assets/js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

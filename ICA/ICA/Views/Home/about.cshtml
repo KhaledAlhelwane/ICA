@@ -1,173 +1,54 @@
-﻿@using System.Globalization
+﻿
+@using System.Globalization;
+
 @using Microsoft.AspNetCore.Mvc.Localization
 
 @inject IViewLocalizer localizer
 
-@{
-    ViewData["Title"] = "about";
-    Layout = "_MainLayout";
-}
 
-<div class="hero-wrap" style="background-image: url('@Url.Content("~/images/bg_7.jpg")');" data-stellar-background-ratio="0.5">
+
+@{
+    ViewData["Title"] = localizer["About us"];
+    ViewData["meta"] = localizer["Who we are,how did we start and what are our goals"];
+    Layout = "_MainLayout";
+
+}
+@{
+    string direction = "";
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar")) { direction = "rtl"; }
+    else { direction = "ltr"; }
+}
+<div class="hero-wrap" style="background-image: url('/images/mainbg.png'); background-position: 50% 225px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a asp-action="index">Home</a></span> <span>About</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
+            <div class="col-md-7 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(50%);">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-action="action">Home</a></span> <span>About</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">About Us</h1>
             </div>
         </div>
     </div>
 </div>
 
-
 <section class="ftco-section">
     <div class="container">
-        <div class="row d-flex">
-            <div class="col-md-6 d-flex ftco-animate">
-                <div class="img img-about align-self-stretch" style="background-image:  url('@Url.Content("~/images/bg_3.jpg")');width: 100%;"></div>
+        <div class="row d-flex" dir="@direction">
+            <div class="col-md-6 d-flex ftco-animate fadeInUp ftco-animated">
+                <div class="img img-about align-self-stretch" style="background-image: url(/Desighn/logo-bigger.png); width: 100%;background-size: contain;"></div>
             </div>
-            <div class="col-md-6 pl-md-5 ftco-animate">
-                <h2 class="mb-4">Welcome to Welfare Stablished Since 1898</h2>
-                <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-counter ftco-intro ftco-intro-2" id="section-counter">
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-md-5 d-flex justify-content-center counter-wrap ftco-animate">
-                <div class="block-18 color-1 align-items-stretch">
-                    <div class="text">
-                        <span>Served Over</span>
-                        <strong class="number" data-number="1432805">0</strong>
-                        <span>Children in 190 countries in the world</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-                <div class="block-18 color-2 align-items-stretch">
-                    <div class="text">
-                        <h3 class="mb-4">Donate Money</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                        <p><a href="#" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-                <div class="block-18 color-3 align-items-stretch">
-                    <div class="text">
-                        <h3 class="mb-4">Be a Volunteer</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                        <p><a href="#" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
-                    </div>
-                </div>
+            <div class="col-md-6 pl-md-5 ftco-animate fadeInUp ftco-animated">
+                <h2 class="mb-4">@localizer["Welcome to Islamic Charity Association Stablished Since 1921"]</h2>
+                <p >@localizer["The main achievements of Islamic Charity Association was the establishment of exemplary charity schools (elementary, preparatory, and secondary education), in addition to an orphanage and the Zenobia hall for conferences and celebrations. Lastly but not least, the 'Aoun Relief and Development Project' was launched, as a result of changes that occurred in the social structure of the city of Homs. The project aims to meet the needs of displaced persons and affected families, providing them with dignified accommodation until they can safely return to their homes and neighborhoods with the permission of the Almighty."]</p>
+                <p >@localizer["The vision of Aoun Relief and Development"]<br> @localizer["is to be a leading national institution that supports the national economy and plays a tangible and effective role in the development and advancement of society. The institution aims to achieve solidarity and cooperation among its members, while contributing to the overall growth and progress of the community."]</p>
+                <p >@localizer["The message of Aoun Relief and Development"] <br>@localizer["is to strive towards a compassionate society where individuals support each other. We are committed to delivering humanitarian aid to those in need, regardless of their political, religious, or sectarian affiliations."] </p>
+                <p >
+                    @localizer["The policy of Aoun Relief and Development includes the following"]
+                    <br>
+                    @localizer["Providing material and moral support to affected families.Developing the skills and performance of displaced individuals by providing vocational training and assisting them in finding employment opportunities.Raising awareness and providing psychological and educational support that contributes to improving the behavior of individuals in the community.Implementing projects that contribute to the development of the community, create new job opportunities, and promote its growth."]
+                </p>
+                <p></p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="ftco-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center">
-                <h2 class="mb-4">Latest Donations</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image:  url('@Url.Content("~/images/person_1.jpg")');"></div>
-                        <div class="info ml-4">
-                            <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-                            <span class="position">Donated Just now</span>
-                            <div class="text">
-                                <p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image: url('@Url.Content("~/images/person_2.jpg")');"></div>
-                        <div class="info ml-4">
-                            <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-                            <span class="position">Donated Just now</span>
-                            <div class="text">
-                                <p>Donated <span>$150</span> for <a href="#">Children Needs Food</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-                <div class="staff">
-                    <div class="d-flex mb-4">
-                        <div class="img" style="background-image: url('@Url.Content("~/images/person_3.jpg")');"></div>
-                        <div class="info ml-4">
-                            <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-                            <span class="position">Donated Just now</span>
-                            <div class="text">
-                                <p>Donated <span>$250</span> for <a href="#">Children Needs Food</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-   <section class="ftco-gallery">
-        <div class="d-md-flex">
-            <a href="/images/cause-2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/cause-2.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-            <a href="/images/cause-3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/cause-3.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-            <a href="/images/cause-4.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/cause-4.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-            <a href="/images/cause-5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/cause-5.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-        </div>
-        <div class="d-md-flex">
-            <a href="/images/cause-6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/cause-6.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-            <a href="/images/image_3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/image_3.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-            <a href="/images/image_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/image_1.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-            <a href="/images/image_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(/images/image_2.jpg);">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="icon-search"></span>
-                </div>
-            </a>
-        </div>
-    </section>
- 

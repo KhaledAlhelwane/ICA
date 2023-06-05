@@ -3,8 +3,9 @@
 
 @inject IViewLocalizer localizer
 @{
-	ViewData["Title"] = "Projects";
-	Layout = "_MainLayout";
+    ViewData["Title"] = localizer["Projects"];
+    ViewData["meta"] = localizer["A brief timeline of our 10 years effort with our partners"];
+    Layout = "_MainLayout";
 }
 <style>
 
@@ -27,18 +28,19 @@
     if (CultureInfo.CurrentCulture.Name.StartsWith("ar")) { direction = "rtl"; }
     else { direction = "ltr"; }
 }
-
-<div class="hero-wrap" style="background-image: url(/images/bg_7.jpg);" data-stellar-background-ratio="0.5">
+<div class="hero-wrap" style="background-image: url('/images/mainbg.png'); background-position: 50% 225px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a asp-action="index">Home</a></span> <span>About</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
+            <div class="col-md-7 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(50%);">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-action="Index">Home</a></span> <span>Projects</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">Projects</h1>
             </div>
         </div>
     </div>
 </div>
+
+
 @*<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Launch demo modal

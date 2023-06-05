@@ -5,7 +5,8 @@
 @inject IViewLocalizer localizer
 
 @{
-    ViewData["Title"] = "ICA";
+    ViewData["Title"] = localizer["Islamic Charity Association"];
+    ViewData["meta"] = localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."];
     Layout = "_MainLayout";
 }
 <style>
@@ -21,13 +22,16 @@
 }
 
  @* Main image with the title*@
-    <div class="hero-wrap" style="background-image: url('images/bg_7.jpg');" data-stellar-background-ratio="0.5">
+   @* <div class="hero-wrap" style="background-image: url('images/bg_7.jpg');" data-stellar-background-ratio="0.5">
+  *@  <div class="hero-wrap" style="background-image: url('images/mainbg.png');background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Doing Nothing is Not An Option of Our Life</h1>
-    @*        <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by <a href="#">Colorlib.com</a></p>
+        @*    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Doing Nothing is Not An Option of Our Life</h1>
+*@    @*        <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by <a href="#">Colorlib.com</a></p>
 *@@*
                 <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://www.youtube.com/watch?v=fjPrA_YHKd4" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span>Watch Video</a></p>
     *@      </div>
@@ -41,28 +45,28 @@
             <div class="row no-gutters">
                 <div class="col-md-5 d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 color-1 align-items-stretch">
-              <div class="text">
-                  <span>Served Over</span>
-                <strong class="number" data-number="1432805">0</strong>
-                <span>Children in 190 countries in the world</span>
+                        <div class="text" dir="@direction">
+                            <span dir="@direction">@localizer["Served Over"] </span>
+                            <strong class="number" data-number="1432805" dir="@direction">0</strong>
+                            <span dir="@direction">Children in 190 countries in the world</span>
               </div>
             </div>
           </div>
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 color-2 align-items-stretch">
               <div class="text">
-                  <h3 class="mb-4">Donate Money</h3>
-                  <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                  <p><a href="#" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
+                  <h3 class="mb-4" dir="@direction">@localizer["Donation"]</h3>
+                            <p dir="@direction">@localizer["Together, we can achieve great things. Please consider making a donation today."]</p>
+                            <p dir="@direction"><a asp-controller="Home" asp-action="Donation" class="btn btn-white px-3 py-2 mt-2">@localizer["Donation department"]</a></p>
               </div>
             </div>
           </div>
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 color-3 align-items-stretch">
               <div class="text">
-                  <h3 class="mb-4">Be a Volunteer</h3>
-                  <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                  <p><a asp-controller="Home" asp-action="HR" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
+                            <h3 class="mb-4" dir="@direction">@localizer["Be With Us"]</h3>
+                            <p dir="@direction">@localizer["Your talents and passion are needed to further our important work.Volunteer,Work with us today."].</p>
+                            <p dir="@direction"><a asp-controller="Home" asp-action="HR" class="btn btn-white px-3 py-2 mt-2">@localizer["human resources"]</a></p>
               </div>
             </div>
           </div>
@@ -172,25 +176,25 @@
                 <div class="col-md-12 ftco-animate">
                     <div class="carousel-cause owl-carousel">
                         <div class="item">
-                        <img src="~/ourachivments/own.png"  />
+                        <img src="~/ourachivments/own.png" alt="عون" />
                         </div>
                         <div class="item">
-						<img src="~/ourachivments/orphans.jpg" />
+						<img src="~/ourachivments/orphans.jpg" alt="الميتم الإسلامي" />
                         </div>
                         <div class="item">
-						<img src="~/ourachivments/communityServices.png"  />
+						<img src="~/ourachivments/communityServices.png" alt="الرعاية الإجتماعية" />
                         </div>
                         <div class="item">
-                        <img src="~/ourachivments/SelfLearning.png" />
+                        <img src="~/ourachivments/SelfLearning.png" alt="التعلم الذاتي"/>
                         </div>
                         <div class="item">
-                        <img src="~/ourachivments/shools.png"  />
+                        <img src="~/ourachivments/shools.png" alt="المدارس الخيرية"  />
                         </div>
                       
                     <div class="item">
-                        <img src="~/ourachivments/zanobia.png"  />
+                        <img src="~/ourachivments/zanobia.png" alt="صالة زنوبيا" />
                     </div>  <div class="item">
-                        <img src="~/ourachivments/wfb.png"  />
+                        <img src="~/ourachivments/wfb.png" alt="WFB"  />
                     </div>
                     </div>
                 </div>
@@ -199,41 +203,56 @@
          
     </section>
 
+
+
     @*our partner*@
 <div data-aos="fade-up"
      data-aos-duration="3000" >
     <div class="container">
         <h2 class="mb-4 text-center">@localizer["Our Partnars"]</h2>
-                   <hr>
+        <div class="row d-flex justify-content-center">
+            <div class="col-8 text-center">
+                <p>
+                    @localizer["At the Islamic charity association, we believe in the power of collaboration and our partnerships have enabled us to make significant strides in achieving our mission."]
+                    
+                </p>
+            </div>
+        </div>
+                   
                     <div class="row">
     <div class="col">
-            <img src="~/ourpartner/bauh3tjy_400x400.jpg"  width="80" />
+            <img src="~/ourpartner/bauh3tjy_400x400.jpg"  width="80" alt="undp"/>
     </div>
     <div class="col">
-            <img src="~/ourpartner/biog14lx_400x400.jpg"  width="80"/>
+            <img src="~/ourpartner/biog14lx_400x400.jpg"  width="80" alt="IOM"/>
     </div>
     <div class="col">
-            <img src="~/ourpartner/logo-wfp (1).svg"  width="80"/>
+            <img src="~/ourpartner/logo-wfp (1).svg"  width="80" alt="wfp"/>
     </div>
     <div class="col">
-            <img src="~/ourpartner/ocha-256_0.png" width="80" />
+                <img src="~/ourpartner/ocha-256_0.png" width="80" alt="ocha" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/unchcr.png"  width="80" />
+                <img src="~/ourpartner/unchcr.png" width="80" alt="unchcr" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/unfpa.png"  width="80" />
+                <img src="~/ourpartner/unfpa.png" width="80" alt="unfpa" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/unhabitat-256.png"   width="80" />
+            <img src="~/ourpartner/unhabitat-256.png"   width="80"  alt="UNHABITAT"/>
     </div>
     <div class="col">
-            <img src="~/ourpartner/unicef-logo.png"  width="80"/>
+                <img src="~/ourpartner/unicef-logo.png" width="80" alt="unicef" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/who_logo.png" width="80" />
+            <img src="~/ourpartner/who_logo.png" width="80" alt="who"/>
     </div>
     </div>
+        <br>
+        <div class="text-center">
+            <a asp-controller="Home" asp-action="projects" class="btn btn-primary">@localizer["The colaborated projects"]</a>
+        </div>
+             
         <br>
         <br>
         <br>
@@ -256,7 +275,7 @@
             <div class="col-lg-3 justify-content-center d-flex mb-sm-3 ftco-animate fadeInUp ftco-animated mb-2">
                 <div>
                     <input type="radio" name="rating" value="excellent" id="1" style="transform: scale(4); accent-color:#28a745;" onclick="disapear();">
-                    <label class="m-4" style="font-size:175%;color:#28a745;font-weight: 900;" for="1">
+                    <label class="m-4" style="font-size:150%;color:#28a745;font-weight: 900;" for="1">
                         @localizer["Excellent"]
                     </label>
                 </div>
@@ -264,7 +283,7 @@
             <div class="col-lg-3 justify-content-center d-flex mb-sm-3 ftco-animate fadeInUp ftco-animated mb-2">
                 <div class="form-check">
                     <input type="radio" name="rating" value="good" id="2" style="transform: scale(4); accent-color: #004ea2;" onclick="disapear();">
-                    <label class="m-4" style="font-size:175%;color:#004ea2;font-weight: 900;" for="2">
+                    <label class="m-4" style="font-size:150%;color:#004ea2;font-weight: 900;" for="2">
                         @localizer["Good"]
                     </label>
                 </div>
@@ -272,7 +291,7 @@
             <div class="col-lg-3 justify-content-center d-flex mb-sm-3 ftco-animate fadeInUp ftco-animated mb-2">
                 <div class="form-check">
                     <input type="radio" name="rating" value="fair" id="3" style="transform: scale(4); accent-color:orange;" onclick="disapear();">
-                    <label class="m-4" style="font-size:175%;font-weight: 900;color:orange" for="3">
+                    <label class="m-4" style="font-size:150%;font-weight: 900;color:orange" for="3">
                         @localizer["Fair"]
                     </label>
                 </div>
@@ -281,7 +300,7 @@
 
                 <div class="form-check">
                     <input type="radio" name="rating" value="bad" id="4" style="transform: scale(4); accent-color:red;" onclick="apear();">
-                    <label class="m-4" style="font-size:175%;font-weight: 900;color:red" for="4">
+                    <label class="m-4" style="font-size:150%;font-weight: 900;color:red" for="4">
                         @localizer["Poor"]
                     </label>
                 </div>
@@ -373,7 +392,7 @@
             {
                 <div class="col-md-4 d-flex">
                     <div class="blog-entry align-self-stretch">
-                        <a  class="block-20" asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');">
+                        <a  class="block-20" asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');background-image">
                         </a>
                         <div class="text p-4 d-block">
                             <h2 dir="@direction" class="mb-4" style="font-size:200%">

@@ -121,11 +121,26 @@
     <value>جمعية خيرية تأسست عام 1339هـ الموافق لعام 1921م وكان من منجزاتها المدارس الخيرية النموذجية (تعليم أساسي وإعدادي وثانوي) بالإضافة إلى دار الأيتام وقاعة زنوبيا للمؤتمرات والاحتفالات، وأخيراً وليس آخراً مشروع عَون للإغاثة والتنمية
                         </value>
   </data>
+  <data name="At the Islamic charity association, we believe in the power of collaboration and our partnerships have enabled us to make significant strides in achieving our mission." xml:space="preserve">
+    <value>تؤمن الجمعية الخيرية الإسلامية بقوة التعاون وقد مكنتنا شراكاتنا من اتخاذ خطوات كبيرة في تحقيق مهمتنا.</value>
+  </data>
+  <data name="Be With Us" xml:space="preserve">
+    <value>انضم معنا</value>
+  </data>
   <data name="Become A Volunteer" xml:space="preserve">
     <value>التطوع</value>
   </data>
   <data name="beneficiary satisfaction" xml:space="preserve">
     <value>رضا المستفيدين</value>
+  </data>
+  <data name="Donate Now" xml:space="preserve">
+    <value>قسم التبرعات</value>
+  </data>
+  <data name="Donation" xml:space="preserve">
+    <value>التبرعات</value>
+  </data>
+  <data name="Donation department" xml:space="preserve">
+    <value>قسم التبرعات</value>
   </data>
   <data name="Events will be updated soon..." xml:space="preserve">
     <value>...الأحداث سيتم تحديثها قريباً</value>
@@ -138,6 +153,15 @@
   </data>
   <data name="Good" xml:space="preserve">
     <value>جيدة</value>
+  </data>
+  <data name="Home page-Islamic Charity Association" xml:space="preserve">
+    <value>الصفحة الرئيسية-الجمعية الخيرية الاسلامية - عون للإغاثة والتنمية</value>
+  </data>
+  <data name="human resources" xml:space="preserve">
+    <value>قسم الموارد البشرية</value>
+  </data>
+  <data name="Islamic Charity Association" xml:space="preserve">
+    <value>الجمعية الخيرية الإسلامية</value>
   </data>
   <data name="Make Donation" xml:space="preserve">
     <value>المساهمة</value>
@@ -166,11 +190,23 @@
   <data name="Recent from blog" xml:space="preserve">
     <value>آخر الأخبار</value>
   </data>
+  <data name="Served Over" xml:space="preserve">
+    <value>تم تخديم أكثر من </value>
+  </data>
   <data name="Sponsorship" xml:space="preserve">
     <value>الرعاية</value>
   </data>
+  <data name="The colaborated projects" xml:space="preserve">
+    <value>البرامج والمشاريع المشتركة</value>
+  </data>
+  <data name="The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity." xml:space="preserve">
+    <value>مؤسسة تعليمية وإغاثية مهمة في مدينة حمص. تأسست في عام 1921 وتضم مدارسًا نموذجية للتعليم الأساسي والإعدادي والثانوي، بالإضافة إلى دار للأيتام وقاعة للمؤتمرات والاحتفالات. وقد تم إطلاق مشروع عَون للإغاثة والتنمية لتلبية احتياجات النازحين والعائلات المنكوبة حتى يتمكنوا من العودة إلى منازلهم بأمان وسلامة بالإضافة الى العديد من المشاريع التي تخدم الأسر والمجتمع</value>
+  </data>
   <data name="The News will be updated soon..." xml:space="preserve">
     <value>...ًسيتم تحديث الأخبار قريبا</value>
+  </data>
+  <data name="Together, we can achieve great things. Please consider making a donation today." xml:space="preserve">
+    <value>"وَمَا تُنفِقُوا مِن شَيْءٍ فِي سَبِيلِ اللَّهِ يُوَفَّ إِلَيْكُمْ "</value>
   </data>
   <data name="Vote" xml:space="preserve">
     <value>تصويت</value>
@@ -180,6 +216,9 @@
   </data>
   <data name="Your opinion of the services provided by the association and its branches" xml:space="preserve">
     <value>رأيكم في الخدمات المقدمة من الجميعة وفروعها</value>
+  </data>
+  <data name="Your talents and passion are needed to further our important work.Volunteer,Work with us today." xml:space="preserve">
+    <value>"والله في عون العبد ما كان العبد في عون أخيه"</value>
   </data>
   <data name="“Always give without remembering and always receive without forgetting.” -Brian Tracy" xml:space="preserve">
     <value>العطاء دون حب لا قيمة له</value>

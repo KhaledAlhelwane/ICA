@@ -4,22 +4,22 @@
 @inject IViewLocalizer localizer
 
 @{
-    ViewData["Title"] = "Hr";
-	Layout = "_MainLayout";
+    ViewData["Title"] = localizer["Hr"];
+    ViewData["meta"] = localizer["Department of Human Resources"];
+    Layout = "_MainLayout";
 }
 @{
     string direction = "";
     if (CultureInfo.CurrentCulture.Name.StartsWith("ar")) { direction = "rtl"; }
     else { direction = "ltr"; }
 }
-
-<div class="hero-wrap" style="background-image: url('/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+<div class="hero-wrap" style="background-image: url('/images/mainbg.png'); background-position: 50% 225px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Hr</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hr</h1>
+            <div class="col-md-7 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(50%);">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-action="Index">Home</a></span> <span>Hr</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">Human resources</h1>
             </div>
         </div>
     </div>
@@ -30,36 +30,36 @@
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-5 heading-section ftco-animate text-center">
-                <h2 class="mb-4">قسم الموارد البشرية</h2>
-                <p>يتم الإعلان عن الوظائف الشاغره وفرص التطوع المتوفرة عن طريق صفحتنا على الفيس بوك وعند توفر فرصة متناسبة مع مهاراتك وخبرتك, يمكنك التقديم من خلال إتباع الخطوات التالي</p>
+                <h2 class="mb-4">@localizer["Department of Human Resources"]</h2>
+                <p>@localizer["We announce job vacancies and available volunteer opportunities through our Facebook page. When there is an opportunity that matches your skills and experience, you can apply by following these steps"]</p>
             </div>
         </div>
     <div class="row">
     <div class="MyContainer ">
         <div class="col-12 ftco-animate  text-center ">
-            <h4>أولاً: السيرة الذاتية</h4>
+                    <h4>@localizer["First: The CV (Curriculum Vitae)"]</h4>
         </div>
         <div class="col-12 ftco-animate d-flex justify-content-center ">
                   
-                    <h5 class="text-center">  يتم ادخال السيرة الذاتية عن طريق الرابط التالي وسـيـتــمّ الاحـتـفـاظ بالسـيـرة الـذاتـيـة فـي قـسـم المـوارد البـشريـة </h5>
+                    <h5 class="text-center">  @localizer["The CV is submitted through the following link, and it will be kept in the Human Resources department"] </h5>
                   </div>
                 <div class="col-12 ftco-animate d-flex justify-content-center ">
 
-                    <p> ملاحظة يرجى استخدام الكمبيوتر عند إدخال السيرة الذاتية وذلك للتأكد من رفع الصورة الشخصية </p>
+                    <p> @localizer["Note: Please use a computer when submitting your CV to ensure that the personal photo is uploaded correctly."] </p>
                 </div>
         <div class="col-12 ftco-animate d-flex justify-content-center ">
-                    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScBI53nGS9fF0PqTgu2fi_T5LBHpUsJnjLvTPafAL8mhzNLsw/viewform" style="color: #11aa07;">رابط السيرة الذاتية</a></p>
+                    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScBI53nGS9fF0PqTgu2fi_T5LBHpUsJnjLvTPafAL8mhzNLsw/viewform" style="color: #11aa07;">@localizer["The link to submit your CV"]</a></p>
         </div>
     </div>
     <div class="MyContainer">
         <div class="col-12 ftco-animate d-flex justify-content-center">
-            <h4>ثانياً: التقدم الى العمل</h4>
+                    <h4>@localizer["Second: Applying for the job"]</h4>
         </div>
         <div class="col-12 ftco-animate d-flex justify-content-center m-0">
-            <h5 class="tex-center">ويتم ذلك عن طريق إدخال اسمك وبعض المعلومات والتي تكون متطابقة مع ما تم إدخاله في المرحلة الأولى في رابط الوظيفة المعلنة على صفحة الفيس بوك  </h5>
+                    <h5 class="tex-center">@localizer["This is done by entering your name and some information that matches what was entered in the first stage through the job link advertised on our Facebook page."]  </h5>
         </div>
         <div class="col-12 ftco-animate d-flex justify-content-center">
-                    <p><a href="https://www.facebook.com/islamicaidorgan/" style="color:#004ea2;">صفحتنا غى الفيسبوك </a></p>
+                    <p><a href="https://www.facebook.com/islamicaidorgan/" style="color:#004ea2;">@localizer["Our Facebook page"] </a></p>
         </div>
     </div>
 </div>      

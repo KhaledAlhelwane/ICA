@@ -1,5 +1,7 @@
 ﻿using ICA.Data;
 using ICA.Models;
+using ICA.Services;
+using ICA.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -10,11 +12,13 @@ namespace ICA.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext context;
+        private readonly IMailingService mailingService;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, IMailingService mailingService)
         {
             _logger = logger;
             this.context = context;
+            this.mailingService = mailingService;
         }
 
         public IActionResult Index()
@@ -92,6 +96,26 @@ namespace ICA.Controllers
         }
         public IActionResult contact()
         {
+            var contact = new ContatctViewModel();
+            return View(contact);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> contact(ContatctViewModel massage)
+        {
+            if (ModelState.IsValid) { 
+            string themassage = "the name is:" + massage.Name + "<br>the email: " + massage.Email + "<br> the massage: " + massage.Message;
+        bool result= await mailingService.SendEmailAsync("IT@icangoh.org", massage.Subject,themassage);
+            if (result) {
+                ViewBag.successed = "successed";
+                    ModelState.Clear();
+            }
+            else if (!result)
+            {
+                ViewBag.Notsuccessed = "Notsuccessed";
+            }
+            }
+
             return View();
         }
         public IActionResult Privacy()
@@ -107,6 +131,10 @@ namespace ICA.Controllers
             return View();
         }
         public IActionResult HR()
+        {
+            return View();
+        }
+        public IActionResult Donation()
         {
             return View();
         }

@@ -144,11 +144,17 @@
   <data name="Our life is hope" xml:space="preserve">
     <value>حياتنا أمل</value>
   </data>
+  <data name="Projects" xml:space="preserve">
+    <value>مشاريعنا</value>
+  </data>
   <data name="Providing Education Services in the Northern Countryside" xml:space="preserve">
     <value>تقديم خدمات التعليم في الريف الشمالي</value>
   </data>
   <data name="Social care" xml:space="preserve">
     <value>الرعاية الإجتماعية</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>جدول زمني موجز لعشر سنين من الجهود المتظافرة مع شركائنا</value>
   </data>
   <data name="The Back to Learning Campaign" xml:space="preserve">
     <value>حملة العودة للتعليم</value>
