@@ -47,6 +47,11 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
             options.DefaultRequestCulture = new RequestCulture(culture: "ar-SY", uiCulture: "ar-SY");
             options.SupportedCultures = supportedCultures;
             options.SupportedUICultures = supportedCultures;
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                    new QueryStringRequestCultureProvider(),
+                    new CookieRequestCultureProvider()
+                };
             });
 
 

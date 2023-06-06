@@ -151,6 +151,9 @@
   <data name="Fair" xml:space="preserve">
     <value>مقبولة</value>
   </data>
+  <data name="Famlies in Homs,Syria" xml:space="preserve">
+    <value>عائلة في مدينة حمص وريفها</value>
+  </data>
   <data name="Good" xml:space="preserve">
     <value>جيدة</value>
   </data>
