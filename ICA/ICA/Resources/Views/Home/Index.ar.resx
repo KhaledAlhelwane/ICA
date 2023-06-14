@@ -172,6 +172,12 @@
   <data name="Media Center" xml:space="preserve">
     <value>المركز الإعلامي</value>
   </data>
+  <data name="more blogs..." xml:space="preserve">
+    <value>...المزيد من الأخبار</value>
+  </data>
+  <data name="more Events..." xml:space="preserve">
+    <value>...المزيد من الأحداث</value>
+  </data>
   <data name="Our achievements" xml:space="preserve">
     <value>منجزاتنا</value>
   </data>

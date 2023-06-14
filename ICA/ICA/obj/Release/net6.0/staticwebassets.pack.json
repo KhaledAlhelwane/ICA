@@ -629,6 +629,10 @@
       "PackagePath": "staticwebassets\\Desighn\\TimeLineCss.css"
     },
     {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\logo-bigger.png",
+      "PackagePath": "staticwebassets\\Desighn\\logo-bigger.png"
+    },
+    {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\logo-modified-min.ico",
       "PackagePath": "staticwebassets\\Desighn\\logo-modified-min.ico"
     },
@@ -689,112 +693,24 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\.DS_Store",
-      "PackagePath": "staticwebassets\\images\\.DS_Store"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_1.jpg",
-      "PackagePath": "staticwebassets\\images\\bg_1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_2.jpg",
-      "PackagePath": "staticwebassets\\images\\bg_2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_3.jpg",
-      "PackagePath": "staticwebassets\\images\\bg_3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_4.jpg",
-      "PackagePath": "staticwebassets\\images\\bg_4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_5.jpg",
-      "PackagePath": "staticwebassets\\images\\bg_5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_6.jpg",
-      "PackagePath": "staticwebassets\\images\\bg_6.jpg"
-    },
-    {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\bg_7.jpg",
       "PackagePath": "staticwebassets\\images\\bg_7.jpg"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\cause-1.jpg",
-      "PackagePath": "staticwebassets\\images\\cause-1.jpg"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\contact_bg.webp",
+      "PackagePath": "staticwebassets\\images\\contact_bg.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\cause-2.jpg",
-      "PackagePath": "staticwebassets\\images\\cause-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\cause-3.jpg",
-      "PackagePath": "staticwebassets\\images\\cause-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\cause-4.jpg",
-      "PackagePath": "staticwebassets\\images\\cause-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\cause-5.jpg",
-      "PackagePath": "staticwebassets\\images\\cause-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\cause-6.jpg",
-      "PackagePath": "staticwebassets\\images\\cause-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\event-1.jpg",
-      "PackagePath": "staticwebassets\\images\\event-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\event-2.jpg",
-      "PackagePath": "staticwebassets\\images\\event-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\event-3.jpg",
-      "PackagePath": "staticwebassets\\images\\event-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\event-4.jpg",
-      "PackagePath": "staticwebassets\\images\\event-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\event-5.jpg",
-      "PackagePath": "staticwebassets\\images\\event-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\event-6.jpg",
-      "PackagePath": "staticwebassets\\images\\event-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\image_1.jpg",
-      "PackagePath": "staticwebassets\\images\\image_1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\image_2.jpg",
-      "PackagePath": "staticwebassets\\images\\image_2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\image_3.jpg",
-      "PackagePath": "staticwebassets\\images\\image_3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\image_4.jpg",
-      "PackagePath": "staticwebassets\\images\\image_4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\image_5.jpg",
-      "PackagePath": "staticwebassets\\images\\image_5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\image_6.jpg",
-      "PackagePath": "staticwebassets\\images\\image_6.jpg"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\donation.webp",
+      "PackagePath": "staticwebassets\\images\\donation.webp"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\loc.png",
       "PackagePath": "staticwebassets\\images\\loc.png"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\mainbg.webp",
+      "PackagePath": "staticwebassets\\images\\mainbg.webp"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\js\\site.js",
@@ -8969,32 +8885,32 @@
       "PackagePath": "staticwebassets\\ourAchivments\\New folder\\wfb.jpg"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\SelfLearning.png",
-      "PackagePath": "staticwebassets\\ourAchivments\\SelfLearning.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\SelfLearning.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\SelfLearning.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\communityServices.png",
-      "PackagePath": "staticwebassets\\ourAchivments\\communityServices.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\communityServices.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\communityServices.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\orphans.jpg",
-      "PackagePath": "staticwebassets\\ourAchivments\\orphans.jpg"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\orphans.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\orphans.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\own.png",
-      "PackagePath": "staticwebassets\\ourAchivments\\own.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\own.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\own.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\shools.png",
-      "PackagePath": "staticwebassets\\ourAchivments\\shools.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\shools.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\shools.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\wfb.png",
-      "PackagePath": "staticwebassets\\ourAchivments\\wfb.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\wfb.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\wfb.webp"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\zanobia.png",
-      "PackagePath": "staticwebassets\\ourAchivments\\zanobia.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\zanobia.webp",
+      "PackagePath": "staticwebassets\\ourAchivments\\zanobia.webp"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourPartner\\OCHA-256_0.png",
@@ -9021,8 +8937,8 @@
       "PackagePath": "staticwebassets\\ourPartner\\logo-wfp (1).svg"
     },
     {
-      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourPartner\\unchcr.png",
-      "PackagePath": "staticwebassets\\ourPartner\\unchcr.png"
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourPartner\\unchcr.webp",
+      "PackagePath": "staticwebassets\\ourPartner\\unchcr.webp"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourPartner\\unfpa.png",
@@ -9031,6 +8947,10 @@
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourPartner\\unicef-logo.png",
       "PackagePath": "staticwebassets\\ourPartner\\unicef-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\sitemap.xml",
+      "PackagePath": "staticwebassets\\sitemap.xml"
     },
     {
       "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.ICA.Microsoft.AspNetCore.StaticWebAssets.props",

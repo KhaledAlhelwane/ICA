@@ -7,9 +7,11 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\O
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\ICA.pdb
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\ar\ICA.resources.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\en\ICA.resources.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\BouncyCastle.Cryptography.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Humanizer.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Magick.NET-Q16-AnyCPU.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Magick.NET.Core.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\MailKit.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\MessagePack.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\MessagePack.Annotations.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -63,6 +65,7 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\O
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\MimeKit.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\NuGet.Common.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\NuGet.Configuration.dll
@@ -84,6 +87,7 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\O
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.Reflection.MetadataLoadContext.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.Runtime.Caching.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.Security.Cryptography.Pkcs.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.Security.Permissions.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\System.Windows.Extensions.dll
@@ -261,6 +265,7 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\O
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\PubTmp\Out\ICA.deps.json

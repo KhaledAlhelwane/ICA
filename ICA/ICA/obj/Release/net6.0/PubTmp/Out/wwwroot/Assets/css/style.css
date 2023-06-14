@@ -12314,9 +12314,9 @@ h1, h2, h3, h4, h5,
                 background: #004ea2;
             }
 
-    .contact-section .contact-info p a {
-        color: #fa8f3d;
-    }
+.contact-section .contact-info p a {
+    color: #004ea2;
+}
 
     .contact-section .contact-info p span {
         color: #000;

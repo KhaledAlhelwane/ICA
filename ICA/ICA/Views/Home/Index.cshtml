@@ -23,7 +23,7 @@
 
  @* Main image with the title*@
    @* <div class="hero-wrap" style="background-image: url('images/bg_7.jpg');" data-stellar-background-ratio="0.5">
-  *@  <div class="hero-wrap" style="background-image: url('images/mainbg.png');background-size: cover;
+  *@  <div class="hero-wrap" style="background-image: url('images/mainbg.webp');background-size: cover;
   background-position: center;
   background-repeat: no-repeat;" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -84,8 +84,8 @@
         <div class="col-md-7 heading-section ftco-animate text-center">
             @{if (CultureInfo.CurrentCulture.Name.StartsWith("ar")){
             <h4 class="text-center">
-              
-                <img src="~/desighn/logo-modified-min.png" width="160" />
+
+                            <img src="~/desighn/logo-modified-min.png" alt="الجمعية الخيرية الإسلامية" width="160" />
                 
                 
                     </h4>
@@ -93,8 +93,8 @@
                 else
                 {
                     <h4 class="text-center">
-                       
-                        <img src="~/desighn/logo-modified-min.png" width="160" />
+
+                            <img src="~/desighn/logo-modified-min.png" alt="الجمعية الخيرية الإسلامية" width="160" />
                         who we are
                        
 
@@ -176,25 +176,25 @@
                 <div class="col-md-12 ftco-animate">
                     <div class="carousel-cause owl-carousel">
                         <div class="item">
-                        <img src="~/ourachivments/own.png" alt="عون" />
+                        <img src="~/ourachivments/own.webp" alt="عون" />
                         </div>
                         <div class="item">
-						<img src="~/ourachivments/orphans.jpg" alt="الميتم الإسلامي" />
+						<img src="~/ourachivments/orphans.webp" alt="الميتم الإسلامي" />
                         </div>
                         <div class="item">
-						<img src="~/ourachivments/communityServices.png" alt="الرعاية الإجتماعية" />
+						<img src="~/ourachivments/communityServices.webp" alt="الرعاية الإجتماعية" />
                         </div>
                         <div class="item">
-                        <img src="~/ourachivments/SelfLearning.png" alt="التعلم الذاتي"/>
+                        <img src="~/ourachivments/SelfLearning.webp" alt="التعلم الذاتي"/>
                         </div>
                         <div class="item">
-                        <img src="~/ourachivments/shools.png" alt="المدارس الخيرية"  />
+                        <img src="~/ourachivments/shools.webp" alt="المدارس الخيرية"  />
                         </div>
                       
                     <div class="item">
-                        <img src="~/ourachivments/zanobia.png" alt="صالة زنوبيا" />
+                        <img src="~/ourachivments/zanobia.webp" alt="صالة زنوبيا" />
                     </div>  <div class="item">
-                        <img src="~/ourachivments/wfb.png" alt="WFB"  />
+                        <img src="~/ourachivments/wfb.webp" alt="WFP"  />
                     </div>
                     </div>
                 </div>
@@ -206,9 +206,8 @@
 
 
     @*our partner*@
-<div data-aos="fade-up"
-     data-aos-duration="3000" >
-    <div class="container">
+<div>
+    <div class="container ftco-animate">
         <h2 class="mb-4 text-center">@localizer["Our Partnars"]</h2>
         <div class="row d-flex justify-content-center">
             <div class="col-8 text-center">
@@ -221,31 +220,31 @@
                    
                     <div class="row">
     <div class="col">
-            <img src="~/ourpartner/bauh3tjy_400x400.jpg"  width="80" alt="undp"/>
+                <img src="~/ourpartner/bauh3tjy_400x400.jpg" alt="undp" width="80" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/biog14lx_400x400.jpg"  width="80" alt="IOM"/>
+                <img src="~/ourpartner/biog14lx_400x400.jpg" alt="IOM" width="80" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/logo-wfp (1).svg"  width="80" alt="wfp"/>
+                <img src="~/ourpartner/logo-wfp (1).svg" alt="wfp" width="80" />
     </div>
     <div class="col">
-                <img src="~/ourpartner/ocha-256_0.png" width="80" alt="ocha" />
+                <img src="~/ourpartner/ocha-256_0.png" alt="ocha" width="80" />
     </div>
     <div class="col">
-                <img src="~/ourpartner/unchcr.png" width="80" alt="unchcr" />
+                <img src="~/ourpartner/unchcr.webp" alt="unchcr" width="80" />
     </div>
     <div class="col">
-                <img src="~/ourpartner/unfpa.png" width="80" alt="unfpa" />
+                <img src="~/ourpartner/unfpa.png" alt="unfpa" width="80" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/unhabitat-256.png"   width="80"  alt="UNHABITAT"/>
+                <img src="~/ourpartner/unhabitat-256.png" alt="UNHABITAT" width="80" />
     </div>
     <div class="col">
-                <img src="~/ourpartner/unicef-logo.png" width="80" alt="unicef" />
+                <img src="~/ourpartner/unicef-logo.png" alt="unicef" width="80" />
     </div>
     <div class="col">
-            <img src="~/ourpartner/who_logo.png" width="80" alt="who"/>
+                <img src="~/ourpartner/who_logo.png" alt="who" width="80" />
     </div>
     </div>
         <br>
@@ -367,7 +366,15 @@
                         </div>
                     </div>
     }
+               
             </div>
+            @if (thenewslisat.Count() > 6)
+            {
+                <div class="text-center">
+                    <a asp-controller="Home" asp-action="Articles" class="btn btn-primary">@localizer["more blogs..."]</a>
+                </div>
+            }
+           
         </div>
     </section>
 }
@@ -420,14 +427,24 @@
           
             
         </div>
+        @if (theEventslisat.Count() > 3)
+        {
+            <div class="text-center">
+                <a asp-controller="Home" asp-action="Events" class="btn btn-primary">@localizer["more Events..."]</a>
+            </div>
+        }
+
     </div>
 </section>
 
+<div class="MyContainer d-flex justify-content-center ftco-animate" style="padding: 5px 6px;">
+    <a asp-controller="Home" asp-action="Contact">
+        <img src="~/images/contact_bg.webp" class="img-fluid" alt="Contact us" style="border-radius: 30%;opacity: 1; transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; transform: scale(1);"
+             onmouseover="this.style.opacity='0.8'; this.style.transform='scale(1.1)';"
+             onmouseout="this.style.opacity='1'; this.style.transform='scale(1)';" />
+    </a>
 
-
-
-
-
+</div>
 @section Scripts {
     @{
         <script>

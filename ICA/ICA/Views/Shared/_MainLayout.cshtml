@@ -4,8 +4,9 @@
 @inject IViewLocalizer localizer
 <!DOCTYPE html>
 
-<html >
+<html lang="en">
 <head>
+
     <meta name="viewport" content="width=device-width" />
      <meta name="description" content="@ViewBag.meta">
     <meta name="keywords" content="Islamic Charity Association, Aoun Homs, Aoun Relief and Development, Charity Association, NGO, Humanitarian Organization, Relief Organization, Orphan Sponsorship, Orphanage, Zanobia Hall, Exemplary Charitable Schools, Social Care, Self-Education, Orphan Sponsorship in Syria, Relief Projects, Global Relief, Refugees, Displaced People, الجمعية الخيرية الإسلامية, أمان للرعاية الإجتماعية,عون حمص, عون للإغاثة والتنمية, جمعية خيرية, منظمة خيرية, منظمة غير حكومية, منظمة إنسانية, منظمة إغاثية, كفالة الأيتام, دار الأيتام, صالة زنوبيا, المدارس الخيرية النموذجية, الخيرية, الرعاية الاجتماعية, التعليم الذاتي, الحملات الإغاثية, المشاريع الخيرية, مشاريع الإغاثة, حملات الإغاثة, الإغاثة العالمية, إغاثة, اللاجئين, النازحين" />
@@ -15,14 +16,15 @@
     <meta name="ICBM" content="34.744805,36.680314">
     <link rel="icon" type="image/ico" href="~/desighn/logo-modified-min.ico">
     <title>@ViewBag.Title</title>
-    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    
+   @* deleted for better seo <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
-    <link href="~/assets/css/bootstrap/bootstrap-grid.css" rel="stylesheet" />
-   @* <link href="~/assets/css/bootstrap/bootstrap-reboot.css" rel="stylesheet" />*@
+  *@ @* not used <link href="~/assets/css/bootstrap/bootstrap-grid.css" rel="stylesheet" />
+  *@ @* not used <link href="~/assets/css/bootstrap/bootstrap-reboot.css" rel="stylesheet" />*@
     <link rel="stylesheet" href="~/assets/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="~/assets/css/animate.css">
-    <link href="~/assets/css/css/mixins/_text-hide.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+ @* not used  <link href="~/assets/css/css/mixins/_text-hide.css" rel="stylesheet" />
+*@    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="~/assets/css/aos.css">
@@ -32,8 +34,8 @@
     <link rel="stylesheet" href="~/assets/css/flaticon.css">
     <link rel="stylesheet" href="~/assets/css/icomoon.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
-    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-    <style>
+    @* deleted for better seo  <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+*@    <style>
         .logo-container {
             display: flex;
             align-items: center;
@@ -81,7 +83,7 @@
                 <div class="container">
                     <a class="navbar-brand" asp-controller="Home" asp-action="index">
                 <div class="logo-container">
-                    <img src="~/desighn/logo-modified-min.png" width="70" height="70" class="rounded-circle" style="background-color: white;" />
+                    <img src="~/desighn/logo-modified-min.png" alt="الجمعية الخيرية الإسلامية" width="70" height="70" class="rounded-circle" style="background-color: white;" />
                     <div class="text-container m-2">
                         الجمعية الخيرية الإسلامية
                         <small class="second-sentence mr-3" style="font-size:40%;font-family: 'Didot', serif;letter-spacing: 1px;">Islamic Charity Association</small>
@@ -99,7 +101,7 @@
                     <li class="nav-item"><a asp-controller="Home" asp-action="projects" class="nav-link  d-flex justify-content-center">@localizer["Projects"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="Articles" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="events" class="nav-link d-flex justify-content-center">@localizer["Events"]</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="about" class="nav-link  d-flex justify-content-center">@localizer["about"]</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="about" class="nav-link  d-flex justify-content-center">@localizer["About"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="contact" class="nav-link  d-flex justify-content-center">@localizer["Contact"]</a></li>
                     <li class="nav-item d-flex justify-content-center"> <partial name="_SelectLanguagePartial" /></li>
                     @*  <li>
@@ -124,7 +126,7 @@
         <div class="row mb-5" dir="@thedirection">
           <div class="col-md-4">
                     <div class="mb-4" dir="@thedirection">
-                        <h2 class="ftco-heading-2" dir="@thedirection">  <img src="~/desighn/logo-modified-min.png" width="80" /></h2>
+                        <h2 class="ftco-heading-2" dir="@thedirection">  <img src="~/desighn/logo-modified-min.png" alt="الجمعية الخيرية الإسلامية" width="80" /></h2>
                         <p >@localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."]</p>
                         <ul class="ftco-footer-social list-unstyled  mt-5 " >
                            @* <li class="ftco-animate"><a https:"" ><span class="icon-twitter"></span></a></li>
@@ -139,25 +141,25 @@
                         <h2 class="ftco-heading-2">@localizer["main projects"] </h2>
                         <div class="block-23 mb-3">
                             <a href="https://www.facebook.com/islamicaidorgan/">
-                                <img src="~/ourachivments/own.png" width="40" class="rounded-circle" alt="عون" />
+                                <img src="~/ourachivments/own.webp" alt="عون" width="40" class="rounded-circle" />
                             </a>
                             <a href="https://www.facebook.com/p/%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85-100066815956039/?paipv=0&eav=AfYUb0wtnrMopYhY3AlXXknqyYVqDr_xKet5-pnpJZIfJHwq8bHkt9sdTXXlABfQ5no&_rdr">
-                                <img src="~/ourachivments/orphans.jpg" width="40" class="rounded-circle" alt="الميتم الإسلامي" />
+                                <img src="~/ourachivments/orphans.webp" alt="الميتم الإسلامي" width="40" class="rounded-circle" />
                             </a>
                             <a href="https://www.facebook.com/Aman.for.Community.Services">
-                                <img src="~/ourachivments/communityServices.png" width="40" alt="الرعاية الإجتماعية" />
+                                <img src="~/ourachivments/communityServices.webp" alt="الرعاية الإجتماعية" width="40" />
                             </a>
                             <a>
-                                <img src="~/ourachivments/SelfLearning.png" width="40" alt="التعلم الذاتي" />
+                                <img src="~/ourachivments/SelfLearning.webp" alt="التعلم الذاتي" width="40" />
                             </a>
                             <a href="https://www.facebook.com/alkhariaha/">
-                                <img src="~/ourachivments/shools.png" width="40" class="rounded-circle" alt="المدارس الخيرية" />
+                                <img src="~/ourachivments/shools.webp" width="40" class="rounded-circle" alt="المدارس الخيرية" />
                             </a>
                             <a href="https://www.facebook.com/zannobia.hall/">
-                                <img src="~/ourachivments/zanobia.png" width="40" class="rounded-circle" alt="صالة زنوبيا" />
+                                <img src="~/ourachivments/zanobia.webp" alt="صالة زنوبيا" width="40" class="rounded-circle" />
                             </a>
                             <a>
-                                <img src="~/ourachivments/wfb.png" width="40" alt="WFB" />
+                                <img src="~/ourachivments/wfb.webp" alt="WFB" width="40" />
                             </a>
                         </div>
                     </div>
@@ -170,7 +172,7 @@
                             <li dir="@thedirection"><a asp-controller="Home" asp-action="projects" class="py-2 d-block">@localizer["Projects"]</a></li>
                             <li><a asp-controller="Home" asp-action="Articles" class="py-2 d-block">@localizer["News"]</a></li>
                             <li><a asp-controller="Home" asp-action="events" class="py-2 d-block">@localizer["Events"]</a></li>
-                            <li><a asp-controller="Home" asp-action="about" class="py-2 d-block">@localizer["about"]</a></li>
+                            <li><a asp-controller="Home" asp-action="about" class="py-2 d-block">@localizer["About"]</a></li>
                             <li><a asp-controller="Home" asp-action="contact" class="py-2 d-block">@localizer["Contact"]</a></li>
                         </ul>
                     </div>
@@ -182,7 +184,7 @@
                   <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">@localizer["Al-Maytam Street, Al-Waer neighborhood, Homs, Syria"]</span></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">031 223 3173</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@icangoh.org.com</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@icangoh.org</span></a></li>
                   </ul>
                 </div>
             </div>
@@ -195,20 +197,20 @@
                         if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                         {
                             <p>
-                                <script>document.write(new Date().getFullYear());</script>
+                              
                                 جميع الحقوق محفوظة  للجمعية الخيرية الإسلامية
- 
+                                @DateTime.Now.Year
                                 </p>
                         }
                         else
                         {
                             <p>
-                                All rights reserved @Html.Raw("@") Islamic charity association in <script>document.write(new Date().getFullYear());</script>  
+                                All rights reserved @Html.Raw("@") Islamic charity association in   @DateTime.Now.Year
                             </p>
                         }
 
               }
-                    <br> <br> <sm>Devloped by </sm><br><sm> Alhousami & Alhelwani</sm>
+                    <br> <p>Devloped by  <br> <a href="https://www.linkedin.com/in/anwar-housami-49a510207/">Alhousami</a> & <a href="https://www.linkedin.com/in/khaled-helwane-1a6943180/">Alhelwani</a> </p>
           </div>
         </div>
       </div>

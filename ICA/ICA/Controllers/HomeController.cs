@@ -43,10 +43,10 @@ namespace ICA.Controllers
         }
         public async Task<IActionResult> Articles(int page = 1, int pageSize = 9)
         {
-            //    return context.Articles != null ?
-            //                  View(await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).ToListAsync()) :
-            //                  Problem("Entity set 'ApplicationDbContext.Articles'  is null.");
-            //
+            if (page < 1) // Check if page is less than 1
+            {
+                page = 1; // Set page to 1 to prevent negative navigation
+            }
             var data = await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "خبر").OrderByDescending(o=>o.Id).ToListAsync();
             var totalCount = data.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
@@ -67,17 +67,15 @@ namespace ICA.Controllers
                 ViewBag.Notfound = "not found";
             }
             return View(articel);
-            return context.Articles != null ?
-                                    View( context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i=>i.Id==id) ):
-                                    Problem("Entity set 'ApplicationDbContext.Articles'  is null.");
+                                
         }
 
         public async Task<IActionResult> Events(int page = 1, int pageSize = 9)
         {
-            //return context.Articles != null ?
-            //          View(await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t=>t.TypeOfArticles=="حدث").ToListAsync()) :
-            //          Problem("Entity set 'ApplicationDbContext.Articles'  is null.");
-
+            if (page < 1) // Check if page is less than 1
+            {
+                page = 1; // Set page to 1 to prevent negative navigation
+            }
             var data = await context.Articles.Include(x => x.ApplicationUsers).Include(A=>A.Assosiation).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "حدث").OrderByDescending(o => o.Id).ToListAsync();
             var totalCount = data.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);

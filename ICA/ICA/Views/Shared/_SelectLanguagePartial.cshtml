@@ -22,12 +22,12 @@
         @{if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
         {
                 <button class="btn" style="border-radius:20px;font-size: 10px;border-block-color:transparent;background-color:transparent;" name="culture" onkeypress="this.form.submit();" asp-for=@requestCulture.RequestCulture.Culture value="@cultureItems[0].Value">
-            <img src="~/Desighn/united-kingdom.png" width="30" height="30" />
+            <img src="~/Desighn/united-kingdom.png" alt="English" width="30" height="30" />
         </button>
            
         }else{
                 <button class="btn" style="border-radius:20px;font-size: 10px;border-block-color:transparent;background-color:transparent;" name="culture" onkeypress="this.form.submit();" asp-for=@requestCulture.RequestCulture.Culture value="@cultureItems[1].Value">
-            <img src="~/Desighn/syria.png" width="30" height="30" />
+            <img src="~/Desighn/syria.png" alt="عربي" width="30" height="30" />
         </button>
         }}
            
