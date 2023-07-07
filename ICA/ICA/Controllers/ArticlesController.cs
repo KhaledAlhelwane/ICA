@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ICA.Data;
 using ICA.Models;
 using ICA.ViewModel;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using ImageMagick;
-using System.IO;
-using System.Collections;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ICA.Controllers

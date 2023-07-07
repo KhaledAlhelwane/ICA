@@ -1,4 +1,5 @@
-﻿using ICA.Models;
+﻿using ICA.Data;
+using ICA.Models;
 using ICA.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -15,11 +16,14 @@ namespace ICA.Controllers.Admin
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManger;
+        private readonly ApplicationDbContext context;
 
-        public UserController(UserManager<ApplicationUser> userManager,RoleManager<IdentityRole> roleManger)
+        public UserController(UserManager<ApplicationUser> userManager,RoleManager<IdentityRole> roleManger
+            , ApplicationDbContext context)
         {
             _userManager = userManager;
             _roleManger = roleManger;
+            this.context = context;
         }
         //List of the users and thier roles
         public async Task<IActionResult> Index()
@@ -141,6 +145,39 @@ namespace ICA.Controllers.Admin
 
             return View();
         }
+        [Authorize(Roles = "IT")]
+        public IActionResult Statistics()
+        {
+            var statistics = context.Rating.ToList();
+            int excellent = 0; int good = 0; int fair = 0;int bad = 0;
+            foreach (var rating in statistics)
+            {
+                if (rating.RatingLevel == "excellent")
+                {
+                    excellent++;
+                }
+                else if (rating.RatingLevel == "good")
+                {
+                   good++;
+                }
+                else if (rating.RatingLevel == "fair")
+                {
+                    fair++;
+                }
+                else
+                {
+                    bad++;
+                }
 
+            }
+            ViewData["excellent"] = excellent;
+            ViewData["good"] = good;
+            ViewData["fair"] = fair;
+            ViewData["bad"] = bad; 
+            ViewData["comment"] = context.Rating.Where(X => X.RatingLevel == "bad").ToList();
+            ViewData["VisitorCounter"] = VisitorsCounter.Counter;
+
+            return View();
+        }
     }
 }

@@ -52,7 +52,17 @@
         }
 
         .second-sentence {
-              }      
+              }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu .dropdown-menu {
+                top: 0;
+                left: -100%; /* Changed */
+                margin-top: -1px;
+            }
     </style>
 </head>
  
@@ -60,9 +70,12 @@
 
     @{
         var thedirection = "";
+        string Listdirectoin = "";
         if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-        { thedirection = "rtl";
-        <style>
+        { 
+            thedirection = "rtl";
+            Listdirectoin = "dropleft";
+            <style>
                 .ftco-footer .ftco-footer-widget h2:after {
                     position: absolute;
                     bottom: -15px;
@@ -76,7 +89,7 @@
         else
         {
             thedirection = "ltr";
-
+            Listdirectoin = "dropright";
         }
     }
             <nav style="direction: @thedirection;" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -98,18 +111,78 @@
                         <ul class="navbar-nav ml-auto">
                             <!--active-->
                     <li class="nav-item"><a asp-controller="Home" asp-action="index" class="nav-link  d-flex justify-content-center">@localizer["Home"]</a></li>
+                
+                  
                     <li class="nav-item"><a asp-controller="Home" asp-action="projects" class="nav-link  d-flex justify-content-center">@localizer["Projects"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="Articles" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="events" class="nav-link d-flex justify-content-center">@localizer["Events"]</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="about" class="nav-link  d-flex justify-content-center">@localizer["About"]</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex justify-content-center dropdown-toggle" id="navbarDropdown" role="button" >
+                          @localizer["Our sections"]
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item d-flex justify-content-center"> @localizer["Aoun"]</a>
+                             <div class="dropdown-divider"></div>
+                             <div class="dropdown @Listdirectoin" >
+                                <a class="dropdown-item dropdown-toggle" onclick="$('#first').removeClass('d-none')">
+                                    @localizer["UN projects"]
+                                </a>
+                                <div id="first" class="dropdown-menu d-none">
+                                    <a class="dropdown-item" href="#">@localizer["Current projects"]</a>
+                                    <a class="dropdown-item" href="#">@localizer["Old Projects"]</a>
+                                </div>
+                            </div>
+                            <div class="dropdown @Listdirectoin">
+                                <a class="dropdown-item dropdown-toggle" onclick="$('#secound').removeClass('d-none')">
+                                    @localizer["Association Projects"]
+                                </a>
+                                <div id="secound" class="dropdown-menu d-none">
+                                    <a class="dropdown-item" href="#">@localizer["Aoun Mall"]</a>
+                                    <a class="dropdown-item" href="#">@localizer["The detergent factory"]</a>
+                                </div>
+                            </div> 
+                            <div class="dropdown @Listdirectoin">
+                                <a class="dropdown-item dropdown-toggle" onclick="$('#third').removeClass('d-none')">
+                                    @localizer["The orphanage"]
+                                </a>
+                                <div id="third" class="dropdown-menu d-none">
+                                    <a class="dropdown-item" href="#">@localizer["Internal"]</a>
+                                    <a class="dropdown-item" href="#">@localizer["External"]</a>
+                                </div>
+                            </div> 
+                            <div class="dropdown @Listdirectoin" onclick="$('#forth').removeClass('d-none')">
+                                <a class="dropdown-item dropdown-toggle">
+                                    @localizer["Schools"]
+                                </a>
+                                <div id="forth" class="dropdown-menu d-none">
+                                    <a class="dropdown-item" href="#">@localizer["Primary school"]</a>
+                                    <a class="dropdown-item" href="#">@localizer["Middle school"]</a>
+                                    <a class="dropdown-item" href="#">@localizer["High school"]</a>
+                                </div>
+                            </div>  
+                            <div class="dropdown @Listdirectoin">
+                                <a class="dropdown-item dropdown-toggle" onclick="$('#fifth').removeClass('d-none')">
+                                   @localizer["Halls"]
+                                </a>
+                                <div id="fifth" class="dropdown-menu d-none">
+                                    <a class="dropdown-item" href="#">@localizer["Zenobia"]</a>
+                                    <a class="dropdown-item" href="#">@localizer["Alwaleed"]</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                 <li class="nav-item"><a asp-controller="Home" asp-action="about" class="nav-link  d-flex justify-content-center">@localizer["About"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="contact" class="nav-link  d-flex justify-content-center">@localizer["Contact"]</a></li>
                     <li class="nav-item d-flex justify-content-center"> <partial name="_SelectLanguagePartial" /></li>
+                   
+                    
                     @*  <li>
                                 <partial name="_LoginPartial" />
                       </li>*@
                         </ul>
                     </div>
-           
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span>
             </button>
@@ -130,8 +203,9 @@
                         <p >@localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."]</p>
                         <ul class="ftco-footer-social list-unstyled  mt-5 " >
                            @* <li class="ftco-animate"><a https:"" ><span class="icon-twitter"></span></a></li>
-                          *@  <li class="ftco-animate"><a href="https://www.facebook.com/islamicaidorgan/"><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="https://www.linkedin.com/company/islamiccharityassociation/?originalSubdomain=sy" /><span class="icon-linkedin"></span></a></li>
+                            *@
+                            <li class="ftco-animate"><a href="https://www.facebook.com/islamicaidorgan/" target="_blank"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.linkedin.com/company/islamiccharityassociation/?originalSubdomain=sy" target="_blank" /><span class="icon-linkedin"></span></a></li>
               </ul>
             </div>
 
@@ -140,22 +214,22 @@
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">@localizer["main projects"] </h2>
                         <div class="block-23 mb-3">
-                            <a href="https://www.facebook.com/islamicaidorgan/">
+                            <a href="https://www.facebook.com/islamicaidorgan/" target="_blank">
                                 <img src="~/ourachivments/own.webp" alt="عون" width="40" class="rounded-circle" />
                             </a>
-                            <a href="https://www.facebook.com/p/%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85-100066815956039/?paipv=0&eav=AfYUb0wtnrMopYhY3AlXXknqyYVqDr_xKet5-pnpJZIfJHwq8bHkt9sdTXXlABfQ5no&_rdr">
+                            <a href="https://www.facebook.com/p/%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85-100066815956039/?paipv=0&eav=AfYUb0wtnrMopYhY3AlXXknqyYVqDr_xKet5-pnpJZIfJHwq8bHkt9sdTXXlABfQ5no&_rdr" target="_blank">
                                 <img src="~/ourachivments/orphans.webp" alt="الميتم الإسلامي" width="40" class="rounded-circle" />
                             </a>
-                            <a href="https://www.facebook.com/Aman.for.Community.Services">
+                            <a href="https://www.facebook.com/Aman.for.Community.Services" target="_blank">
                                 <img src="~/ourachivments/communityServices.webp" alt="الرعاية الإجتماعية" width="40" />
                             </a>
                             <a>
                                 <img src="~/ourachivments/SelfLearning.webp" alt="التعلم الذاتي" width="40" />
                             </a>
-                            <a href="https://www.facebook.com/alkhariaha/">
+                            <a href="https://www.facebook.com/alkhariaha/" target="_blank">
                                 <img src="~/ourachivments/shools.webp" width="40" class="rounded-circle" alt="المدارس الخيرية" />
                             </a>
-                            <a href="https://www.facebook.com/zannobia.hall/">
+                            <a href="https://www.facebook.com/zannobia.hall/" target="_blank">
                                 <img src="~/ourachivments/zanobia.webp" alt="صالة زنوبيا" width="40" class="rounded-circle" />
                             </a>
                             <a>
@@ -215,7 +289,7 @@
         </div>
       </div>
     </footer>
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#004ea2" /></svg></div>
     <script src="~/assets/js/jquery.min.js"></script>
     <script src="~/assets/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="~/assets/js/popper.min.js"></script>
@@ -233,6 +307,18 @@
    @* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="~/assets/js/google-map.js"></script>
  *@   <script src="~/assets/js/main.js"></script>
+ <script>
+        $(document).ready(function () {
+            $('.nav-item.dropdown').on('pointerleave', function () {
+                $('#first').addClass('d-none');
+                $('#secound').addClass('d-none');
+                $('#third').addClass('d-none');
+                $('#forth').addClass('d-none');
+                $('#fifth').addClass('d-none');
+             
+            });
+        });
+ </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

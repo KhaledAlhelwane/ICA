@@ -1,0 +1,170 @@
+﻿@*this is a styling for the comment section *@
+<style>
+
+    #text-carousel {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+    }
+    #text-carousel h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #text-carousel p {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        #text-carousel .carousel-control-prev,
+        #text-carousel .carousel-control-next {
+            width: 5%;
+            background-color: rgba(0,0,0,.5);
+            top: auto;
+            bottom: 0;
+        }
+
+        #text-carousel .carousel-control-prev-icon,
+        #text-carousel .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+            #text-carousel .carousel-control-prev-icon:before,
+            #text-carousel .carousel-control-next-icon:before {
+                content: '';
+                display: inline-block;
+                border: none;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            </style>
+<h2>إحصائيات</h2>
+<hr>
+@*visitores counter*@
+<div class="row justify-content-center ">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-body">
+                <h2>عدد زيارات الصفحة الرئيسية</h2>
+                <hr>
+                <div>
+                    <h3>@ViewBag.VisitorCounter </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+@*the chart taple which consiste of four value that brought from the controler as a viewdata and then use it as viewbage*@
+<div class="row justify-content-center ">
+<div class="col-7">
+    <div class="card">
+        <div class="card-body">
+            <h2>إحصائيات التقييم</h2>
+            <hr>
+                <div>
+                    <canvas id="myChart" width="100" height="100"></canvas>
+                </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<br>
+@*this is the section of the comment , to note that the comment only related to the bad rating as the user cant supmet with out writing a comment , and the comment section is avialabel for only the bad rating *@
+<div class="row justify-content-center">
+<div class="col-7">
+        <div class="card">
+            <div class="card-body">
+                <h3>التعليقات</h3>
+                <hr>
+                <div class="row ">
+                    @{
+                        List<Rating> commentlista = ViewBag.comment;
+                    }
+                    @if (commentlista.Count() != 0)
+                    {
+                        <div id="text-carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner bg-light">
+
+
+
+                                @foreach (var comment in commentlista)
+                                {
+                                    <div class="carousel-item @(comment ==commentlista[0] ? "active" : "")">
+                                        <div class="container">
+                                            <h3>First slide headline</h3>
+                                            <p>@comment.Comment</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <button class="carousel-control-prev btn btn-secondary" type="button" data-bs-target="#text-carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#text-carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    }else{
+                         <h3>لا يوجد تعليقات حتى الأن.........</h3>
+                    }
+                   
+
+                        </div>
+                 
+               
+            </div>
+        </div>
+       
+</div>
+</div>
+
+<br>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@*this script for configuring the chart taple *@
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'ممتاز',
+                'جيد',
+                'مقبولة',
+                'غير ذلك'
+               
+               
+            ],
+            datasets: [{
+                label: 'عدد الأصوات',
+                data: [@ViewBag.excellent, @ViewBag.good, @ViewBag.fair, @ViewBag.bad],
+                backgroundColor: [
+                    'rgb(144, 238, 144)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 99, 132)'
+                   
+                   
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

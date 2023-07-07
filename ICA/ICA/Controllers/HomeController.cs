@@ -23,6 +23,7 @@ namespace ICA.Controllers
 
         public IActionResult Index()
         {
+            VisitorsCounter.Increment();
             var remoteIpAddress = HttpContext.Connection.RemoteIpAddress;
             string x = remoteIpAddress.ToString();
             TempData["IP"] = x;

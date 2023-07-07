@@ -123,14 +123,38 @@
   <data name="Al-Maytam Street, Al-Waer neighborhood, Homs, Syria" xml:space="preserve">
     <value>شارع الميتم حي الوعر، حمص ، سوريا</value>
   </data>
+  <data name="Alwaleed" xml:space="preserve">
+    <value>الوليد</value>
+  </data>
+  <data name="Aoun" xml:space="preserve">
+    <value>عون</value>
+  </data>
+  <data name="Aoun Mall" xml:space="preserve">
+    <value>مول عون</value>
+  </data>
+  <data name="Association Projects" xml:space="preserve">
+    <value>مشاريع ذاتية</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>تواصل معنا</value>
+  </data>
+  <data name="Current projects" xml:space="preserve">
+    <value>مشاريع حالية </value>
   </data>
   <data name="Events" xml:space="preserve">
     <value>أحداث</value>
   </data>
+  <data name="External" xml:space="preserve">
+    <value>خارجيين</value>
+  </data>
+  <data name="Halls" xml:space="preserve">
+    <value>الصالات</value>
+  </data>
   <data name="Have a Questions?" xml:space="preserve">
     <value>في حال وجود أي إستفسار</value>
+  </data>
+  <data name="High school" xml:space="preserve">
+    <value>الثانوية</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
@@ -138,25 +162,55 @@
   <data name="ICA" xml:space="preserve">
     <value>الجمعية الخيرية الإسلامية</value>
   </data>
+  <data name="Internal" xml:space="preserve">
+    <value>داخليين</value>
+  </data>
   <data name="main projects" xml:space="preserve">
     <value>مشاريعنا الأساسية</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>القائمة</value>
   </data>
+  <data name="Middle school" xml:space="preserve">
+    <value>الإعدادية</value>
+  </data>
   <data name="News" xml:space="preserve">
     <value>أخبارنا</value>
+  </data>
+  <data name="Old Projects" xml:space="preserve">
+    <value>مشاريع سابقة</value>
+  </data>
+  <data name="Our sections" xml:space="preserve">
+    <value>أقسامنا</value>
   </data>
   <data name="own project" xml:space="preserve">
     <value>مشروع عون</value>
   </data>
+  <data name="Primary school" xml:space="preserve">
+    <value>الإبتدائية</value>
+  </data>
   <data name="Projects" xml:space="preserve">
     <value>مشاريعنا</value>
+  </data>
+  <data name="Schools" xml:space="preserve">
+    <value>المدارس</value>
   </data>
   <data name="Site Links" xml:space="preserve">
     <value>روابط مفيدة</value>
   </data>
+  <data name="The detergent factory" xml:space="preserve">
+    <value>معمل النظافة</value>
+  </data>
   <data name="The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity." xml:space="preserve">
     <value>مؤسسة تعليمية وإغاثية مهمة في مدينة حمص. تأسست في عام 1921 وتضم مدارسًا نموذجية للتعليم الأساسي والإعدادي والثانوي، بالإضافة إلى دار للأيتام وقاعة للمؤتمرات والاحتفالات. وقد تم إطلاق مشروع عَون للإغاثة والتنمية لتلبية احتياجات النازحين والعائلات المنكوبة حتى يتمكنوا من العودة إلى منازلهم بأمان وسلامة بالإضافة الى العديد من المشاريع التي تدعم الأسر والمجتمع </value>
+  </data>
+  <data name="The orphanage" xml:space="preserve">
+    <value>الميتم </value>
+  </data>
+  <data name="UN projects" xml:space="preserve">
+    <value>مشاريع أممية</value>
+  </data>
+  <data name="Zenobia" xml:space="preserve">
+    <value>زنوبيا</value>
   </data>
 </root>
