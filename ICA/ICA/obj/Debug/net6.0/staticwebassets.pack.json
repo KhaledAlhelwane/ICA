@@ -621,6 +621,30 @@
       "PackagePath": "staticwebassets\\Assets\\scss\\style.scss"
     },
     {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\1b03356d-74f1-483c-bfb3-d28ab83f4a69pexels-pixabay-45911.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\1b03356d-74f1-483c-bfb3-d28ab83f4a69pexels-pixabay-45911.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\2b272cb9-f0ba-43a5-8fbb-bff1284b958apexels-valdemaras-d-1683724.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\2b272cb9-f0ba-43a5-8fbb-bff1284b958apexels-valdemaras-d-1683724.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\56a74995-cd83-464c-9c65-21f8380fcf6cpexels-alex-andrews-2295744.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\56a74995-cd83-464c-9c65-21f8380fcf6cpexels-alex-andrews-2295744.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\8d17a3c6-dee3-4d8b-884b-fb4f810e6aebpexels-valdemaras-d-1683724.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\8d17a3c6-dee3-4d8b-884b-fb4f810e6aebpexels-valdemaras-d-1683724.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\8df91e95-94a1-47b2-a8c3-8a5e07c66b78pexels-pixabay-247502.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\8df91e95-94a1-47b2-a8c3-8a5e07c66b78pexels-pixabay-247502.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\9e3d6e22-ed21-4ac4-86cd-485fd4eff7fbpexels-pixabay-45911.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\9e3d6e22-ed21-4ac4-86cd-485fd4eff7fbpexels-pixabay-45911.jpg"
+    },
+    {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\ArticleDesighn.css",
       "PackagePath": "staticwebassets\\Desighn\\ArticleDesighn.css"
     },

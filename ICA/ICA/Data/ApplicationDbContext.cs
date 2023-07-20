@@ -38,6 +38,8 @@ namespace ICA.Data
         public DbSet<MainAssociation> MainAssociations { get; set; }
         public DbSet<Center> Centers { get; set; }
         public DbSet<Rating> Rating { get; set; }
+        public DbSet<Bus> Bus { get; set; }
+        
 
 
 

@@ -17,7 +17,7 @@ namespace ICA.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -239,8 +239,51 @@ namespace ICA.Data.Migrations
                         new
                         {
                             Id = 4,
-                            FullName = "المدارس الخيريةالنموذجية"
+                            FullName = "المدارس الخيرية النموذجية"
                         });
+                });
+
+            modelBuilder.Entity("ICA.Models.Bus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Check")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Des")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("DigitDes")
+                        .HasColumnType("float");
+
+                    b.Property<double>("DigitSurce")
+                        .HasColumnType("float");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RealTIME")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TIME")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bus");
                 });
 
             modelBuilder.Entity("ICA.Models.Center", b =>
@@ -506,6 +549,9 @@ namespace ICA.Data.Migrations
 
                     b.Property<string>("RatingLevel")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RatingTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("id");
 

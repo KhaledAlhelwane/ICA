@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model ICA.Models.Bus
+@inject UserManager<ApplicationUser> UserManager
+
+<h1>تفاصيل المهمة </h1>
+
+<div class="form-group">
+    <label asp-for="FullName" class="control-label"> إسم السائق</label>
+    <input readonly asp-for="FullName" class="form-control" value="@UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.SecoundName" />
+    <span asp-validation-for="FullName" class="text-danger"></span>
+</div>
+
+
+
+
+<div class="form-group">
+    <label asp-for="Source" class="control-label">مكان الإنطلاق</label>
+    <input readonly asp-for="Source" class="form-control" />
+    <span asp-validation-for="Source" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Des" class="control-label">الوجهة</label>
+    <input readonly asp-for="Des" class="form-control" />
+    <span asp-validation-for="Des" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TIME" class="control-label">تاريخ المهمة</label>
+    <input readonly type="date" asp-for="TIME" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+    <span asp-validation-for="TIME" class="text-danger"></span>
+</div>
+
+
+<img id="pp" alt="profile" src="/BusKilometer/@Model.Photo1" class="img-thumbnail" width="150" height="150" />
+<div class="form-group">
+    <label asp-for="TIME" class="control-label">رقم العداد عند الإنطلاق</label>
+<input readonly asp-for="DigitSurce" class="form-control" placeholder="ادخل رقم العداد" />
+</div>
+<img id="pp" alt="profile" src="/BusKilometer/@Model.Photo2" class="img-thumbnail" width="150" height="150" />
+<div class="form-group">
+    <label asp-for="TIME" class="control-label">رقم العداد عند العودة</label>
+<input readonly asp-for="DigitDes" class="form-control" placeholder="ادخل رقم العداد" />
+ </div>
+
+<a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.Id">تعديل</a>

@@ -11,9 +11,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ICA.Controllers.Admin
 {
-    
+    [Authorize]
     public class UserController : Controller
     {
+       
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManger;
         private readonly ApplicationDbContext context;

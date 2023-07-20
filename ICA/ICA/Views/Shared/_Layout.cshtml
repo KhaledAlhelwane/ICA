@@ -64,7 +64,21 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="User" asp-action="Account">
+                @{
+                    string urlcontroller = string.Empty;
+                    string urlaction = string.Empty;
+                    if (User.IsInRole("Driver"))
+                    {
+                        urlcontroller = "Driver";
+                        urlaction = "index";
+                    }
+                else
+                {
+                        urlcontroller = "User";
+                        urlaction = "Account";
+                }
+                }
+                <a class="navbar-brand" asp-area="" asp-controller="@urlcontroller" asp-action="@urlaction">
                     <div class="logo-container">
                         <img src="~/desighn/logo-modified-min.png" width="70" height="70" />
                         <div class="text-container m-2">

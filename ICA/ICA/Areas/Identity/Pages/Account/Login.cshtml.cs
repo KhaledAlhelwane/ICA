@@ -22,11 +22,14 @@ namespace ICA.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger
+            , UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
+            this.userManager = userManager;
         }
 
        
@@ -93,7 +96,15 @@ namespace ICA.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    var userR = await userManager.FindByEmailAsync(Input.Email);
+                    var roles = await userManager.GetRolesAsync(userR);
 
+
+                    if (roles.FirstOrDefault()=="Driver")
+                        return RedirectToAction("index", "Driver");
+                  
+                        if (roles.FirstOrDefault() == "Unhcr")
+                            return RedirectToAction("index", "unchr");
                     //return LocalRedirect(returnUrl);  
                     return RedirectToAction("Account", "User");
                 }

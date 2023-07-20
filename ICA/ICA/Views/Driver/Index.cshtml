@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<ICA.Models.Bus>
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>أهلا بك @UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.SecoundName</h1>
+
+<h4>  نقدر جهودكم ونسعى لتقديم الدعم اللازم لكم</h4>
+<p>
+    <a class="btn btn-primary" asp-action="Create">إضافة مهمة جديدة</a>
+</p>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+           
+          
+            <th>
+               مكان الإنطلاق
+            </th>
+            <th>
+               الوجهة
+            </th>
+            <th>
+               تاريخ المهمة
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Des)
+            </td>
+            <td>
+                    @*    @Html.DisplayFor(modelItem => item.TIME.ToString("yyyy-MM-dd"))*@
+                        @item.TIME.ToString("yyyy-MM-dd")
+            </td>
+            
+            <td>
+               @* <a asp-action="Edit" asp-route-id="@item.Id">تعديل</a> |*@
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.Id">التفاصيل</a>
+             @*   <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
