@@ -151,6 +151,9 @@ namespace ICA.Data.Migrations
                     b.Property<string>("ApplicationUsersId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ArticleUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("AssosiationId")
                         .HasColumnType("int");
 

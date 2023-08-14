@@ -6,8 +6,10 @@
 @inject IViewLocalizer localizer
 @{
     ViewData["Title"] = localizer["Events"];
-    ViewData["meta"] = localizer["our last events"];
+    ViewData["meta"] = localizer["Discover the latest events and activities organized by the Islamic Charity Association in Homs. Our events page features a range of educational, cultural, and social events that bring together the families and communities we serve. Join us for a chance to learn, connect, and make a positive impact in the lives of those in need."];
     Layout = "_MainLayout";
+    ViewData["Image"] = "https://icangoh.org/desighn/logo-modified-min.png";
+    ViewData["type"] = "website";
 }
 <style>
     .active 
@@ -46,18 +48,18 @@
                 {
                     <div class="col-md-4 d-flex">
                         <div class="blog-entry align-self-stretch">
-                            <a class="block-20" asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');">
+                            <a class="block-20" asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');">
                             </a>
                             <div class="text p-4 d-block">
                                 <h2 dir="@direction" class="mb-4" style="font-size:200%">
                                     @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                     {
-                                        <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="color:#004ea2;" class="ArticleTilte">@x.TitleArabic</a>
+                                        <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="color:#004ea2;" class="ArticleTilte">@x.TitleArabic</a>
 
                                     }
                                     else
                                     {
-                                        <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="color:#004ea2;" class="ArticleTilte">@x.TitleEnglish</a>
+                                        <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="color:#004ea2;" class="ArticleTilte">@x.TitleEnglish</a>
 
                                     }
                                 </h2>

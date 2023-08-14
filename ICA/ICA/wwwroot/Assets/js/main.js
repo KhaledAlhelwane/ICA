@@ -68,30 +68,65 @@
 
 	};
 	carousel();
-
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		// 	 timer;
-		// clearTimeout(timer);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-			// timer;
-		// timer = setTimeout(function(){
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
+	//this show upp the main menu
+	$('#navbarDropdown').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#maindropdown');
+		$this.toggleClass('show');
+		});
+		//this show upp the first submenu and so on 
+	$('#navbarDropdown1').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#first');
+		$this.toggleClass('show');
+		$('#secound').removeClass('show');
+		$('#third').removeClass('show');
+		$('#forth').removeClass('show');
+		$('#fifth').removeClass('show');
 	});
 
-
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
+	$('#navbarDropdown2').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#secound');
+		$this.toggleClass('show');
+		$('#first').removeClass('show');
+		$('#third').removeClass('show');
+		$('#forth').removeClass('show');
+		$('#fifth').removeClass('show');
 	});
+	$('#navbarDropdown3').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#third');
+		$this.toggleClass('show');
+		$('#secound').removeClass('show');
+		$('#first').removeClass('show');
+		$('#forth').removeClass('show');
+		$('#fifth').removeClass('show');
+	});
+	$('#navbarDropdown4').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#forth');
+		$this.toggleClass('show');
+		$('#secound').removeClass('show');
+		$('#third').removeClass('show');
+		$('#first').removeClass('show');
+		$('#fifth').removeClass('show');
+	});
+	$('#navbarDropdown5').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#fifth');
+		$this.toggleClass('show');
+		$('#secound').removeClass('show');
+		$('#third').removeClass('show');
+		$('#first').removeClass('show');
+		$('#forth').removeClass('show');
+	});
+	//this will make the dropdown list to disappear when cliking outsitd the menu
+	$(document).click(function () {
+		$('nav .dropdown').removeClass('show');
+		$('nav .dropdown-menu').removeClass('show');
+	});
+	
 
 	// scroll
 	var scrollWindow = function() {

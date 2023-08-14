@@ -1,12 +1,16 @@
 ﻿@using System.Globalization
 @using Microsoft.AspNetCore.Html;
+@using Microsoft.AspNetCore.Http.Extensions;
 @using Microsoft.AspNetCore.Mvc.Localization
 
 @inject IViewLocalizer localizer
 
 @{
     ViewData["Title"] = localizer["Islamic Charity Association"];
-    ViewData["meta"] = localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."];
+    ViewData["meta"] = localizer["The Islamic Charity Association in Homs is a leading institution offering education and relief services. Founded in 1921, the association operates exemplary schools, an orphanage, and a conference hall. Its 'Aoun Relief and Development Project' provides temporary housing for displaced families, while other projects support families and the wider community."];
+    ViewData["Url"] = Context.Request.GetDisplayUrl();
+    ViewData["Image"] = "https://icangoh.org/desighn/logo-modified-min.png";
+    ViewData["type"] = "website";
     Layout = "_MainLayout";
 }
 <style>
@@ -161,7 +165,6 @@
 </div>
               
     @*our achivmants*@
-
 <section class="ftco-section container">
         <div class="container-fluid">
             <div class="row justify-content-center mb-2 pb-3">
@@ -212,8 +215,10 @@
         <div class="row d-flex justify-content-center">
             <div class="col-8 text-center">
                 <p>
+               @*
                     @localizer["At the Islamic charity association, we believe in the power of collaboration and our partnerships have enabled us to make significant strides in achieving our mission."]
-                    
+
+                    *@   
                 </p>
             </div>
         </div>
@@ -347,15 +352,15 @@
     {
                     <div class="col-md-4 d-flex ">
                         <div class="blog-entry align-self-stretch">
-                            <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" as class="block-20" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');">
+                            <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" as class="block-20" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');">
                             </a>
                             <div class="text p-4 d-block">
                                 <h2 dir="@direction" class="mb-4" style="font-size:200%">
                                     @if (CultureInfo.CurrentCulture.Name.StartsWith("ar")){
-                                    <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="color:#004ea2;" class="ArticleTilte">@x.TitleArabic</a>
+                                        <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="color:#004ea2;" class="ArticleTilte">@x.TitleArabic</a>
 
                                     }else{
-                                    <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="color:#004ea2;" class="ArticleTilte">@x.TitleEnglish</a>
+                                        <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="color:#004ea2;" class="ArticleTilte">@x.TitleEnglish</a>
 
                                     }
                                  </h2>
@@ -368,7 +373,8 @@
     }
                
             </div>
-            @if (thenewslisat.Count() > 6)
+            <br>
+            @if (thenewslisat.Count() > 3)
             {
                 <div class="text-center">
                     <a asp-controller="Home" asp-action="Articles" class="btn btn-primary">@localizer["more blogs..."]</a>
@@ -399,18 +405,18 @@
             {
                 <div class="col-md-4 d-flex">
                     <div class="blog-entry align-self-stretch">
-                        <a  class="block-20" asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');background-image">
+                        <a class="block-20" asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="background-image: url('/PorfilesPictures/@string.Concat("Resized",x.ProfilePicture)');background-image">
                         </a>
                         <div class="text p-4 d-block">
                             <h2 dir="@direction" class="mb-4" style="font-size:200%">
                                 @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                 {
-                                    <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="color:#004ea2;" class="ArticleTilte">@x.TitleArabic</a>
+                                    <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="color:#004ea2;" class="ArticleTilte">@x.TitleArabic</a>
 
                                 }
                                 else
                                 {
-                                    <a asp-controller="Home" asp-action="article" asp-route-id="@x.Id" style="color:#004ea2;" class="ArticleTilte">@x.TitleEnglish</a>
+                                    <a asp-controller="Home" asp-action="article" asp-route-title="@x.ArticleUrl" style="color:#004ea2;" class="ArticleTilte">@x.TitleEnglish</a>
 
                                 }
                             </h2>
@@ -445,6 +451,8 @@
     </a>
 
 </div>
+
+
 @section Scripts {
     @{
         <script>

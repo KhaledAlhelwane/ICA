@@ -9,8 +9,11 @@
 
 @{
     ViewData["Title"] = localizer["About us"];
-    ViewData["meta"] = localizer["Who we are,how did we start and what are our goals"];
+    ViewData["meta"] = localizer["Discover the Islamic Charity Association in Homs, providing educational, social, and humanitarian services since 1921. Our vision is to create a compassionate society where individuals support each other, and our policy includes providing material and moral support, developing skills and performance, raising awareness, and implementing projects that contribute to the community's growth. Join us in making a positive impact."];
     Layout = "_MainLayout";
+    ViewData["Url"] = Context.Request.GetDisplayUrl();
+    ViewData["Image"] = "https://icangoh.org/desighn/logo-modified-min.png";
+    ViewData["type"] = "website";
 
 }
 @{
@@ -23,7 +26,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(50%);">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-action="action">Home</a></span> <span>About</span></p>
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-controller="home" asp-action="index">Home</a></span> <span>About</span></p>
                 <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">About Us</h1>
             </div>
         </div>

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ICA.Data;
 using ICA.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ICA.Controllers
 {
+    [Authorize(Roles = "IT,Unhcr")]
     public class UnchrController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -23,7 +25,7 @@ namespace ICA.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Bus != null ? 
-                          View(await _context.Bus.ToListAsync()) :
+                          View(await _context.Bus.OrderByDescending(a => a.Id).ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Bus'  is null.");
         }
 

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PUWrbXJUMB/PHWyL7mDZ8+nOJ6qLu1uipHszfMR4Nz6EBgAgIfpgsaEFsjm0xVjcxYRMJShLgB3LCmB/4msxZQ==",
+  "dgSpecHash": "ZuCLsN6fQz42knf1g5CTv3VulWrNni/iOX7QOvxrPyC70L+0EvAcrnRgdLRMbLSCgPsGZpo08C9Cr60k6QelGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\ICA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\khale\\.nuget\\packages\\bouncycastle.cryptography\\2.1.1\\bouncycastle.cryptography.2.1.1.nupkg.sha512",
+    "C:\\Users\\khale\\.nuget\\packages\\htmlagilitypack\\1.11.51\\htmlagilitypack.1.11.51.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

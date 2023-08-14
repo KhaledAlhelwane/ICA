@@ -5,8 +5,11 @@
 
 @{
     ViewData["Title"] = localizer["Hr"];
-    ViewData["meta"] = localizer["Department of Human Resources"];
+    ViewData["meta"] = localizer["Join Islamic Charity Association and make a difference in the lives of those in need. Support our vision for a compassionate society and contribute to community growth and progress through our relief and development projects. Explore job opportunities and apply now."];
     Layout = "_MainLayout";
+    ViewData["Url"] = Context.Request.GetDisplayUrl();
+    ViewData["Image"] = "https://icangoh.org/desighn/logo-modified-min.png";
+    ViewData["type"] = "website";
 }
 @{
     string direction = "";

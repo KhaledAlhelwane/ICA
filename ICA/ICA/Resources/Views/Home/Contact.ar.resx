@@ -126,6 +126,9 @@
   <data name="Contact Information" xml:space="preserve">
     <value>معلومات التواصل</value>
   </data>
+  <data name="Contact the Islamic Charity Association to learn more about our mission, upcoming events, and how you can get involved. Our contact page features a convenient email form that allows you to send a message directly to our team. Whether you're interested in volunteering, donating, or just have a question, we're here to help. Send us a message today and join us in making a positive impact in the lives of those in need." xml:space="preserve">
+    <value>تواصل مع الجمعية لخير الإسلامية لمعرفة المزيد عن مهمتنا والفعاليات القادمة وكيف يمكنك المشاركة. تتضمن هذه الصفحة نموذجًا بريديًا مريحًا يتيح لك إرسال رسالة مباشرة إلى فريقنا. سواء كنت مهتمًا بالتطوع أو التبرع أو لديك استفسار، فنحن هنا للمساعدة. ارسل لنا رسالة اليوم وانضم إلينا لتحقيق تأثير إيجابي في حياة الأشخاص المحتاجين</value>
+  </data>
   <data name="Do you have any questions?" xml:space="preserve">
     <value>هل لديك أي إستفسار؟</value>
   </data>

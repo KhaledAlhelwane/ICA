@@ -574,3 +574,6 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\refint\ICA
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.pdb
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.genruntimeconfig.cache
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ref\ICA.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\bin\Debug\net6.0\HtmlAgilityPack.dll
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.Resources.Views.Home.Donation.ar.resources
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Debug\net6.0\ICA.Resources.Views.Home.Donation.en.resources

@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.51, )"
+            },
             "Magick.NET-Q16-AnyCPU": {
               "target": "Package",
               "version": "[13.0.1, )"

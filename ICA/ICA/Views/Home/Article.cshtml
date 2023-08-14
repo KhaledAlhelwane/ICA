@@ -8,10 +8,15 @@
 @model ICA.Models.Article
 
 @{
-    ViewData["Title"] = "Article";
+    ViewData["Title"] = Model.TitleArabic;
+    ViewData["meta"] = ViewBag.description;
     Layout = "_MainLayout";
-  
+    ViewData["Url"] = Context.Request.GetDisplayUrl();
+    ViewData["Image"] = "https://icangoh.org/PorfilesPictures/"+@Model.ProfilePicture;
+    ViewData["type"] = "article";
 }
+  
+
 <link href="~/desighn/articledesighn.css" rel="stylesheet" />
 @{
     string direction = "";
@@ -126,3 +131,5 @@ else
     }
 
 }
+<br>
+<br>

@@ -621,8 +621,20 @@
       "PackagePath": "staticwebassets\\Assets\\scss\\style.scss"
     },
     {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\BusKilometer\\Resizedfef2914c-a397-40c3-b93c-a9c91b75f57epexels-wendelin-jacober-1460658.jpg",
+      "PackagePath": "staticwebassets\\BusKilometer\\Resizedfef2914c-a397-40c3-b93c-a9c91b75f57epexels-wendelin-jacober-1460658.jpg"
+    },
+    {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\ArticleDesighn.css",
       "PackagePath": "staticwebassets\\Desighn\\ArticleDesighn.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\MultiLevelDropdownList.css",
+      "PackagePath": "staticwebassets\\Desighn\\MultiLevelDropdownList.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\MultiLevelDropdownList.js",
+      "PackagePath": "staticwebassets\\Desighn\\MultiLevelDropdownList.js"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\TimeLineCss.css",
@@ -639,6 +651,10 @@
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\logo-modified-min.png",
       "PackagePath": "staticwebassets\\Desighn\\logo-modified-min.png"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\on_devloping-min.gif",
+      "PackagePath": "staticwebassets\\Desighn\\on_devloping-min.gif"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\Desighn\\ourstorycss.css",
@@ -8867,6 +8883,34 @@
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\summernote\\summernote\\summernote.min.js",
       "PackagePath": "staticwebassets\\lib\\summernote\\summernote\\summernote.min.js"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.all.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.all.js"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.d.ts",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.d.ts"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.js"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.js"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\ourAchivments\\New folder\\communityServices.jpg",

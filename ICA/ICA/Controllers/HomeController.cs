@@ -1,10 +1,13 @@
-﻿using ICA.Data;
+﻿using HtmlAgilityPack;
+using ICA.Data;
 using ICA.Models;
 using ICA.Services;
 using ICA.ViewModel;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Net.Http;
 
 namespace ICA.Controllers
 {
@@ -38,8 +41,8 @@ namespace ICA.Controllers
                 }
 
             }
-            ViewData["newslist"] = context.Articles.Include(a=>a.ApplicationUsers).Include(a2=>a2.Assosiation).OrderByDescending(b=>b.Id).Where(z=>z.Status==true&&z.TypeOfArticles=="خبر").Take(6).ToList();
-            ViewData["Eventslist"] = context.Articles.Include(a=>a.ApplicationUsers).Include(a2 => a2.Assosiation).OrderByDescending(b=>b.Id).Where(z=>z.Status==true&&z.TypeOfArticles=="حدث").Take(3).ToList();
+            ViewData["newslist"] = context.Articles.Include(a=>a.ApplicationUsers).Include(a2=>a2.Assosiation).OrderByDescending(b=>b.DatePuplished).Where(z=>z.Status==true&&z.TypeOfArticles=="خبر").Take(3).ToList();
+            ViewData["Eventslist"] = context.Articles.Include(a=>a.ApplicationUsers).Include(a2 => a2.Assosiation).OrderByDescending(b=>b.DatePuplished).Where(z=>z.Status==true&&z.TypeOfArticles=="حدث").Take(3).ToList();
             return View();
         }
         public async Task<IActionResult> Articles(int page = 1, int pageSize = 9)
@@ -48,7 +51,7 @@ namespace ICA.Controllers
             {
                 page = 1; // Set page to 1 to prevent negative navigation
             }
-            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "خبر").OrderByDescending(o=>o.Id).ToListAsync();
+            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "خبر").OrderByDescending(o=>o.DatePuplished).ToListAsync();
             var totalCount = data.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 
@@ -60,13 +63,31 @@ namespace ICA.Controllers
             return View(currentPageData);
         }
 
-        public IActionResult Article(int id) 
+        public IActionResult Article(string title) 
         {
-            Article articel = context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.Id == id);
+            Article articel = context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.ArticleUrl== title);
+
+            //Article articel = context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.Id == id);
             if (articel == null)
             {
                 ViewBag.Notfound = "not found";
             }
+            //this code is intended to clean the content varible from the html elment to make the meta descritpoin tag more efficiant 
+            HtmlDocument document = new HtmlDocument();
+            document.LoadHtml(articel.ContentArabic);
+
+            // Extract the plain text from the HTML content
+            string content = document.DocumentNode.InnerText;
+            if (content.Length > 125)
+            {
+                ViewBag.description = content.Substring(0, 125) + "....";
+            }
+            else
+            {
+                ViewBag.description = content;
+            }
+           
+            //
             return View(articel);
                                 
         }
@@ -77,7 +98,7 @@ namespace ICA.Controllers
             {
                 page = 1; // Set page to 1 to prevent negative navigation
             }
-            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(A=>A.Assosiation).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "حدث").OrderByDescending(o => o.Id).ToListAsync();
+            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(A=>A.Assosiation).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "حدث").OrderByDescending(o => o.DatePuplished).ToListAsync();
             var totalCount = data.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 

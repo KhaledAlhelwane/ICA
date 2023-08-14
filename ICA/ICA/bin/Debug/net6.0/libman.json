@@ -26,6 +26,14 @@
     {
       "library": "bootstrap-icons@1.10.4",
       "destination": "wwwroot/lib/bootstrap-icons/"
+    },
+    {
+      "library": "sweetalert2@11.7.20",
+      "destination": "wwwroot/lib/sweetalert2/"
+    },
+    {
+      "library": "bootstrap-submenu@3.0.1",
+      "destination": "wwwroot/Assets/css/bootstrap-submenu/"
     }
   ]
 }

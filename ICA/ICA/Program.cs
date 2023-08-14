@@ -36,6 +36,18 @@ builder.Services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
 
+//set the session to be unlimited 
+builder.Services.ConfigureApplicationCookie(Options =>
+{
+    Options.Cookie.Name = "AspNetCore.Identity.Application";
+    Options.ExpireTimeSpan = TimeSpan.FromDays(365 * 100);
+    Options.SlidingExpiration = true;
+});
+
+
+
+
+
 builder.Services.Configure<RequestLocalizationOptions>(options =>
             {
             var supportedCultures = new[]
@@ -80,9 +92,19 @@ app.UseAuthorization();
 
 app.UseRequestLocalization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "article",
+        pattern: "article/{title}",
+        defaults: new { controller = "Home", action = "article" });
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 app.MapRazorPages();
 
 app.Run();

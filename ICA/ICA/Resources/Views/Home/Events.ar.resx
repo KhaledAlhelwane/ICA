@@ -117,11 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Discover the latest events and activities organized by the Islamic Charity Association in Homs. Our events page features a range of educational, cultural, and social events that bring together the families and communities we serve. Join us for a chance to learn, connect, and make a positive impact in the lives of those in need." xml:space="preserve">
+    <value>كن على اطلاعٍ بآخر الفعاليات والأنشطة التي تنظمها الجمعية الخير الإسلامية في حمص. تقدم صفحتنا للفعاليات معلومات عن الحملات التي سنطلقها قريبًا، والتجمعات المجتمعية، وفرص التطوع. انضم إلينا لتحقيق تأثير إيجابي في حياة الأشخاص المحتاجين وبناء مجتمع أقوى وأكثر ارتباطًا.</value>
+  </data>
   <data name="Events" xml:space="preserve">
     <value>الأحداث</value>
-  </data>
-  <data name="our last events" xml:space="preserve">
-    <value>آخر الأحداث</value>
   </data>
   <data name="Our Latest Events" xml:space="preserve">
     <value>آخر الأحداث</value>

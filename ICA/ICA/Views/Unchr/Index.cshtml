@@ -1,44 +1,46 @@
-﻿@model IEnumerable<ICA.Models.Bus>
-
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<ICA.Models.Bus>
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h1>نظام مراقبة إستهلاك الوقود</h1>
+<h2>أهلا بك  @UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.SecoundName</h2>
+<hr>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FullName)
+                <label>رقم المهمة </label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Photo1)
+                <label>إسم السائق</label>
+            </th>
+           
+            <th>
+                <label> الإنطلاق</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DigitSurce)
+                <label>الوجهة</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Photo2)
+                <label> العداد عند الإنطلاق</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DigitDes)
+                <label> العداد عند الإنتهاء</label>
+            </th>
+            
+          
+            <th>
+                <label>تاريخ المهمة</label>     
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Source)
+                <label>الوقت الأصلي</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Des)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TIME)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Check)
+                <label>حالة التحقق</label>    
             </th>
             <th></th>
         </tr>
@@ -46,37 +48,49 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo1)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Des)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DigitSurce)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo2)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.DigitDes)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Source)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Des)
-            </td>
+           
+           
             <td>
                 @Html.DisplayFor(modelItem => item.TIME)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RealTIME)
+                </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Check)
-            </td>
+                    @if (item.Check==true)
+                    {
+                        <h1 class="text-success">
+                            <i class="bi bi-bookmark-check-fill"></i>
+                        </h1>
+                    }
+                    else
+                    {
+                        <h1 class="text-danger"><i class="bi bi-bookmark-x-fill"></i></h1>
+                    }
+                </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" class="btn btn-primary Mybutton" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> check</a>
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> *@
+             @*   <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
             </td>
         </tr>
 }

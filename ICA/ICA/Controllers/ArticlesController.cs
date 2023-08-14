@@ -6,6 +6,8 @@ using ICA.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using ImageMagick;
 using Microsoft.AspNetCore.Authorization;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
 
 namespace ICA.Controllers
 {
@@ -106,7 +108,18 @@ namespace ICA.Controllers
             {
                 System.GC.Collect();
                 System.GC.WaitForPendingFinalizers();
-              
+                string slug=string.Empty;
+                Article lastId = _context.Articles.OrderBy(a=>a.Id).LastOrDefault();
+                if (lastId == null)
+                {
+                    slug = SlugGenerator(1+articleviewmodel.TitleArabic);
+
+                }
+                else
+                {
+                    slug = SlugGenerator(lastId.Id+1+" "+articleviewmodel.TitleArabic);
+
+                }
                 string filename = string.Empty;
                 filename = Guid.NewGuid().ToString() + articleviewmodel.ProfilePictureFile.FileName;
                 string uploads = Path.Combine(hosting.WebRootPath, "PorfilesPictures");
@@ -121,12 +134,13 @@ namespace ICA.Controllers
                     Assosiation = _context.Assosiation.Find(articleviewmodel.thenameassoc),
                     ContentArabic = articleviewmodel.ContentArabic,
                     ContentEnglish = articleviewmodel.ContentEnglish,
-                    DatePuplished = DateTime.Now,
+                    DatePuplished = articleviewmodel.DatePuplished,
                     ProfilePicture = filename,
                     TitleArabic = articleviewmodel.TitleArabic,
                     TitleEnglish = articleviewmodel.TitleEnglish,
                     TypeOfArticles = articleviewmodel.TypeOfArticles,
                     Status=true,
+                    ArticleUrl=slug,
                     Album= album
                 };
                 _context.Add(article);
@@ -203,8 +217,11 @@ namespace ICA.Controllers
                         article.ProfilePicture = filename;
                     }
                     var newarticle = _context.Articles.Find(id);
+                    if(newarticle.TitleArabic != article.TitleArabic) {
+                        newarticle.TitleArabic = article.TitleArabic;
+                        newarticle.ArticleUrl = SlugGenerator(article.id + " " + article.TitleArabic);  
+                    }
                     newarticle.ProfilePicture = article.ProfilePicture;
-                    newarticle.TitleArabic = article.TitleArabic;
                     newarticle.TitleEnglish = article.TitleEnglish;
                     newarticle.TypeOfArticles = article.TypeOfArticles;
                     newarticle.ContentArabic = article.ContentArabic;
@@ -326,7 +343,28 @@ namespace ICA.Controllers
                     return false;
                 }
             }
+        }
 
+        private string SlugGenerator(string Title)
+        {
+            string orginalTitle=Title;
+            // Replace invalid characters with a hyphen
+            Title = Title.Replace(" ", "-");
+            Title = Title.Replace(",", "-");
+            Title = Title.Replace("(", "-");
+            Title = Title.Replace(")", "");
+            Title = Title.Replace("?", "");
+            Title = Title.Replace("؟", "");
+
+
+            // Ensure the slug is not empty
+            if (Title.Length == 0)
+            {
+                Title = orginalTitle;
+            }
+
+            return Title;
+            
         }
     }
 }

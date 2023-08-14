@@ -6,7 +6,11 @@
     ViewData["Title"] = localizer["Projects"];
     ViewData["meta"] = localizer["A brief timeline of our 10 years effort with our partners"];
     Layout = "_MainLayout";
+    ViewData["Url"] = Context.Request.GetDisplayUrl();
+    ViewData["Image"] = "https://icangoh.org/desighn/logo-modified-min.png";
+    ViewData["type"] = "website";
 }
+
 <style>
 
     .MyContainer {
@@ -34,7 +38,7 @@
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(50%);">
                 <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-action="Index">Home</a></span> <span>Projects</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">Projects</h1>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">previous projects</h1>
             </div>
         </div>
     </div>

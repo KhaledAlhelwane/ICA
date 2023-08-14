@@ -3,6 +3,7 @@
     public class Article
     {
         public int Id { get; set; }
+        public string? ArticleUrl { get; set; }
         public string ?TypeOfArticles { get; set; }
         public  string ?TitleArabic { get; set; }
         public string ?ContentArabic { get; set; }

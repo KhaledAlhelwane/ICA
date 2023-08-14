@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Department of Human Resources" xml:space="preserve">
-    <value>قسم الموارد البشرية</value>
-  </data>
   <data name="First: The CV (Curriculum Vitae)" xml:space="preserve">
     <value>أولاً: السيرة الذاتية</value>
   </data>
   <data name="Hr" xml:space="preserve">
     <value>الموارد البشرية</value>
+  </data>
+  <data name="Join Islamic Charity Association and make a difference in the lives of those in need. Support our vision for a compassionate society and contribute to community growth and progress through our relief and development projects. Explore job opportunities and apply now." xml:space="preserve">
+    <value>تَطوّع مع الجمعية الخيرية الإسلامية وساهم في تحسين حياة المحتاجين. دَعْم رؤيتنا لمجتمع متعاطف والمساهمة في نمو المجتمع من خلال مشاريع الإغاثة والتنمية. تَصفّح فرص العمل وقدّم طلبك الآن.</value>
   </data>
   <data name="Note: Please use a computer when submitting your CV to ensure that the personal photo is uploaded correctly." xml:space="preserve">
     <value>ملاحظة يرجى استخدام الكمبيوتر عند إدخال السيرة الذاتية وذلك للتأكد من رفع الصورة الشخصية</value>

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ICA/1.0.0": {
         "dependencies": {
+          "HtmlAgilityPack": "1.11.51",
           "Magick.NET-Q16-AnyCPU": "13.0.1",
           "MailKit": "4.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.11",
@@ -35,6 +36,14 @@
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.1.1.34079"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.11.51": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.51.0",
+            "fileVersion": "1.11.51.0"
           }
         }
       },
@@ -2703,6 +2712,13 @@
       "sha512": "sha512-NNQaa4eyf5YjSdLKUWGPzq5HXZQc3yGybfIOkR6UY1C/rRFWdo0UhSzBqqnxwGnq3ie4vkN0JlzhhANjfTIJIQ==",
       "path": "bouncycastle.cryptography/2.1.1",
       "hashPath": "bouncycastle.cryptography.2.1.1.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.11.51": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yRn0Vd6Smu69xGyRWIZVl/Ley2OMMCMwC9tZRR/GdXfxGYj1sGMT4KskWd8OP9dGlqaXPkyB0NzBHKejtZdbow==",
+      "path": "htmlagilitypack/1.11.51",
+      "hashPath": "htmlagilitypack.1.11.51.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",

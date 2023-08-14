@@ -60,8 +60,29 @@ namespace ICA.Areas.Identity.Pages.Account
             public bool RememberMe { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task<IActionResult> OnGetAsync(string returnUrl = null)
         {
+            //if the user is authenticated so it will be redirected to his main page 
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("IT")|| User.IsInRole("Media"))
+                {
+                    return RedirectToAction("Account", "User");
+
+                }
+                if (User.IsInRole("Driver"))
+                {
+                    return RedirectToAction("Index", "Driver");
+
+                }
+                if (User.IsInRole("Unhcr"))
+                {
+                    return RedirectToAction("Index", "Unchr");
+
+                }
+
+
+            }
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
@@ -73,8 +94,9 @@ namespace ICA.Areas.Identity.Pages.Account
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
-            ReturnUrl = returnUrl;
+          
+           ReturnUrl = returnUrl;
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)

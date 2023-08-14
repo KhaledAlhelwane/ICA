@@ -5,68 +5,95 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
 
-<h4>Bus</h4>
+
+<h1>التحقق من المهمة </h1>
+
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<div class="row d-flex justify-content-center">
+    <div class="col-md-8 ">
+        <form id="myform" asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
+                <label asp-for="FullName" class="control-label"> إسم السائق</label>
+                <input readonly asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
+
+            <input hidden asp-for="Id">
+            <input hidden asp-for="Photo1">
+            <input hidden asp-for="Photo2">
+
             <div class="form-group">
-                <label asp-for="Photo1" class="control-label"></label>
-                <input asp-for="Photo1" class="form-control" />
-                <span asp-validation-for="Photo1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DigitSurce" class="control-label"></label>
-                <input asp-for="DigitSurce" class="form-control" />
-                <span asp-validation-for="DigitSurce" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Photo2" class="control-label"></label>
-                <input asp-for="Photo2" class="form-control" />
-                <span asp-validation-for="Photo2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DigitDes" class="control-label"></label>
-                <input asp-for="DigitDes" class="form-control" />
-                <span asp-validation-for="DigitDes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Source" class="control-label"></label>
-                <input asp-for="Source" class="form-control" />
+                <label asp-for="Source" class="control-label">مكان الإنطلاق</label>
+                <input readonly asp-for="Source" class="form-control" />
                 <span asp-validation-for="Source" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Des" class="control-label"></label>
-                <input asp-for="Des" class="form-control" />
+                <label asp-for="Des" class="control-label">الوجهة</label>
+                <input readonly asp-for="Des" class="form-control" />
                 <span asp-validation-for="Des" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TIME" class="control-label"></label>
-                <input asp-for="TIME" class="form-control" />
+                <label asp-for="TIME" class="control-label">تاريخ المهمة</label>
+                <input readonly type="date" asp-for="TIME" class="form-control" />
                 <span asp-validation-for="TIME" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Check" class="control-label"></label>
-                <input asp-for="Check" class="form-control" />
-                <span asp-validation-for="Check" class="text-danger"></span>
+                <label asp-for="TIME" class="control-label">تاريخ تحميل المهمة</label>
+                <input readonly type="date" asp-for="RealTIME" class="form-control"  />
+                <span asp-validation-for="TIME" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+            <label asp-for="Check" class="control-label"></label>
+            <input asp-for="Check" class="form-control" />
+            <span asp-validation-for="Check" class="text-danger"></span>
+            </div>*@<br>
+            <label class="control-label">صورة العداد عند الإنطلاق</label>
+               <div class="text-center">
+                <img id="pp" alt="profile" src="~/BusKilometer/@Model.Photo1" class="img-thumbnail" width="600" height="600" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="DigitSurce" class="control-label"> رقم العداد عند الإنطلاق</label>
+                <input readonly  asp-for="DigitSurce" class="form-control" placeholder="ادخل رقم العداد" />
+                <span asp-validation-for="DigitSurce" class="text-danger"></span>
+            </div><br>
+            <label class="control-label">صورة العداد عند الإياب</label>
+              <div class="text-center">
+                <img id="pp2" alt="profile" src="~/BusKilometer/@Model.Photo2" class="img-thumbnail" width="600" height="600" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DigitDes" class="control-label">رقم العداد عند الإياب</label>
+                <input readonly  asp-for="DigitDes" class="form-control" placeholder="ادخل رقم العداد" />
+                <span asp-validation-for="DigitDes" class="text-danger"></span>
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label asp-for="DigitDes" class="control-label">عدد الكيلومترات ضمن المهمة</label>
+                @{
+                    var killometers = Model.DigitDes - Model.DigitSurce;
+                }
+                <input readonly class="form-control" value="@killometers" />
+                <span asp-validation-for="DigitDes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Check" class="control-label">حالة التحقق</label>
+                <select id="disabledSelect" class="form-select" asp-for="Check">
+                    <option value="True"><i class="bi bi-bookmark-check-fill"></i> نعم</option>
+                    <option value="False"><i class="bi bi-bookmark-x-fill"></i> لا</option>
+                </select>
+                <span asp-validation-for="Check" class="text-danger"></span>
+            </div>
+           
+            <br />
+            <div class="form-group d-flex justify-content-center">
+                <button type="submit"  class="btn btn-primary Mybutton"><i class="bi bi-pencil-square"></i> تأكيد</button>
             </div>
         </form>
     </div>
 </div>
-
+<br>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-return-right"></i> العودة الى القائمة</a>
 </div>
-

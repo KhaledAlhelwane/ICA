@@ -7,6 +7,7 @@ namespace ICA.ViewModel
     public class ArticleViewModel
     {
         public int id { get; set; }
+        public string? ArticleUrl { get; set; }
         public string? TypeOfArticles { get; set; }
         [Required(ErrorMessage = "Please fill this field")]
         public string? TitleArabic { get; set; }

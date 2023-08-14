@@ -120,10 +120,10 @@
   <data name="News" xml:space="preserve">
     <value>الأخبار</value>
   </data>
-  <data name="our last news" xml:space="preserve">
-    <value>آخر أخبارنا</value>
-  </data>
   <data name="Our Latest News" xml:space="preserve">
     <value>آخر أخبارنا</value>
+  </data>
+  <data name="Stay up-to-date with the latest news and events from the Islamic Charity Association in Homs. Our news page features updates on our education and relief services, as well as stories of hope and resilience from the families and communities we serve. Join our mission to make a positive impact in the lives of those in need." xml:space="preserve">
+    <value>ابقَ على اطلاعٍ بآخر الأخبار والفعاليات من الجمعية الخيرية الإسلامية , تقدم صفحتنا للأخبار تحديثات حول خدماتنا في التعليم والإغاثة، بالإضافة إلى قصص الأمل والصمود من العائلات والمجتمعات التي نخدمها. انضم إلى مهمتنا لتحقيق تأثير إيجابي في حياة الأشخاص المحتاجين.</value>
   </data>
 </root>

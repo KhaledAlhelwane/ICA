@@ -6,14 +6,19 @@
 
 <html lang="en">
 <head>
-
-    <meta name="viewport" content="width=device-width" />
-     <meta name="description" content="@ViewBag.meta">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@ViewBag.meta">
     <meta name="keywords" content="Islamic Charity Association, Aoun Homs, Aoun Relief and Development, Charity Association, NGO, Humanitarian Organization, Relief Organization, Orphan Sponsorship, Orphanage, Zanobia Hall, Exemplary Charitable Schools, Social Care, Self-Education, Orphan Sponsorship in Syria, Relief Projects, Global Relief, Refugees, Displaced People, الجمعية الخيرية الإسلامية, أمان للرعاية الإجتماعية,عون حمص, عون للإغاثة والتنمية, جمعية خيرية, منظمة خيرية, منظمة غير حكومية, منظمة إنسانية, منظمة إغاثية, كفالة الأيتام, دار الأيتام, صالة زنوبيا, المدارس الخيرية النموذجية, الخيرية, الرعاية الاجتماعية, التعليم الذاتي, الحملات الإغاثية, المشاريع الخيرية, مشاريع الإغاثة, حملات الإغاثة, الإغاثة العالمية, إغاثة, اللاجئين, النازحين" />
     <meta name="geo.position" content="34.744805; 36.680314">
     <meta name="geo.placename" content="Homs, Syria">
     <meta name="geo.region" content="SY-HO">
     <meta name="ICBM" content="34.744805,36.680314">
+    <meta property="og:title" content="@ViewBag.Title">
+    <meta property="og:description" content="@ViewBag.meta">
+    <meta property="og:url" content="@ViewBag.Url">
+    <meta property="og:image" content="@ViewBag.Image">
+    <meta property="og:type" content="@ViewBag.type" />
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/ico" href="~/desighn/logo-modified-min.ico">
     <title>@ViewBag.Title</title>
     
@@ -34,7 +39,8 @@
     <link rel="stylesheet" href="~/assets/css/flaticon.css">
     <link rel="stylesheet" href="~/assets/css/icomoon.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
-    @* deleted for better seo  <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+	
+	    @* deleted for better seo  <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 *@    <style>
         .logo-container {
             display: flex;
@@ -113,69 +119,78 @@
                     <li class="nav-item"><a asp-controller="Home" asp-action="index" class="nav-link  d-flex justify-content-center">@localizer["Home"]</a></li>
                 
                   
-                    <li class="nav-item"><a asp-controller="Home" asp-action="projects" class="nav-link  d-flex justify-content-center">@localizer["Projects"]</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="Articles" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
+                   @* <li class="nav-item"><a asp-controller="Home" asp-action="projects" class="nav-link  d-flex justify-content-center">@localizer["Projects"]</a></li>
+                  *@  <li class="nav-item"><a asp-controller="Home" asp-action="Articles" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="events" class="nav-link d-flex justify-content-center">@localizer["Events"]</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link d-flex justify-content-center dropdown-toggle" id="navbarDropdown" role="button" >
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link d-flex justify-content-center dropdown-toggle" id="navbarDropdown" role="button">
                           @localizer["Our sections"]
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item d-flex justify-content-center"> @localizer["Aoun"]</a>
+                        <div id="maindropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item d-flex justify-content-center" asp-controller="sections" asp-action="index"> @localizer["Aoun"]</a>
                              <div class="dropdown-divider"></div>
-                             <div class="dropdown @Listdirectoin" >
-                                <a class="dropdown-item dropdown-toggle" onclick="$('#first').removeClass('d-none')">
+                             <div  class="dropdown @Listdirectoin" >
+                                <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown1" role="button">
                                     @localizer["UN projects"]
                                 </a>
-                                <div id="first" class="dropdown-menu d-none">
-                                    <a class="dropdown-item" href="#">@localizer["Current projects"]</a>
-                                    <a class="dropdown-item" href="#">@localizer["Old Projects"]</a>
+                                <div id="first" class="dropdown-menu" >
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Current projects"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" <a asp-controller="Home" asp-action="projects"  >@localizer["Old Projects"]</a>
                                 </div>
                             </div>
                             <div class="dropdown @Listdirectoin">
-                                <a class="dropdown-item dropdown-toggle" onclick="$('#secound').removeClass('d-none')">
+                                <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown2" role="button">
                                     @localizer["Association Projects"]
                                 </a>
-                                <div id="secound" class="dropdown-menu d-none">
-                                    <a class="dropdown-item" href="#">@localizer["Aoun Mall"]</a>
-                                    <a class="dropdown-item" href="#">@localizer["The detergent factory"]</a>
+                                <div id="secound" class="dropdown-menu ">
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Aoun Mall"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["The detergent factory"]</a>
                                 </div>
                             </div> 
                             <div class="dropdown @Listdirectoin">
-                                <a class="dropdown-item dropdown-toggle" onclick="$('#third').removeClass('d-none')">
+                                <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown3" role="button">
                                     @localizer["The orphanage"]
                                 </a>
-                                <div id="third" class="dropdown-menu d-none">
-                                    <a class="dropdown-item" href="#">@localizer["Internal"]</a>
-                                    <a class="dropdown-item" href="#">@localizer["External"]</a>
+                                <div id="third" class="dropdown-menu">
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Internal"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["External"]</a>
                                 </div>
                             </div> 
-                            <div class="dropdown @Listdirectoin" onclick="$('#forth').removeClass('d-none')">
-                                <a class="dropdown-item dropdown-toggle">
+                            <div class="dropdown @Listdirectoin" >
+                                <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown4" role="button">
                                     @localizer["Schools"]
                                 </a>
-                                <div id="forth" class="dropdown-menu d-none">
-                                    <a class="dropdown-item" href="#">@localizer["Primary school"]</a>
-                                    <a class="dropdown-item" href="#">@localizer["Middle school"]</a>
-                                    <a class="dropdown-item" href="#">@localizer["High school"]</a>
+                                <div id="forth" class="dropdown-menu ">
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Primary school"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Middle school"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["High school"]</a>
                                 </div>
                             </div>  
                             <div class="dropdown @Listdirectoin">
-                                <a class="dropdown-item dropdown-toggle" onclick="$('#fifth').removeClass('d-none')">
+                                <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown5" role="button">
                                    @localizer["Halls"]
                                 </a>
-                                <div id="fifth" class="dropdown-menu d-none">
-                                    <a class="dropdown-item" href="#">@localizer["Zenobia"]</a>
-                                    <a class="dropdown-item" href="#">@localizer["Alwaleed"]</a>
+                                <div id="fifth" class="dropdown-menu ">
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections">@localizer["Zenobia"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections">@localizer["Alwaleed"]</a>
                                 </div>
                             </div>
                         </div>
 
                     </li>
+                
                  <li class="nav-item"><a asp-controller="Home" asp-action="about" class="nav-link  d-flex justify-content-center">@localizer["About"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="contact" class="nav-link  d-flex justify-content-center">@localizer["Contact"]</a></li>
                     <li class="nav-item d-flex justify-content-center"> <partial name="_SelectLanguagePartial" /></li>
-                   
+             @*       <li class="nav-item">
+                        <ul class="list-group d-flex justify-content-center">
+                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
+                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
+                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
+                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
+                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
+                        </ul>
+                    </li>*@
                     
                     @*  <li>
                                 <partial name="_LoginPartial" />
@@ -200,8 +215,24 @@
           <div class="col-md-4">
                     <div class="mb-4" dir="@thedirection">
                         <h2 class="ftco-heading-2" dir="@thedirection">  <img src="~/desighn/logo-modified-min.png" alt="الجمعية الخيرية الإسلامية" width="80" /></h2>
-                        <p >@localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."]</p>
-                        <ul class="ftco-footer-social list-unstyled  mt-5 " >
+                   @*     <p >@localizer["The Islamic Charity Association in Homs is a significant institution that offers education and relief services. It was established in 1921 and has exemplary schools, an orphanage, and a conference hall. the association has launched the 'Aoun Relief and Development Projesocietyct' to provide temporary housing for displaced families until they can return home safely in addition to many projects that support families and the socity."]</p>
+                        *@        @{
+                            if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                            {
+                                <p>
+
+                                    جميع الحقوق محفوظة  للجمعية الخيرية الإسلامية
+                                    @DateTime.Now.Year
+                                </p>
+                            }
+                            else
+                            {
+                                <p>
+                                    All rights reserved @Html.Raw("@") Islamic charity association in   @DateTime.Now.Year
+                                </p>
+                            }
+
+                        }  <ul class="ftco-footer-social list-unstyled  mt-5 ">
                            @* <li class="ftco-animate"><a https:"" ><span class="icon-twitter"></span></a></li>
                             *@
                             <li class="ftco-animate"><a href="https://www.facebook.com/islamicaidorgan/" target="_blank"><span class="icon-facebook"></span></a></li>
@@ -267,7 +298,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-                    @{
+                 @*   @{
                         if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                         {
                             <p>
@@ -283,7 +314,7 @@
                             </p>
                         }
 
-              }
+              }*@
                     <br> <p>Devloped by  <br> <a href="https://www.linkedin.com/in/anwar-housami-49a510207/">Alhousami</a> & <a href="https://www.linkedin.com/in/khaled-helwane-1a6943180/">Alhelwani</a> </p>
           </div>
         </div>
@@ -304,21 +335,8 @@
     <script src="~/assets/js/bootstrap-datepicker.js"></script>
     <script src="~/assets/js/jquery.timepicker.min.js"></script>
     <script src="~/assets/js/scrollax.min.js"></script>
-   @* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="~/assets/js/google-map.js"></script>
- *@   <script src="~/assets/js/main.js"></script>
- <script>
-        $(document).ready(function () {
-            $('.nav-item.dropdown').on('pointerleave', function () {
-                $('#first').addClass('d-none');
-                $('#secound').addClass('d-none');
-                $('#third').addClass('d-none');
-                $('#forth').addClass('d-none');
-                $('#fifth').addClass('d-none');
-             
-            });
-        });
- </script>
+  <script src="~/assets/js/main.js"></script>
+	
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
