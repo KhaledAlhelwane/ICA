@@ -112,12 +112,13 @@ namespace ICA.Controllers
                 Article lastId = _context.Articles.OrderBy(a=>a.Id).LastOrDefault();
                 if (lastId == null)
                 {
-                    slug = SlugGenerator(1+articleviewmodel.TitleArabic);
+                    slug = SlugGenerator(1 + " " + articleviewmodel.TitleEnglish);
+
 
                 }
                 else
                 {
-                    slug = SlugGenerator(lastId.Id+1+" "+articleviewmodel.TitleArabic);
+                    slug = SlugGenerator(lastId.Id + 1 + " " + articleviewmodel.TitleEnglish);
 
                 }
                 string filename = string.Empty;

@@ -1,0 +1,145 @@
+﻿@using Microsoft.AspNetCore.Html;
+@using System.Globalization;
+
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+@model ICA.Models.Assosiation
+
+@{
+    ViewData["Title"] = Model.FullName;
+    ViewData["meta"] = ViewBag.description;
+    Layout = "_MainLayout";
+    ViewData["Url"] = Context.Request.GetDisplayUrl();
+    ViewData["Image"] = "https://icangoh.org/PorfilesPictures/" + Model.Photo;
+}
+
+
+
+
+
+
+
+<link href="~/desighn/articledesighn.css" rel="stylesheet" />
+@{
+    string direction = "";
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar")) { direction = "rtl"; }
+    else { direction = "ltr"; }
+}
+@*
+<div class="ColoredNav alert alert-dark" role="alert">
+    <br>
+    <br><br>
+
+</div>*@
+<div class="hero-wrap" style="background-image: url('/PorfilesPictures/@Model.Photo'); background-position: 50% 225px;" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-7 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(50%);">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);"><span class="mr-2"><a asp-controller="home" asp-action="section">Sections</a></span> <span>@Model.FullNameEnglish</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0; transform: translateZ(0px) translateY(21.4286%);">@Model.FullNameEnglish</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+@if (@ViewBag.Notfound == null)
+{
+    <div class="container">
+        <div dir="rtl" class="MyContainer row ">
+            <div class="col-12 ">
+                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    <h1 class="text-center" style="color:#004ea2;font-family: Noto Kufi Arabic, Roboto Condensed;font-size: 18px;font-weight: 800;line-height: 28.8px;padding:20px;margin:10px"> @Model.FullName</h1>
+
+                }
+                else
+                {
+                    <h1 class="text-center" style="color:#004ea2;font-family: Noto Kufi Arabic, Roboto Condensed;font-size: 18px;font-weight: 800;line-height: 28.8px"> @Model.FullNameEnglish</h1>
+
+                }
+            </div>
+            @* <div class="col-12  text-center ">
+        <img src="~/PorfilesPictures/@Model.Photo" class="mx-auto d-block img-fluid" alt="@Model.Photo" />
+        <hr>
+        </div>*@
+
+            <div class="col-12">
+                <div dir="@direction">
+                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                    {
+                        @(new HtmlString(@Model.About))
+                    }
+                    else
+                    {
+                        @(new HtmlString(@Model.AboutEnglish))
+                    }
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    @* <section class="ftco-gallery ">
+        @{
+            <div class="container">
+                <div class="row">
+                    @foreach (var x in Model.Album.Images.ToList())
+                    {
+
+
+                        <a href="/PorfilesPictures/@x.ImageUrl" class="col-md-3 gallery image-popup  justify-content-center align-items-center img ftco-animate" style="background-image: url(/PorfilesPictures/@x.ImageUrl);">
+                            <div class="icon d-flex justify-content-center align-items-center">
+                                <span class="icon-search"></span>
+                            </div>
+                        </a>
+                    }
+
+
+
+                </div>
+            </div>
+        }
+    </section>*@
+}
+else
+{
+
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        <div dir="rtl" class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">خطأ 404: لا يمكن العثور على المورد المطلوب</h4>
+            <p>قد تمت إزالة الصفحة التي تبحث عنها أو تغيير اسمها، أو ربما تكون غير متاحة مؤقتًا. يرجى المحاولة مرة أخرى باستخدام الإرشادات التالية:</p>
+            <ul>
+                <li>تحقق مرة أخرى من العنوان الصحيح للصفحة.</li>
+                <li>العودة إلى الصفحة السابقة والمحاولة مرة أخرى.</li>
+                <li>الاتصال بمسؤول الموقع للحصول على المساعدة.</li>
+            </ul>
+            <hr>
+            <p class="mb-0">رمز الخطأ: 404</p>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Error 404: The requested resource could not be found</h4>
+            <p>The page you are looking for may have been removed or its name changed, or it may be temporarily unavailable. Please try the following:</p>
+            <ul>
+                <li>Double-check the URL for errors.</li>
+                <li>Go back to the previous page and try again.</li>
+                <li>Contact the site administrator for assistance.</li>
+            </ul>
+            <hr>
+            <p class="mb-0">Error code: 404</p>
+        </div>
+
+    }
+
+}
+<br>
+<br>

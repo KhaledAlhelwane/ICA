@@ -83,6 +83,7 @@
 		$('#third').removeClass('show');
 		$('#forth').removeClass('show');
 		$('#fifth').removeClass('show');
+		/*$('#sixth').toggleClass('show');*/
 	});
 
 	$('#navbarDropdown2').click(function (event) {
@@ -93,6 +94,7 @@
 		$('#third').removeClass('show');
 		$('#forth').removeClass('show');
 		$('#fifth').removeClass('show');
+		$('#sixth').removeClass('show');
 	});
 	$('#navbarDropdown3').click(function (event) {
 		event.stopPropagation();
@@ -102,6 +104,7 @@
 		$('#first').removeClass('show');
 		$('#forth').removeClass('show');
 		$('#fifth').removeClass('show');
+		$('#sixth').removeClass('show');
 	});
 	$('#navbarDropdown4').click(function (event) {
 		event.stopPropagation();
@@ -111,6 +114,7 @@
 		$('#third').removeClass('show');
 		$('#first').removeClass('show');
 		$('#fifth').removeClass('show');
+		$('#sixth').removeClass('show');
 	});
 	$('#navbarDropdown5').click(function (event) {
 		event.stopPropagation();
@@ -120,6 +124,17 @@
 		$('#third').removeClass('show');
 		$('#first').removeClass('show');
 		$('#forth').removeClass('show');
+		$('#sixth').removeClass('show');
+	});
+	$('#navbarDropdown6').click(function (event) {
+		event.stopPropagation();
+		var $this = $('#sixth');
+		$this.toggleClass('show');
+		$('#secound').removeClass('show');
+		$('#third').removeClass('show');
+		/*$('#first').removeClass('show');*/
+		$('#forth').removeClass('show');
+		$('#fifth').removeClass('show');
 	});
 	//this will make the dropdown list to disappear when cliking outsitd the menu
 	$(document).click(function () {

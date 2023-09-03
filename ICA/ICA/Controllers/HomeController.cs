@@ -45,6 +45,7 @@ namespace ICA.Controllers
             ViewData["Eventslist"] = context.Articles.Include(a=>a.ApplicationUsers).Include(a2 => a2.Assosiation).OrderByDescending(b=>b.DatePuplished).Where(z=>z.Status==true&&z.TypeOfArticles=="حدث").Take(3).ToList();
             return View();
         }
+        [Route("News")]
         public async Task<IActionResult> Articles(int page = 1, int pageSize = 9)
         {
             if (page < 1) // Check if page is less than 1
@@ -91,7 +92,7 @@ namespace ICA.Controllers
             return View(articel);
                                 
         }
-
+        [Route("Events")]
         public async Task<IActionResult> Events(int page = 1, int pageSize = 9)
         {
             if (page < 1) // Check if page is less than 1
@@ -110,10 +111,12 @@ namespace ICA.Controllers
             return View(currentPageData);
            
         }
+        [Route("about-islamic-charity-association")]
         public IActionResult about()
         {
             return View();
         }
+        [Route("contact-us")]
         public IActionResult contact()
         {
             var contact = new ContatctViewModel();
@@ -146,18 +149,28 @@ namespace ICA.Controllers
         {
             return View();
         }
+        [Route("previous-projects")]
+
         public IActionResult Projects()
         {
             return View();
         }
+        [Route("human-resources")]
         public IActionResult HR()
         {
             return View();
         }
+        [Route("donation")]
         public IActionResult Donation()
         {
             return View();
         }
+        [Route("association-structure")]
+        public IActionResult structure()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

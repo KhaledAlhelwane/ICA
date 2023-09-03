@@ -55,7 +55,7 @@
                 <input asp-for="TitleEnglish" class="form-control" />
                 <span asp-validation-for="TitleEnglish" class="text-danger"></span>
             </div>
-            <div class="form-group mt-1">
+            <div class="form-group mt-1" dir="ltr">
                 <label asp-for="ContentEnglish" class="control-label">محتوى المقال بالإنجليزية</label> <i class="bi bi-exclamation-circle-fill text-primary" data-bs-toggle="popover" title="ملاحظة" data-bs-content="الرجاء تحميل صورة واحد على الأكثر داخل محتوى المقال وتحميل الصور في ألبوم الصور"></i>
                 <textarea required id="summernote2" asp-for="ContentEnglish"></textarea>
                 <span asp-validation-for="ContentEnglish" class="text-danger"></span>

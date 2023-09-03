@@ -127,15 +127,21 @@
                           @localizer["Our sections"]
                         </a>
                         <div id="maindropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item d-flex justify-content-center" asp-controller="sections" asp-action="index"> @localizer["Aoun"]</a>
+                            <a class="dropdown-item d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="Aoun-for-Relief-and-Development"> @localizer["Aoun"]</a>
                              <div class="dropdown-divider"></div>
                              <div  class="dropdown @Listdirectoin" >
                                 <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown1" role="button">
                                     @localizer["UN projects"]
                                 </a>
                                 <div id="first" class="dropdown-menu" >
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Current projects"]</a>
-                                    <a class="dropdown-item  d-flex justify-content-center" <a asp-controller="Home" asp-action="projects"  >@localizer["Old Projects"]</a>
+                                    <div class="dropdown @Listdirectoin">
+                                        <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown6" role="button">@localizer["Current projects"]</a>
+                                        <div id="sixth" class="dropdown-menu">
+                                            <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="UNHCR">UNHCR</a>
+
+                                        </div>
+                                    </div>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Home" asp-action="projects"  >@localizer["Old Projects"]</a>
                                 </div>
                             </div>
                             <div class="dropdown @Listdirectoin">
@@ -143,8 +149,8 @@
                                     @localizer["Association Projects"]
                                 </a>
                                 <div id="secound" class="dropdown-menu ">
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Aoun Mall"]</a>
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["The detergent factory"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="aoun-mall">@localizer["Aoun Mall"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="the-detergent-factory">@localizer["The detergent factory"]</a>
                                 </div>
                             </div> 
                             <div class="dropdown @Listdirectoin">
@@ -152,8 +158,8 @@
                                     @localizer["The orphanage"]
                                 </a>
                                 <div id="third" class="dropdown-menu">
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Internal"]</a>
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["External"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="the-islamic-internal-orphanage">@localizer["Internal"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="the-islamic-external--orphanage">@localizer["External"]</a>
                                 </div>
                             </div> 
                             <div class="dropdown @Listdirectoin" >
@@ -161,9 +167,9 @@
                                     @localizer["Schools"]
                                 </a>
                                 <div id="forth" class="dropdown-menu ">
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Primary school"]</a>
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["Middle school"]</a>
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections" asp-action="index">@localizer["High school"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="khairiya-school-primary">@localizer["Primary school"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="khairiya-school-middle">@localizer["Middle school"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="khairiya-school-secondery">@localizer["High school"]</a>
                                 </div>
                             </div>  
                             <div class="dropdown @Listdirectoin">
@@ -171,9 +177,12 @@
                                    @localizer["Halls"]
                                 </a>
                                 <div id="fifth" class="dropdown-menu ">
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections">@localizer["Zenobia"]</a>
-                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="sections">@localizer["Alwaleed"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="zenobia-hall">@localizer["Zenobia"]</a>
+                                    <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="al-walid-hall">@localizer["Alwaleed"]</a>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex justify-content-center" asp-controller="home" asp-action="structure"> @localizer["association structure"]</a>
+
                             </div>
                         </div>
 

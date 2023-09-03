@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/Een9nf6kqRH8MQQhgzxTjkq2+OW6nfaPtI4vP07qC0=",
+  "Hash": "2KtEMk77bDYbCP9FNtgGanf87THAYqiHSC0iIh9a/Fk=",
   "Source": "ICA",
   "BasePath": "_content/ICA",
   "Mode": "Default",
@@ -4129,6 +4129,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\mainbg.webp"
+    },
+    {
+      "Identity": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\structure.webp",
+      "SourceId": "ICA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\",
+      "BasePath": "_content/ICA",
+      "RelativePath": "images/structure.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\structure.webp"
     },
     {
       "Identity": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\js\\site.js",
@@ -39253,6 +39270,23 @@
       "OriginalItemSpec": "wwwroot\\ourPartner\\WHO_logo.png"
     },
     {
+      "Identity": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\PorfilesPictures\\a56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg",
+      "SourceId": "ICA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\",
+      "BasePath": "_content/ICA",
+      "RelativePath": "PorfilesPictures/a56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\PorfilesPictures\\a56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\PorfilesPictures\\ProfilePicture.png",
       "SourceId": "ICA",
       "SourceType": "Discovered",
@@ -39268,6 +39302,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\PorfilesPictures\\ProfilePicture.png"
+    },
+    {
+      "Identity": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\PorfilesPictures\\Resizeda56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg",
+      "SourceId": "ICA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\",
+      "BasePath": "_content/ICA",
+      "RelativePath": "PorfilesPictures/Resizeda56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\PorfilesPictures\\Resizeda56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg"
     },
     {
       "Identity": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\sitemap.xml",

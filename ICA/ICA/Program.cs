@@ -99,8 +99,13 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "article",
-        pattern: "article/{title}",
+         //pattern: "article/{title}",
+         pattern: "article/{title}",
         defaults: new { controller = "Home", action = "article" });
+    endpoints.MapControllerRoute(
+       name: "section",
+       pattern: "section/{AssosiationURL}",
+       defaults: new { controller = "sections", action = "section" });
     endpoints.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");

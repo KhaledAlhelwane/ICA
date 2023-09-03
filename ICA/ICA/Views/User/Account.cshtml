@@ -55,19 +55,7 @@
     </div> 
     <hr>
     <div class="row mt-5">
-        @if (User.IsInRole("Media") || User.IsInRole("IT"))
-        {
-            <div class="col-md-12 d-flex justify-content-center">
-                <div class="card col-8">
-                    <div class="card-body text-center">
-                        <i class="fas fa-tasks fa-3x mb-3 icon-green"></i>
-                        <h3 class="card-title text-green">ادارة المقالات</h3>
-                        <p class="card-text" style="font-size:120%">عرض وإدارة المقالات وأنواعها من إضافة وحذف وتعديل بالإضافة لإدارة الصور</p>
-                        <a asp-controller="articles" asp-action="Index" class="btn btn-primary Mybutton">انتقل</a>
-                    </div>
-                </div>
-            </div>
-        }
+      
       @if (User.IsInRole("IT"))
         {
             <div class="col-md-12 d-flex justify-content-center mt-2">
@@ -79,17 +67,40 @@
                     <a asp-controller="User" asp-action="Index" class="btn btn-primary Mybutton">انتقل</a>
                 </div>
             </div>
-        </div>
+            </div> 
             <div class="col-md-12 d-flex justify-content-center mt-2">
                 <div class="card col-8">
                     <div class="card-body text-center">
                         <i class="fas fa-chart-line fa-3x mb-3 icon-blue"></i>
-                        <h4 class="card-title text-blue ">إحصائيات التقاييم</h4>
+                        <h4 class="card-title text-info ">إدارة الأقسام</h4>
+                        <p class="card-text">يمكنك تحرير محتوى أقسام الجمعية من خلال الرابط التالي</p>
+                        <a asp-controller="Assosiations" asp-action="Index" class="btn btn-info Mybutton">انتقل</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center mt-2">
+                <div class="card col-8">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x mb-3 icon-blue"></i>
+                        <h4 class="card-title text-success ">إحصائيات التقاييم</h4>
                         <p class="card-text">يمكنك رؤية نسبة التقيمات  والإطلاع على التعليقات</p>
-                        <a asp-controller="User" asp-action="Statistics" class="btn btn-primary Mybutton">انتقل</a>
+                        <a asp-controller="User" asp-action="Statistics" class="btn btn-success Mybutton">انتقل</a>
                     </div>
                 </div>
             </div>
 }
+        @if (User.IsInRole("Media") || User.IsInRole("IT"))
+        {
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card col-8">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tasks fa-3x mb-3 icon-green"></i>
+                        <h3 class="card-title text-danger">ادارة المقالات</h3>
+                        <p class="card-text" style="font-size:120%">عرض وإدارة المقالات وأنواعها من إضافة وحذف وتعديل بالإضافة لإدارة الصور</p>
+                        <a asp-controller="articles" asp-action="Index" class="btn btn-danger Mybutton">انتقل</a>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>

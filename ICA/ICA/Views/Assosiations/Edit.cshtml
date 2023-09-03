@@ -1,0 +1,112 @@
+﻿@model ICA.ViewModel.AssosiationsViewmodel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><i class="bi bi-file-plus"></i> إنشاء قسم جديد من الجمعية</h1>
+
+<hr />
+<form asp-action="Edit" id="myForm" enctype="multipart/form-data" method="post">
+    <div class="row MyContainer">
+        <div class="col-md-8">
+            <input hidden asp-for="Photo" class="form-control" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-1">
+                <label asp-for="AssosiationURL" class="control-label">الرابط التشعبي للقسم (URL)</label>
+                <input readonly asp-for="AssosiationURL" class="form-control" />
+                <span asp-validation-for="AssosiationURL" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-1">
+                <label asp-for="FullName" class="control-label">الإسم بالعربي</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-1">
+                <label asp-for="FullNameEnglish" class="control-label">الإسم بالإنجليزي</label>
+                <input asp-for="FullNameEnglish" class="form-control" />
+                <span asp-validation-for="FullNameEnglish" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-1">
+                <label asp-for="Email" class="control-label">ايميل القسم</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-1">
+                <label asp-for="PhoneNumber" class="control-label">رقم الهاتف</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaceBookLink" class="control-label">رابط صفحة الفيس يوك</label>
+                <input asp-for="FaceBookLink" class="form-control" />
+                <span asp-validation-for="FaceBookLink" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-1">
+                <label asp-for="Manger" class="control-label">المدير</label>
+                <input asp-for="Manger" class="form-control" />
+                <span asp-validation-for="Manger" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-1">
+                <label asp-for="About" class="control-label">عن القسم بالعربي</label> <i class="bi bi-exclamation-circle-fill text-primary" data-bs-toggle="popover" title="ملاحظة" data-bs-content="الرجاء تحميل صورة واحد على الأكثر داخل محتوى المقال وتحميل الصور في ألبوم الصور"></i>
+                <textarea id="summernote" asp-for="About"></textarea>
+                <span asp-validation-for="About" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-1" dir="ltr">
+                <label asp-for="AboutEnglish" class="control-label">عن القسم بالإنجليزي</label> <i class="bi bi-exclamation-circle-fill text-primary" data-bs-toggle="popover" title="ملاحظة" data-bs-content="الرجاء تحميل صورة واحد على الأكثر داخل محتوى المقال وتحميل الصور في ألبوم الصور"></i>
+                <textarea required id="summernote2" asp-for="AboutEnglish"></textarea>
+                <span asp-validation-for="AboutEnglish" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group mt-1">
+                <button type="button" onclick="Validatoin();" class="btn btn-primary Mybutton m-2"> حفظ <i class="bi bi-check2-circle"></i></button>
+                <button hidden type="submit" id="submitbutton" class="btn btn-primary Mybutton m-2"> حفظ <i class="bi bi-check2-circle"></i></button>
+                @* <input type="submit" value="حفظ" class="btn btn-primary " />*@
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="custom-file mt-2">
+                <label class="control-label">صورة الغلاف</label>
+                <input  type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/*" asp-for="PhotoFile"
+                       onchange="document.getElementById('pp').src=window.URL.createObjectURL(this.files[0])" />
+            </div>
+            @if (Model.Photo != null)
+            {
+                <img id="pp" alt="image profile" class="img-thumbnail" src="~/PorfilesPictures/@Model.Photo" />
+            }
+            else
+            {
+                <img id="pp" alt="profile" src="~/PorfilesPictures/ProfilePicture.png" class="img-thumbnail" />
+            }
+        </div>
+    </div>
+</form>
+<div>
+
+    <a asp-action="Index" class="btn btn-secondary"> <i class="bi bi-arrow-return-right"></i> العودة</a>
+
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+
+<script>
+    function Validatoin() {
+        var content1 = document.getElementById("summernote");
+        var content2 = document.getElementById("summernote2");
+        if (content1.value == '' || content2.value == '') {
+            alert("يجب ملء جميع الحقول");
+
+        } else {
+            document.getElementById("submitbutton").click();
+        }
+
+    }
+</script>

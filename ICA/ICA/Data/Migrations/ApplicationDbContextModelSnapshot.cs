@@ -201,6 +201,12 @@ namespace ICA.Data.Migrations
                     b.Property<string>("About")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AboutEnglish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssosiationURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -208,6 +214,9 @@ namespace ICA.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullNameEnglish")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Manger")

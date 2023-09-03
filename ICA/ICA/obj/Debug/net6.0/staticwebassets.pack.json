@@ -681,6 +681,14 @@
       "PackagePath": "staticwebassets\\PorfilesPictures\\ProfilePicture.png"
     },
     {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\PorfilesPictures\\Resizeda56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg",
+      "PackagePath": "staticwebassets\\PorfilesPictures\\Resizeda56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\PorfilesPictures\\a56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg",
+      "PackagePath": "staticwebassets\\PorfilesPictures\\a56e033b-dfc5-4fd4-abb8-1e2e96d7e143Solid.jpeg"
+    },
+    {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\bootstrap-rtl\\css\\bootstrap-flipped.css",
       "PackagePath": "staticwebassets\\bootstrap-rtl\\css\\bootstrap-flipped.css"
     },
@@ -727,6 +735,10 @@
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\mainbg.webp",
       "PackagePath": "staticwebassets\\images\\mainbg.webp"
+    },
+    {
+      "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\images\\structure.webp",
+      "PackagePath": "staticwebassets\\images\\structure.webp"
     },
     {
       "Id": "C:\\Users\\khale\\Desktop\\Asp core projects\\ICA\\ICA\\ICA\\wwwroot\\js\\site.js",
