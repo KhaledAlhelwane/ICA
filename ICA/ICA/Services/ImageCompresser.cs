@@ -38,13 +38,14 @@ namespace ICA.Services
                 try
                 {
 
-                    var size = new MagickGeometry(1000, 1000);
+                   // var size = new MagickGeometry(1000, 1000);
                     //// This will resize the image to a fixed size without maintaining the aspect ratio.
                     // Normally an image will be resized to fit inside the specified size.
-                    size.IgnoreAspectRatio = false;
+                   // size.IgnoreAspectRatio = false;
 
-                    image.Resize(size);
-                    image.Quality = 75;
+                    //image.Resize(size);
+                    image.Quality = 50;
+                  
                     //   Save the result
                     await image.WriteAsync(path + "\\Resized" + filename);
                     return true;

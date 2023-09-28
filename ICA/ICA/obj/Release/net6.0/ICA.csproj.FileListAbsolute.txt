@@ -298,3 +298,5 @@ C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\bin\Release\net6.0\zh-Hant\
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\bin\Release\net6.0\HtmlAgilityPack.dll
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\ICA.Resources.Views.Home.Donation.ar.resources
 C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\ICA.Resources.Views.Home.Donation.en.resources
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\ICA.Resources.Views.Home.blog.ar.resources
+C:\Users\khale\Desktop\Asp core projects\ICA\ICA\ICA\obj\Release\net6.0\ICA.Resources.Views.Home.blog.en.resources

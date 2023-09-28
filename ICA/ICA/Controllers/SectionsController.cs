@@ -2,6 +2,7 @@
 using ICA.Data;
 using ICA.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace ICA.Controllers
 {
@@ -22,8 +23,15 @@ namespace ICA.Controllers
         {
             Assosiation model = context.Assosiation.SingleOrDefault(i => i.AssosiationURL == AssosiationURL);
             HtmlDocument document = new HtmlDocument();
-            document.LoadHtml(model.About);
+            if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+            {
+                document.LoadHtml(model.About);
 
+            }
+            else
+            {
+                document.LoadHtml(model.AboutEnglish);
+            }
             // Extract the plain text from the HTML content
             string content = document.DocumentNode.InnerText;
             if (content.Length > 125)

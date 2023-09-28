@@ -5,8 +5,12 @@ using ICA.Services;
 using ICA.ViewModel;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using MimeKit.Encodings;
 using System.Diagnostics;
+using System.Drawing.Printing;
+using System.Globalization;
 using System.Net.Http;
 
 namespace ICA.Controllers
@@ -45,8 +49,8 @@ namespace ICA.Controllers
             ViewData["Eventslist"] = context.Articles.Include(a=>a.ApplicationUsers).Include(a2 => a2.Assosiation).OrderByDescending(b=>b.DatePuplished).Where(z=>z.Status==true&&z.TypeOfArticles=="حدث").Take(3).ToList();
             return View();
         }
-        [Route("News")]
-        public async Task<IActionResult> Articles(int page = 1, int pageSize = 9)
+       
+        public async Task<IActionResult> News(int page = 1, int pageSize = 9)
         {
             if (page < 1) // Check if page is less than 1
             {
@@ -68,15 +72,23 @@ namespace ICA.Controllers
         {
             Article articel = context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.ArticleUrl== title);
 
-            //Article articel = context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.Id == id);
+            //Article articel = context.News.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.Id == id);
             if (articel == null)
             {
                 ViewBag.Notfound = "not found";
             }
             //this code is intended to clean the content varible from the html elment to make the meta descritpoin tag more efficiant 
             HtmlDocument document = new HtmlDocument();
-            document.LoadHtml(articel.ContentArabic);
+             if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+            {
+                document.LoadHtml(articel.ContentArabic);
 
+            }
+            else
+            {
+                document.LoadHtml(articel.ContentEnglish);
+
+            }
             // Extract the plain text from the HTML content
             string content = document.DocumentNode.InnerText;
             if (content.Length > 125)
@@ -87,12 +99,21 @@ namespace ICA.Controllers
             {
                 ViewBag.description = content;
             }
-           
+            if (articel.TypeOfArticles == "مقال للمدونة") {
+                ViewData["News"] = context.Articles
+                    .Where(x=>x.TypeOfArticles== "مقال للمدونة" && x.Id!=articel.Id && x.Status==true)
+                    .OrderBy(r => r.DatePuplished)
+                    .Take(4)
+                    .ToList();
+            }
             //
+            articel.visitCounter +=1 ;
+            context.Articles.Update(articel);
+            context.SaveChanges();
             return View(articel);
                                 
         }
-        [Route("Events")]
+      
         public async Task<IActionResult> Events(int page = 1, int pageSize = 9)
         {
             if (page < 1) // Check if page is less than 1
@@ -170,6 +191,23 @@ namespace ICA.Controllers
         {
             return View();
         }
+       
+        public async Task<IActionResult> BlogAsync(int page = 1, int pageSize = 3)
+        {
+            if (page < 1) // Check if page is less than 1
+            {
+                page = 1; // Set page to 1 to prevent negative navigation
+            }
+            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "مقال للمدونة").OrderByDescending(o => o.DatePuplished).ToListAsync();
+            var totalCount = data.Count();
+            var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+            var currentPageData = data.Skip((page - 1) * pageSize).Take(pageSize);
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = page;
+
+            return View(currentPageData);
+        
+    }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

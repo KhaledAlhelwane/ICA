@@ -19,13 +19,13 @@
                 <select required dir="rtl" class="form-select" asp-for="TypeOfArticles" aria-label="Default select example">
                     <option value="خبر">خبر</option>
                     <option value="حدث">حدث</option>
-                   @* <option value="تعميم">تعميم</option>
-                    <option value="توظيف">توظيف</option>*@
+                    <option value="مقال للمدونة">مقال للمدونة</option>
+                 
                 </select>
                 <span asp-validation-for="TypeOfArticles" class="text-danger"></span>
             </div>
             <div class="form-group mt-1">
-                <label asp-for="ContentEnglish" class="control-label">عن</label>
+                <label asp-for="ContentEnglish" class="control-label">المصدر</label>
                 <select asp-for="thenameassoc" class="form-select" asp-items="@(new SelectList(Model.AssosiationList, "Id", "FullName"))"></select>
                 <span asp-validation-for="thenameassoc" class="text-danger"></span>
             </div>
@@ -44,11 +44,7 @@
                 <input  dir="rtl" type="date" asp-for="DatePuplished" class="form-control" value=@DateTime.Now.AddYears(-0).ToString("yyyy-MM-dd") />
                 <span asp-validation-for="DatePuplished" class="text-danger"></span>
             </div>
-          @*  <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
-                </label>
-            </div>*@
+          
           
             <div class="form-group mt-1">
                 <label asp-for="TitleEnglish" class="control-label">عنوان المقال بالإنجليزية</label>

@@ -120,4 +120,7 @@
   <data name="Media Center" xml:space="preserve">
     <value>المركز الإعلامي</value>
   </data>
+  <data name="More Blogs" xml:space="preserve">
+    <value>مقالات أخرى من الجمعية</value>
+  </data>
 </root>

@@ -120,11 +120,13 @@
                 
                   
                    @* <li class="nav-item"><a asp-controller="Home" asp-action="projects" class="nav-link  d-flex justify-content-center">@localizer["Projects"]</a></li>
-                  *@  <li class="nav-item"><a asp-controller="Home" asp-action="Articles" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
+                  *@  <li class="nav-item"><a asp-controller="Home" asp-action="News" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="events" class="nav-link d-flex justify-content-center">@localizer["Events"]</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="blog" class="nav-link  d-flex justify-content-center">@localizer["Blog"]</a></li>
+
                     <li class="nav-item dropdown ">
                         <a class="nav-link d-flex justify-content-center dropdown-toggle" id="navbarDropdown" role="button">
-                          @localizer["Our sections"]
+                          @localizer["sections"]
                         </a>
                         <div id="maindropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="Aoun-for-Relief-and-Development"> @localizer["Aoun"]</a>
@@ -190,20 +192,9 @@
                 
                  <li class="nav-item"><a asp-controller="Home" asp-action="about" class="nav-link  d-flex justify-content-center">@localizer["About"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="contact" class="nav-link  d-flex justify-content-center">@localizer["Contact"]</a></li>
-                    <li class="nav-item d-flex justify-content-center"> <partial name="_SelectLanguagePartial" /></li>
-             @*       <li class="nav-item">
-                        <ul class="list-group d-flex justify-content-center">
-                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
-                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
-                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
-                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
-                            <li class="list-group-item">  <a class="dropdown-item" href="#">Action</a></li>
-                        </ul>
-                    </li>*@
-                    
-                    @*  <li>
-                                <partial name="_LoginPartial" />
-                      </li>*@
+                    <li class="nav-item"><a href="http://mail.icangoh.org/" class="nav-link  d-flex justify-content-center">@localizer["Email System"]</a></li>
+                         <li class="nav-item d-flex justify-content-center"> <partial name="_SelectLanguagePartial" /></li>
+         
                         </ul>
                     </div>
             
@@ -272,9 +263,7 @@
                             <a href="https://www.facebook.com/zannobia.hall/" target="_blank">
                                 <img src="~/ourachivments/zanobia.webp" alt="صالة زنوبيا" width="40" class="rounded-circle" />
                             </a>
-                            <a>
-                                <img src="~/ourachivments/wfb.webp" alt="WFB" width="40" />
-                            </a>
+                           
                         </div>
                     </div>
                 </div>
@@ -284,7 +273,7 @@
                         <ul class="list-unstyled" >
                             <li dir="@thedirection"><a asp-controller="Home" asp-action="index" class="py-2 d-block">@localizer["Home"]</a></li>
                             <li dir="@thedirection"><a asp-controller="Home" asp-action="projects" class="py-2 d-block">@localizer["Projects"]</a></li>
-                            <li><a asp-controller="Home" asp-action="Articles" class="py-2 d-block">@localizer["News"]</a></li>
+                            <li><a asp-controller="Home" asp-action="Newss" class="py-2 d-block">@localizer["News"]</a></li>
                             <li><a asp-controller="Home" asp-action="events" class="py-2 d-block">@localizer["Events"]</a></li>
                             <li><a asp-controller="Home" asp-action="about" class="py-2 d-block">@localizer["About"]</a></li>
                             <li><a asp-controller="Home" asp-action="contact" class="py-2 d-block">@localizer["Contact"]</a></li>

@@ -27,7 +27,7 @@ namespace ICA.Controllers
             hosting = Hosting;
         }
 
-        // GET: Articles
+        // GET: News
         public async Task<IActionResult> Index(string ?search)
         
         {
@@ -35,7 +35,7 @@ namespace ICA.Controllers
             {
                 return _context.Articles != null ?
                             View(await _context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).OrderByDescending(d => d.Id).ToListAsync()) :
-                            Problem("Entity set 'ApplicationDbContext.Articles'  is null.");
+                            Problem("Entity set 'ApplicationDbContext.News'  is null.");
             }
             else
             {
@@ -46,7 +46,7 @@ namespace ICA.Controllers
                     ViewBag.faild = "no items";
                     return _context.Articles != null ?
                                              View(await _context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).OrderByDescending(d => d.Id).ToListAsync()) :
-                                             Problem("Entity set 'ApplicationDbContext.Articles'  is null.");
+                                             Problem("Entity set 'ApplicationDbContext.News'  is null.");
 
                 }
                 return View(lista) ;
@@ -71,7 +71,7 @@ namespace ICA.Controllers
             _context.SaveChanges();
            return RedirectToAction(nameof(Index));
         }
-        // GET: Articles/Details/5
+        // GET: News/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Articles == null)
@@ -89,7 +89,7 @@ namespace ICA.Controllers
             return View(article);
         }
 
-        // GET: Articles/Create
+        // GET: News/Create
         public IActionResult Create()
         {
             var listofassociation = _context.Assosiation.ToList();
@@ -97,7 +97,7 @@ namespace ICA.Controllers
             return View(articl);
         }
 
-        // POST: Articles/Create
+        // POST: News/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -152,7 +152,7 @@ namespace ICA.Controllers
             return View(articleviewmodel);
         }
 
-        // GET: Articles/Edit/5
+        // GET: News/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Articles == null)
@@ -184,7 +184,7 @@ namespace ICA.Controllers
             return View(articleVM);
         }
 
-        // POST: Articles/Edit/5
+        // POST: News/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -249,7 +249,7 @@ namespace ICA.Controllers
             return View(article);
         }
 
-        // GET: Articles/Delete/5
+        // GET: News/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Articles == null)
@@ -267,14 +267,14 @@ namespace ICA.Controllers
             return View(article);
         }
 
-        // POST: Articles/Delete/5
+        // POST: News/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Articles == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Articles'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.News'  is null.");
             }
             var article = await _context.Articles.Include(a => a.Album).ThenInclude(b => b.Images).SingleAsync(c=>c.Id==id);
             string uploads = Path.Combine(hosting.WebRootPath, "PorfilesPictures");

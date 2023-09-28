@@ -10,9 +10,12 @@ using ICA.Models;
 using ICA.ViewModel;
 using ICA.Data.Migrations;
 using ICA.Services;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace ICA.Controllers
 {
+    [Authorize(Roles = "IT")]
     public class AssosiationsController : Controller
     {
         private readonly ApplicationDbContext _context;

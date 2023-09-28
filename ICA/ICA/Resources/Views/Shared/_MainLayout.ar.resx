@@ -138,11 +138,17 @@
   <data name="association structure" xml:space="preserve">
     <value>هيكلية الجمعية</value>
   </data>
+  <data name="Blog" xml:space="preserve">
+    <value>المدونة</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>تواصل معنا</value>
   </data>
   <data name="Current projects" xml:space="preserve">
     <value>مشاريع حالية </value>
+  </data>
+  <data name="Email System" xml:space="preserve">
+    <value>نظام البريد الإلكتروني</value>
   </data>
   <data name="Events" xml:space="preserve">
     <value>أحداث</value>
@@ -183,9 +189,6 @@
   <data name="Old Projects" xml:space="preserve">
     <value>مشاريع سابقة</value>
   </data>
-  <data name="Our sections" xml:space="preserve">
-    <value>أقسامنا</value>
-  </data>
   <data name="own project" xml:space="preserve">
     <value>مشروع عون</value>
   </data>
@@ -197,6 +200,9 @@
   </data>
   <data name="Schools" xml:space="preserve">
     <value>المدارس</value>
+  </data>
+  <data name="sections" xml:space="preserve">
+    <value>أقسامنا</value>
   </data>
   <data name="Site Links" xml:space="preserve">
     <value>روابط مفيدة</value>

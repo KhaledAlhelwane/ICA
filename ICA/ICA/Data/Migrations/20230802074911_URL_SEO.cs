@@ -10,7 +10,7 @@ namespace ICA.Data.Migrations
         {
             migrationBuilder.AddColumn<string>(
                 name: "ArticleUrl",
-                table: "Articles",
+                table: "News",
                 type: "nvarchar(max)",
                 nullable: true);
         }
@@ -19,7 +19,7 @@ namespace ICA.Data.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "ArticleUrl",
-                table: "Articles");
+                table: "News");
         }
     }
 }

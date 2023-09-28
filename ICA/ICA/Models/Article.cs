@@ -13,6 +13,7 @@
         // English
         public string? TitleEnglish { get; set; }
         public string? ContentEnglish { get; set; }
+        public int visitCounter { get; set; }
         public  Album ?Album { get; set; }
         public ApplicationUser? ApplicationUsers { get; set; }
         public  Assosiation ?Assosiation { get; set; }

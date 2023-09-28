@@ -17,7 +17,7 @@ namespace ICA.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.20")
+                .HasAnnotation("ProductVersion", "6.0.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -180,6 +180,9 @@ namespace ICA.Data.Migrations
 
                     b.Property<string>("TypeOfArticles")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("visitCounter")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -737,7 +740,7 @@ namespace ICA.Data.Migrations
                         .HasForeignKey("ApplicationUsersId");
 
                     b.HasOne("ICA.Models.Assosiation", "Assosiation")
-                        .WithMany("Articles")
+                        .WithMany()
                         .HasForeignKey("AssosiationId");
 
                     b.Navigation("ApplicationUsers");
@@ -798,7 +801,7 @@ namespace ICA.Data.Migrations
             modelBuilder.Entity("ICA.Models.Member", b =>
                 {
                     b.HasOne("ICA.Models.Assosiation", "Assosiation")
-                        .WithMany("Members")
+                        .WithMany()
                         .HasForeignKey("AssosiationId");
 
                     b.HasOne("ICA.Models.projects", "projects")
@@ -815,7 +818,7 @@ namespace ICA.Data.Migrations
             modelBuilder.Entity("ICA.Models.projects", b =>
                 {
                     b.HasOne("ICA.Models.Assosiation", "Assosiation")
-                        .WithMany("Projects")
+                        .WithMany()
                         .HasForeignKey("AssosiationId");
 
                     b.Navigation("Assosiation");
@@ -887,15 +890,6 @@ namespace ICA.Data.Migrations
             modelBuilder.Entity("ICA.Models.Article", b =>
                 {
                     b.Navigation("Album");
-                });
-
-            modelBuilder.Entity("ICA.Models.Assosiation", b =>
-                {
-                    b.Navigation("Articles");
-
-                    b.Navigation("Members");
-
-                    b.Navigation("Projects");
                 });
 
             modelBuilder.Entity("ICA.Models.MainAssociation", b =>

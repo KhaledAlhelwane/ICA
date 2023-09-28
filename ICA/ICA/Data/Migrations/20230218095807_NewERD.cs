@@ -54,7 +54,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.RenameTable(
                 name: "Article",
-                newName: "Articles");
+                newName: "News");
 
             migrationBuilder.RenameTable(
                 name: "Album",
@@ -72,7 +72,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.RenameIndex(
                 name: "IX_Article_ApplicationUsersId",
-                table: "Articles",
+                table: "News",
                 newName: "IX_Articles_ApplicationUsersId");
 
             migrationBuilder.RenameIndex(
@@ -82,7 +82,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.AddColumn<int>(
                 name: "AssosiationId",
-                table: "Articles",
+                table: "News",
                 type: "int",
                 nullable: true);
 
@@ -119,7 +119,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Articles",
-                table: "Articles",
+                table: "News",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
@@ -290,7 +290,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_AssosiationId",
-                table: "Articles",
+                table: "News",
                 column: "AssosiationId");
 
             migrationBuilder.CreateIndex(
@@ -352,7 +352,7 @@ namespace ICA.Data.Migrations
                 name: "FK_Albums_Articles_ArticleId",
                 table: "Albums",
                 column: "ArticleId",
-                principalTable: "Articles",
+                principalTable: "News",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
@@ -382,14 +382,14 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Articles_AspNetUsers_ApplicationUsersId",
-                table: "Articles",
+                table: "News",
                 column: "ApplicationUsersId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Articles_Assosiation_AssosiationId",
-                table: "Articles",
+                table: "News",
                 column: "AssosiationId",
                 principalTable: "Assosiation",
                 principalColumn: "Id");
@@ -412,7 +412,7 @@ namespace ICA.Data.Migrations
                 name: "FK_TypeOfArticles_Articles_ArticleId",
                 table: "TypeOfArticles",
                 column: "ArticleId",
-                principalTable: "Articles",
+                principalTable: "News",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
@@ -437,11 +437,11 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Articles_AspNetUsers_ApplicationUsersId",
-                table: "Articles");
+                table: "News");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Articles_Assosiation_AssosiationId",
-                table: "Articles");
+                table: "News");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Images_Albums_AlbumId",
@@ -486,11 +486,11 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Articles",
-                table: "Articles");
+                table: "News");
 
             migrationBuilder.DropIndex(
                 name: "IX_Articles_AssosiationId",
-                table: "Articles");
+                table: "News");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Albums",
@@ -510,7 +510,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.DropColumn(
                 name: "AssosiationId",
-                table: "Articles");
+                table: "News");
 
             migrationBuilder.DropColumn(
                 name: "MainAssociationId",
@@ -533,7 +533,7 @@ namespace ICA.Data.Migrations
                 newName: "ITRequist");
 
             migrationBuilder.RenameTable(
-                name: "Articles",
+                name: "News",
                 newName: "Article");
 
             migrationBuilder.RenameTable(

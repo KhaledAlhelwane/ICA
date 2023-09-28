@@ -8,7 +8,18 @@
 @model ICA.Models.Article
 
 @{
-    ViewData["Title"] = Model.TitleArabic;
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        ViewData["Title"] = Model.TitleArabic;
+
+
+    }
+    else
+    {
+        ViewData["Title"] = Model.TitleEnglish;
+
+    }
+  
     ViewData["meta"] = ViewBag.description;
     Layout = "_MainLayout";
     ViewData["Url"] = Context.Request.GetDisplayUrl();
@@ -96,6 +107,49 @@
             </div>
         }
     </section>
+    <br><br>
+    <section class="ftco-gallery bg-light ">
+        <div class="container">
+
+            @{
+                if (@ViewBag.Articles != null)
+                {
+                    <br>
+
+                    <h2 class="text-end" dir="@direction">@localizer["More Blogs"] </h2>
+                    List<Article> OtherArticles = ViewBag.Articles;
+
+                  
+                    <div class="list-group" dir="@direction">
+                    @foreach (var x in OtherArticles)
+                    {
+                        <a asp-controller="Home" asp-action="article" asp-route-title=@x.ArticleUrl class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                    @if (@direction == "rtl")
+                                    {
+                                        <h4 class="mb-1">@x.TitleArabic</h4>
+
+                                    }
+                                    else
+                                    {
+                                        <h5 class="mb-1">@x.TitleEnglish</h5>
+                                    }
+
+                                    <small>@x.DatePuplished.ToString("yyyy-MM-dd")</small>
+                            </div>
+                                <small>@localizer["Media Center"]</small>
+                        </a>
+                    }
+                    </div>
+                  
+                }
+            }
+
+        </div>
+    </section>
+
+  
+
 }
 else
 {

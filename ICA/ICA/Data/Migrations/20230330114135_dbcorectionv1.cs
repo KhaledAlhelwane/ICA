@@ -21,7 +21,7 @@ namespace ICA.Data.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "TypeOfArticles",
-                table: "Articles",
+                table: "News",
                 type: "nvarchar(max)",
                 nullable: true);
         }
@@ -30,7 +30,7 @@ namespace ICA.Data.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "TypeOfArticles",
-                table: "Articles");
+                table: "News");
 
             migrationBuilder.AlterColumn<string>(
                 name: "Manger",
@@ -58,7 +58,7 @@ namespace ICA.Data.Migrations
                     table.ForeignKey(
                         name: "FK_TypeOfArticles_Articles_ArticleId",
                         column: x => x.ArticleId,
-                        principalTable: "Articles",
+                        principalTable: "News",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });

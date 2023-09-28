@@ -186,7 +186,7 @@ namespace ICA.Data.Migrations
 
                     b.HasIndex("AssosiationId");
 
-                    b.ToTable("Articles");
+                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("ICA.Models.Assosiation", b =>
@@ -677,11 +677,11 @@ namespace ICA.Data.Migrations
             modelBuilder.Entity("ICA.Models.Article", b =>
                 {
                     b.HasOne("ICA.Models.ApplicationUser", "ApplicationUsers")
-                        .WithMany("Articles")
+                        .WithMany("News")
                         .HasForeignKey("ApplicationUsersId");
 
                     b.HasOne("ICA.Models.Assosiation", "Assosiation")
-                        .WithMany("Articles")
+                        .WithMany("News")
                         .HasForeignKey("AssosiationId");
 
                     b.Navigation("ApplicationUsers");
@@ -823,7 +823,7 @@ namespace ICA.Data.Migrations
 
             modelBuilder.Entity("ICA.Models.ApplicationUser", b =>
                 {
-                    b.Navigation("Articles");
+                    b.Navigation("News");
 
                     b.Navigation("ITRequists");
                 });
@@ -835,7 +835,7 @@ namespace ICA.Data.Migrations
 
             modelBuilder.Entity("ICA.Models.Assosiation", b =>
                 {
-                    b.Navigation("Articles");
+                    b.Navigation("News");
 
                     b.Navigation("Members");
 

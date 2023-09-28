@@ -104,7 +104,7 @@ namespace ICA.Data.Migrations
                 name: "FK_Albums_Articles_ArticleId",
                 table: "Albums",
                 column: "ArticleId",
-                principalTable: "Articles",
+                principalTable: "News",
                 principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
@@ -231,7 +231,7 @@ namespace ICA.Data.Migrations
                 name: "FK_Albums_Articles_ArticleId",
                 table: "Albums",
                 column: "ArticleId",
-                principalTable: "Articles",
+                principalTable: "News",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 

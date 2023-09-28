@@ -4,22 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>المقالات</h1>
+<h1>المنشورات</h1>
 
 <form asp-action="index" method="post">
 <div class="input-group mb-3">
         <button class="btn btn-outline-secondary " type="submit"  id="button-addon2">بحث</button>
 
-        <input type="text" name="search" class="form-control" placeholder="بحث بإستخدام عنوان المقال" aria-label="Recipient's username" aria-describedby="button-addon2" value="@ViewBag.searchword">
+        <input type="text" name="search" class="form-control" placeholder="بحث بإستخدام عنوان المنشور" aria-label="Recipient's username" aria-describedby="button-addon2" value="@ViewBag.searchword">
   </div>
 </form>
 <p>
-    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> إنشاء مقال جديد</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> إنشاء منشور جديد</a>
 </p>
 @if (ViewBag.faild != null)
 {
     <div class="alert alert-warning" role="alert">
-       لا يوجد مقال بهذا العنوان 
+       لا يوجد منشور بهذا العنوان 
     </div>
 }
 <table class="table">
@@ -27,7 +27,7 @@
         <tr>
            
             <th>
-                <h4>عنوان المقال</h4>
+                <h4>عنوان المنشور</h4>
             </th>
             <th>
                 <h4>نوعه</h4>

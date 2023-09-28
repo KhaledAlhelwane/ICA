@@ -17,16 +17,15 @@
             <div class="form-group">
                 <label asp-for="TypeOfArticles" class="control-label">نوع المقال</label>
                 <select dir="rtl" class="form-select" asp-for="TypeOfArticles" aria-label="Default select example">
-                 @*   <option>الرجاء الإختيار</option>
-               *@     <option value="خبر">خبر</option>
+                   <option value="خبر">خبر</option>
                     <option value="حدث">حدث</option>
-                   @* <option value="تعميم">تعميم</option>
-                    <option value="توظيف">توظيف</option>*@
+                    <option value="مقال للمدونة">مقال للمدونة</option>
+                   
                 </select>
                 <span asp-validation-for="TypeOfArticles" class="text-danger"></span>
             </div>
              <div class="form-group">
-                <label asp-for="thenameassoc" class="control-label">عن</label>
+                <label asp-for="thenameassoc" class="control-label">المصدر</label>
                 <select asp-for="thenameassoc" class="form-control" asp-items="@(new SelectList(Model.AssosiationList, "Id", "FullName"))"></select>
             </div>
             <div class="form-group">
