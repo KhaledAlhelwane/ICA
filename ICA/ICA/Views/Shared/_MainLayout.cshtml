@@ -119,8 +119,7 @@
                     <li class="nav-item"><a asp-controller="Home" asp-action="index" class="nav-link  d-flex justify-content-center">@localizer["Home"]</a></li>
                 
                   
-                   @* <li class="nav-item"><a asp-controller="Home" asp-action="projects" class="nav-link  d-flex justify-content-center">@localizer["Projects"]</a></li>
-                  *@  <li class="nav-item"><a asp-controller="Home" asp-action="News" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
+                 <li class="nav-item"><a asp-controller="Home" asp-action="News" class="nav-link  d-flex justify-content-center">@localizer["News"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="events" class="nav-link d-flex justify-content-center">@localizer["Events"]</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="blog" class="nav-link  d-flex justify-content-center">@localizer["Blog"]</a></li>
 
@@ -131,17 +130,20 @@
                         <div id="maindropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="Aoun-for-Relief-and-Development"> @localizer["Aoun"]</a>
                              <div class="dropdown-divider"></div>
+
                              <div  class="dropdown @Listdirectoin" >
                                 <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown1" role="button">
                                     @localizer["UN projects"]
                                 </a>
+
                                 <div id="first" class="dropdown-menu" >
                                     <div class="dropdown @Listdirectoin">
                                         <a class="dropdown-item dropdown-toggle  d-flex justify-content-center" id="navbarDropdown6" role="button">@localizer["Current projects"]</a>
                                         <div id="sixth" class="dropdown-menu">
-                                            <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="UNHCR">UNHCR</a>
-
+                                            <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="UNHCR">@localizer["Social care project"]</a>
+                                            <a class="dropdown-item  d-flex justify-content-center" asp-controller="Sections" asp-action="Section" asp-route-AssosiationURL="WFP-Relief-Project">@localizer["WFP Relief Project"]</a>
                                         </div>
+                                       
                                     </div>
                                     <a class="dropdown-item  d-flex justify-content-center" asp-controller="Home" asp-action="projects"  >@localizer["Old Projects"]</a>
                                 </div>
@@ -251,12 +253,12 @@
                             <a href="https://www.facebook.com/p/%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85-100066815956039/?paipv=0&eav=AfYUb0wtnrMopYhY3AlXXknqyYVqDr_xKet5-pnpJZIfJHwq8bHkt9sdTXXlABfQ5no&_rdr" target="_blank">
                                 <img src="~/ourachivments/orphans.webp" alt="الميتم الإسلامي" width="40" class="rounded-circle" />
                             </a>
-                            <a href="https://www.facebook.com/Aman.for.Community.Services" target="_blank">
+                            @*  <a href="https://www.facebook.com/Aman.for.Community.Services" target="_blank">
                                 <img src="~/ourachivments/communityServices.webp" alt="الرعاية الإجتماعية" width="40" />
                             </a>
-                            <a>
+                           <a>
                                 <img src="~/ourachivments/SelfLearning.webp" alt="التعلم الذاتي" width="40" />
-                            </a>
+                            </a>*@
                             <a href="https://www.facebook.com/alkhariaha/" target="_blank">
                                 <img src="~/ourachivments/shools.webp" width="40" class="rounded-circle" alt="المدارس الخيرية" />
                             </a>
@@ -273,7 +275,7 @@
                         <ul class="list-unstyled" >
                             <li dir="@thedirection"><a asp-controller="Home" asp-action="index" class="py-2 d-block">@localizer["Home"]</a></li>
                             <li dir="@thedirection"><a asp-controller="Home" asp-action="projects" class="py-2 d-block">@localizer["Projects"]</a></li>
-                            <li><a asp-controller="Home" asp-action="Newss" class="py-2 d-block">@localizer["News"]</a></li>
+                            <li><a asp-controller="Home" asp-action="News" class="py-2 d-block">@localizer["News"]</a></li>
                             <li><a asp-controller="Home" asp-action="events" class="py-2 d-block">@localizer["Events"]</a></li>
                             <li><a asp-controller="Home" asp-action="about" class="py-2 d-block">@localizer["About"]</a></li>
                             <li><a asp-controller="Home" asp-action="contact" class="py-2 d-block">@localizer["Contact"]</a></li>
@@ -285,9 +287,9 @@
                         <h2 class="ftco-heading-2">@localizer["Have a Questions?"]</h2>
                 <div class="block-23 mb-3">
                   <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">@localizer["Al-Maytam Street, Al-Waer neighborhood, Homs, Syria"]</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">031 223 3173</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@icangoh.org</span></a></li>
+                                <li><a href="https://maps.app.goo.gl/Gx7tPfCh76bxhYgj8"><span class="icon icon-map-marker"></span><span class="text">@localizer["Al-Maytam Street, Al-Waer neighborhood, Homs, Syria"]</span></a></li>
+                                <li><span class="icon icon-phone"></span><span class="text">@localizer["031 223 3173"]</span></li>
+                                <li><a asp-controller="Home" asp-action="contact"><span class="icon icon-envelope"></span><span class="text">info@icangoh.org</span></a></li>
                   </ul>
                 </div>
             </div>

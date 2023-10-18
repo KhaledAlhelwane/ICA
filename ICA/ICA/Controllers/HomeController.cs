@@ -56,7 +56,7 @@ namespace ICA.Controllers
             {
                 page = 1; // Set page to 1 to prevent negative navigation
             }
-            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "خبر").OrderByDescending(o=>o.DatePuplished).ToListAsync();
+            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "خبر" &&t.Status==true).OrderByDescending(o=>o.DatePuplished).ToListAsync();
             var totalCount = data.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 
@@ -73,7 +73,7 @@ namespace ICA.Controllers
             Article articel = context.Articles.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.ArticleUrl== title);
 
             //Article articel = context.News.Include(x => x.ApplicationUsers).Include(a => a.Album).ThenInclude(b => b.Images).SingleOrDefault(i => i.Id == id);
-            if (articel == null)
+            if (articel == null|| articel.Status==false)
             {
                 ViewBag.Notfound = "not found";
             }
@@ -120,7 +120,7 @@ namespace ICA.Controllers
             {
                 page = 1; // Set page to 1 to prevent negative navigation
             }
-            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(A=>A.Assosiation).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "حدث").OrderByDescending(o => o.DatePuplished).ToListAsync();
+            var data = await context.Articles.Include(x => x.ApplicationUsers).Include(A=>A.Assosiation).Include(a => a.Album).ThenInclude(b => b.Images).Where(t => t.TypeOfArticles == "حدث"&& t.Status==true).OrderByDescending(o => o.DatePuplished).ToListAsync();
             var totalCount = data.Count();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 

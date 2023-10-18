@@ -37,12 +37,12 @@ builder.Services.AddMvc()
                 .AddDataAnnotationsLocalization();
 
 //set the session to be unlimited 
-builder.Services.ConfigureApplicationCookie(Options =>
-{
-    Options.Cookie.Name = "AspNetCore.Identity.Application";
-    Options.ExpireTimeSpan = TimeSpan.FromDays(365 * 100);
-    Options.SlidingExpiration = true;
-});
+//builder.Services.ConfigureApplicationCookie(Options =>
+//{
+//    Options.Cookie.Name = "AspNetCore.Identity.Application";
+//    Options.ExpireTimeSpan = TimeSpan.FromDays(365 * 100);
+//    Options.SlidingExpiration = true;
+//});
 
 
 
